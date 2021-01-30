@@ -1,0 +1,59 @@
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Klee One';
+  src: url('/fonts/KleeOne-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'Klee One';
+  src: url('/fonts/KleeOne-SemiBold.woff2') format('woff2');
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  font-family: 'Avenir Light', 'Klee One', serif;
+  line-height: 2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5em 0;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+a {
+  color: inherit;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  border-radius: 2px;
+  background-color: #f0f0f0;
+  color: #555;
+  font-size: calc(1em - 2px);
+  font-family: menlo, inconsolata, monospace;
+}
+
+@media (min-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+}
