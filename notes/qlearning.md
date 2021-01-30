@@ -12,7 +12,7 @@ date: 2014-05-23 22:46:06
 
 <!--more-->
 
-<link rel="stylesheet" href="/works/blog/qlearning.css" media="all">
+<!-- <link rel="stylesheet" href="/works/blog/qlearning.css" media="all">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>
 var config = {
@@ -25,4 +25,4 @@ var config = {
 <script src="/works/blog/qlearning.min.js"></script>
 <div id="field"></div>
 <input type="button" id="btn-start" value="Start">
-<div id="counter"></div>
+<div id="counter"></div> -->
