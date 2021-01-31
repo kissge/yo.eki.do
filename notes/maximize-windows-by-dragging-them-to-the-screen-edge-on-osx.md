@@ -13,8 +13,9 @@ Windowsや大抵のLinux向けウィンドウマネージャではウィンド�
 というわけでOS X向けのさまざまなユーティリティがあってこれを模倣しようとする試みが長らくなされていたのですが、悲しむべきことにほとんどが有料（<a href="http://www.boastr.net/bettersnaptool/">例1</a>、<a href="https://itunes.apple.com/us/app/isnap/id420332190?mt=12">例2</a>、<a href="http://www.irradiatedsoftware.com/cinch/">例3</a>、<a href="https://bahoom.com/hyperdock/">例4</a>、<a href="http://www.nulana.com/flexiglass/">例5</a>）で、唯一無料だった<a href="https://www.boastr.net/">BetterTouchTool</a>も3ドルから（予定）のカンパウェアになることが発表されました。
 というわけでフリーのツールで、出来ればオープンソースのもので、このウィンドウをドラッグしたまま画面の端にぐぐぐっと押し付けることで最大化したり画面サイズの半分の大きさに変えたりする機能を実現できないか探していたところ発見。
 
+<x-script src="//cdn.jsdelivr.net/github-cards/latest/widget.js">
 <div class="github-card" data-github="gbrueckner/Snapp" data-width="400" data-height="" data-theme="default"></div>
-<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+</x-script>
 
 この間までEl Capitanのみ対応だったところ、プルリクをマージしてもらったのでYosemiteでも動くっぽいことになりました。
 手元で使っている限りでは今のところ問題なく動いているようです。

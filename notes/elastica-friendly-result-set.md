@@ -61,8 +61,9 @@ Elasticaの難点として、クエリを投げて帰ってくる結果が連想
 とかやって欲しいデータを取る。
 ちょっと指が疲れて微妙なのでこの辺をいい感じにラップするライブラリ[ElasticaFriendlyResultSet](https://github.com/kissge/ElasticaFriendlyResultSet)を書いた。
 
+<x-script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js">
 <div class="github-card" data-github="kissge/ElasticaFriendlyResultSet" data-width="400" data-height="296" data-theme="medium"></div>
-<script src="https://cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+</x-script>
 
 これを使うと
 

@@ -4,8 +4,9 @@ date: 2015-06-03 22:11:03
 --
 Redmineとかで添付ファイルのPDFを見たいときにDownloadsフォルダが汚されるのが気に食わなかったので．Chrome以外のブラウザでは試していない．
 
+<x-script src="//cdn.jsdelivr.net/github-cards/latest/widget.js">
 <div class="github-card" data-github="kissge/undisposition" data-width="400" data-height="296" data-theme="medium"></div>
-<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+</x-script>
 
 っていうのがあります．べんり．インストール方法は
 

@@ -9,7 +9,7 @@ I wasn't able to find nicer solution, so wrote this.
 
 <!--more-->
 
-<script src="https://gist.github.com/kissge/850f5b67c1fa11e02a1e.js"></script>
+<x-script src="https://gist.github.com/kissge/850f5b67c1fa11e02a1e.js"></x-script>
 
 <pre><code>&gt; hist.from.freq(seq(0, 9), c(154, 105, 72, 16, 111, 103, 81, 84, 38, 158), normalize = T)</code></pre>
 

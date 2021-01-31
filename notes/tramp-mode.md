@@ -124,7 +124,7 @@ Emacs 24.3くらいまではこの変数のデフォルト値は `scpc` だっ�
 Emacs 24.5で `;;;###tramp-autoload` にバグがあるような気がするのですがHEADで再現しないのでどこかに報告したほうがいいのかどうなのか分からずにいる。
 具体的には
 
-<script src="https://gist.github.com/kissge/a9f1c59959181856280f.js"></script>
+<x-script src="https://gist.github.com/kissge/a9f1c59959181856280f.js"></x-script>
 
 を使って
 
