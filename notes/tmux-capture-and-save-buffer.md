@@ -1,5 +1,5 @@
 from: wordpress
-title: tmux: paneの表示内容をファイルに書き出す
+title: "tmux: paneの表示内容をファイルに書き出す"
 date: 2019-06-17T00:00:00+09:00
 --
 
