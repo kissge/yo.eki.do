@@ -5,4 +5,5 @@ export const config: Config = {
   title: '葉月夜堂',
   twitter: 'p_km',
   googleAnalyticsTrackingID: 'UA-45102742-1',
+  googleAdSenseClientID: 'ca-pub-5159408992513362',
 };

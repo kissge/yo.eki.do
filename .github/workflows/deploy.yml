@@ -19,6 +19,7 @@ jobs:
           path: .monolog
       - run: mv config.ts .monolog/src/
       - run: mv images .monolog/static/
+      - run: mv static/* .monolog/static/
       - run: mkdir .src && mv */ .src
       - run: yarn install
         working-directory: .monolog
