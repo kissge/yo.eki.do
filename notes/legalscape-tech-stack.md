@@ -1,5 +1,7 @@
 title: リーガルリサーチシステム「Legalscape」の技術スタック2021
 date: 2021-12-02T09:00:00+09:00
+tags:
+    - advent
 --
 
 こんにちは。Legalscape Co-Founder & CTOの城戸（きど）です。
