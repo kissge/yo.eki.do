@@ -9,7 +9,7 @@ Python: How to iterate through a list by two
 ```python
 it = range(10)
 for a, b in zip(it, it):
-    print(&#039;{} + {} = {}&#039;.format(a, b, a + b))
+    print('{} + {} = {}'.format(a, b, a + b))
 ```
 
 一瞬これでいけるかな？と思うも
@@ -33,7 +33,7 @@ for a, b in zip(it, it):
 it = range(10)
 itit = iter(it)
 for a, b in zip(itit, itit):
-    print(&#039;{} + {} = {}&#039;.format(a, b, a + b))
+    print('{} + {} = {}'.format(a, b, a + b))
 ```
 
 とすると
