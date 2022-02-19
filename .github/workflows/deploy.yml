@@ -25,6 +25,7 @@ jobs:
         working-directory: .monolog
       - run: yarn export
         working-directory: .monolog
+      - run: head -c 100 .monolog/__sapper__/export/posts.json
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
