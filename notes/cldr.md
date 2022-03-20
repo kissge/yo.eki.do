@@ -136,7 +136,7 @@ Common Locale Data Repository、略してCLDRは、The Unicode Consortiumが提�
 
 そういえばGoogle 日本語入力のソースコードにも元号のデータが埋め込まれていたのを思い出す。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Google 日本語入力のソースコード。 <a href="https://t.co/gOBfU9Bsfo">https://t.co/gOBfU9Bsfo</a> <a href="https://t.co/lXwChxyFAi">pic.twitter.com/lXwChxyFAi</a></p>&mdash; (@p_km) <a href="https://twitter.com/p_km/status/664781052964028416?ref_src=twsrc%5Etfw">November 12, 2015</a></blockquote> <x-script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></x-script>
+<x-script async src="https://platform.twitter.com/widgets.js" charset="utf-8"><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Google 日本語入力のソースコード。 <a href="https://t.co/gOBfU9Bsfo">https://t.co/gOBfU9Bsfo</a> <a href="https://t.co/lXwChxyFAi">pic.twitter.com/lXwChxyFAi</a></p>&mdash; (@p_km) <a href="https://twitter.com/p_km/status/664781052964028416?ref_src=twsrc%5Etfw">November 12, 2015</a></blockquote></x-script>
 
 # 余談——ISO 8601形式の日付を得る裏技（？）
 
