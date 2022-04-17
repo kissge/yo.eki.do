@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: EC2でL2TP/IPsec PSK VPNを立てる
 date: 2017-06-12 23:17:55
---
+---
+
 特に必要性があるわけではないがEC2上でSoftEtherを立てる。注意点をメモしておく。
 
 <!--more-->

@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: 'Emacs: git-gutter が便利過ぎる'
 date: 2014-07-23 19:15:10
---
+---
+
 あまりに感動したのでつい．
 
 SublimeText にある GitGutter という拡張の Emacs Lisp 版が git-gutter.el である．
@@ -22,5 +24,3 @@ SublimeText にある GitGutter という拡張の Emacs Lisp 版が git-gutter.
 とにかく導入してよかった，簡単だったし．
 ついでに Emacs のバージョンを 23 系から 24 に変えた．
 今までの .emacs でほとんど変える必要がなく無事動いたが，<code>menu-bar-mode</code> と <code>tool-bar-mode</code> の引数を省略したときの挙動が変わったようなのでそこだけ修正．
-
-

@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: Q - Shortest Path Problem Solver with Q-Learning
 date: 2014-05-23 22:46:06
---
+---
+
 # Q
 
 ## What's this

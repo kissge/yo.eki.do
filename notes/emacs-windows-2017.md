@@ -1,9 +1,11 @@
+---
 from: wordpress
 title: 'Emacs: Windowsでやっていく2017'
 date: 2017-12-08 00:00:08
 tags:
     - advent
---
+---
+
 この記事は[Emacs Advent Calendar 2017](https://qiita.com/advent-calendar/2017/emacs)の第8日目の記事として書かれました。
 第7日目は[yynozk](https://qiita.com/yynozk)さんによる「[Emacs の org-mode は表計算もできてしまう](https://qiita.com/yynozk/items/36a590b49a9237907335)」です。
 第9日目は[tm_tn](https://qiita.com/tm_tn)さんによる記事の予定です。「何か書きます」とのこと。
@@ -35,9 +37,11 @@ Emacs 24で満足できる人は、何も考えずに`apt install emacs`する�
 
 Emacs 25を導入したい場合は、いろいろ手段はあるがkelleykのPPMを追加するのが一番簡単だろう。
 
-    add-apt-repository ppa:kelleyk/emacs
-    apt update
-    apt install emacs25
+```sh
+add-apt-repository ppa:kelleyk/emacs
+apt update
+apt install emacs25
+```
 
 Emacs 27を導入したいなら、Ubunt Emacs Lisp teamの公開している[PPM](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa)でemacs-snapshotを追加することになるだろうか。
 開発中のバージョンであり高い頻度で更新される。
@@ -61,10 +65,11 @@ GitHubを見ると更新が2年止まっているように見えるが、Sourcef
 
 **追記 (12/10)**: VcXsrvを起動中にディスプレイの一つを切断するとVcXsrvがクラッシュすることがあるような気がします。
 
-
 さて、ここまでセットアップを終えると無事GUI版のEmacsが使えるようになっているはずである。
 
-    DISPLAY=:0 emacs
+```sh
+DISPLAY=:0 emacs
+```
 
 ![](/images/uploads/2017/12/emacs1.png)
 
@@ -91,11 +96,15 @@ Vcxsrvの描画するウィンドウはWindowsのスケーリングをかける�
 X転送ってどっちにフォント入れればいいのか忘れるけれど、今どきはとりあえずクライアント (Linux) 側ということになっている。
 というわけでインストールはaptで簡単に。
 
-    apt install fonts-noto-cjk
+```sh
+apt install fonts-noto-cjk
+```
 
 Emacsのほうはこんな感じで設定を。
 
-    (set-fontset-font "fontset-default" 'japanese-jisx0208 '("Noto Sans CJK JP Medium" . "iso10646-1"))
+```lisp
+(set-fontset-font "fontset-default" 'japanese-jisx0208 '("Noto Sans CJK JP Medium" . "iso10646-1"))
+```
 
 ## 日本語入力
 
@@ -103,13 +112,17 @@ Emacsのほうはこんな感じで設定を。
 今回も使い慣れたmozc (Google日本語入力のオープンソース版)　とemacs-mozc-binでいく。
 まずターミナルでサーバをインストールする。
 
-    apt install emacs-mozc-bin
+```sh
+apt install emacs-mozc-bin
+```
 
 Emacs側ではまず[mozc.el](https://raw.githubusercontent.com/google/mozc/master/src/unix/emacs/mozc.el)を手に入れ、`load-path`の通っているディレクトリに置く。
 そして
 
-    (setq default-input-method "japanese-mozc")
-    (require 'mozc)
+```lisp
+(setq default-input-method "japanese-mozc")
+(require 'mozc)
+```
 
 あとは`M-x toggle-input-method`でIMEのオンオフが切り替えられる。好みに応じて`global-set-key`しておこう。
 ちなみに全角半角キーは`(kbd "<zenkaku-hankaku>")`で指定できる。
@@ -132,13 +145,17 @@ Emacsの`shell`などで起動しないで欲しいという理由もある。
 WindowsからWSL上のコマンドを実行するのは簡単だ。
 Windows + Rキーで開くファイル名を指定して実行 (Run) ダイアログなどからbashを呼び出すだけで良い。
 
-    bash -c "DISPLAY=:0 emacs"
+```sh
+bash -c "DISPLAY=:0 emacs"
+```
 
 しかし、これだと「黒画面」が表示しっぱなしになってしまう。
 Emacsが終了するまでbash.exeのウィンドウが裏に表示されたままになってしまうのである。
 そこでひと工夫加えてこうすれば良い。
 
-    bash -c "DISPLAY=:0 emacs &"
+```sh
+bash -c "DISPLAY=:0 emacs &"
+```
 
 良い……んじゃないかと思う。自分のショートカット見たらこれじゃなくてrun.exe使ってて、あれ、&じゃダメな理由あったんだっけ……忘れた……。
 
@@ -214,7 +231,9 @@ Atomの[ftp-remote-edit](https://atom.io/packages/ftp-remote-edit)はいい線�
 この問題は比較的小さいファイルを編集するときには起きないようだ。
 そこで、一回に送る文字列の長さを制限してみる。
 
-    (custom-set-variables '(tramp-chunksize 1024))
+```lisp
+(custom-set-variables '(tramp-chunksize 1024))
+```
 
 数字は適当である。
 が、これがうまくいった。
@@ -223,8 +242,9 @@ Atomの[ftp-remote-edit](https://atom.io/packages/ftp-remote-edit)はいい線�
 一応`tramp-chunksize`をいじるのはWSL上だけに制限しておこう。
 WSLかどうか判定するのはこういう感じで。
 
-    (string-match-p "Microsoft" (shell-command-to-string "uname -r"))
-
+```lisp
+(string-match-p "Microsoft" (shell-command-to-string "uname -r"))
+```
 
 というわけでどうにか開発環境として日常的に使えるように出来た。
 これがEmacsの問題だったのかtramp-modeなのかWSLなのか、よくわからない。どこかに報告したほうがいいのかもしれない。

@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: リンクをクリックしたとき強制的にファイルとして保存されるのを防ぐChrome拡張
 date: 2015-06-03 22:11:03
---
+---
+
 Redmineとかで添付ファイルのPDFを見たいときにDownloadsフォルダが汚されるのが気に食わなかったので．Chrome以外のブラウザでは試していない．
 
 <x-script src="//cdn.jsdelivr.net/github-cards/latest/widget.js">

@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: Emacs 24 でクリップボードとの連携が上手くいかなくなった
 date: 2014-07-23 22:14:19
---
+---
+
 <a href="http://yo.eki.do/notes/git-gutter" title="Emacs: git-gutter が便利過ぎる">というわけで</a> Emacs 24 に晴れてバージョンアップすることになった．
 
 <pre><code>M-; emacs-version

@@ -1,9 +1,11 @@
+---
 from: wordpress
 title: 'Emacs: まだターミナルで消耗してるの？'
 date: 2015-12-04 23:00:02
 tags:
     - advent
---
+---
+
 この記事は<a href="http://qiita.com/advent-calendar/2015/emacs">Emacs Advent Calendar 2015</a>の第5日目の記事として書かれました。
 第4日目は<a href="http://qiita.com/niku">niku</a>さんによる記事の予定です。「org-babelについて書くかも」とのこと。
 第6日目は<a href="http://qiita.com/takaxp">takaxp</a>さんによる記事の予定です。「何も書かずに2015年を終えられると思うほど堕落してはおらんっ」とのこと。
@@ -74,7 +76,9 @@ Emacs 24.3くらいまではこの変数のデフォルト値は `scpc` だっ�
 
 などと書くことでターミナルから
 
-    $ ssh example1
+```sh
+$ ssh example1
+```
 
 だけで一発で目的のホストに繋ぐことが出来ます。この設定をしているときにはEmacsで
 
@@ -106,7 +110,9 @@ Emacs 24.3くらいまではこの変数のデフォルト値は `scpc` だっ�
 また、 `tramp-mode` で繋ぐ先のホストのログインシェルがzshの場合、接続がうまくいかない場合があります。
 よく見受けられる対処法（私も使っています）は、 `.zshrc` の1行目にEmacsからの接続を識別する場合分けを追加することのようです。
 
-    [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+```sh
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+```
 
 もう一点上級者向けっぽいことを書くと、システムグローバルな設定のままControlMasterを使うようにカスタマイズする場合、Emacsで最初にshared connectionを開いてからターミナルなどでsshセッションを開き、Emacsを終了するとターミナルの方も同時に落ちる、というようなことになる場合があります。
 このへんは好き好きというか、一般にどうするのがよいのか不明です。
@@ -128,7 +134,9 @@ Emacs 24.5で `;;;###tramp-autoload` にバグがあるような気がするの�
 
 を使って
 
-    emacs -q -l init.el
+```sh
+emacs -q -l init.el
+```
 
 などとして起動した後
 

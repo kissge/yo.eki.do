@@ -1,8 +1,9 @@
+---
 title: PDFと、出版社と、私
 date: 2021-12-23T14:00:00+09:00
 tags:
     - advent
---
+---
 
 こんにちは。Legalscape Co-founder & CTOの城戸（きど）です。この記事は[Legalscape アドベントカレンダー 2021](https://qiita.com/advent-calendar/2021/legalscape)の12/23のエントリです。
 

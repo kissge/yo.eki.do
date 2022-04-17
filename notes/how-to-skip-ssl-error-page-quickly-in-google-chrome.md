@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: How to skip SSL Error page quickly in Google Chrome
 date: 2016-10-26 23:25:15
---
+---
+
 When you are building your own web apps, especially in development environments, it is often the case that you use self-signed SSL certificates;
 then you will have to see this annoying "Your connection is not private" every time.
 
@@ -11,7 +13,7 @@ In order to proceed to your page, you have to click "ADVANCED" at the bottom, an
 
 ![Another screenshot](/images/uploads/2016/10/Screenshot-2016-10-26-23.02.34.png)
 
-click "Proceed to **** (unsafe)".
+click "Proceed to \*\*\*\* (unsafe)".
 
 Problem here: clicking twice is a labor and we all love keyboard shortcuts.
 Then, try this instead: just type the magic word `badidea`, and voilà!

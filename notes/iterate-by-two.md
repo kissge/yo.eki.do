@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: 'Python: リストを2個ずつ巡回する'
 date: 2016-11-18 02:07:05
---
+---
+
 Python: How to iterate through a list by two
 
 <!--more-->

@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: yum upgradeしようとすると依存解決がうまくいかない
 date: 2015-10-05 10:52:09
---
+---
+
 こんな感じで
 
     # yum --changelog upgrade
@@ -42,7 +44,9 @@ date: 2015-10-05 10:52:09
 <del datetime="2015-10-24T04:38:32+00:00">まず読み方が分からなくて何が何やらという感じだったが、何の事はない、`php-pecl-mongo` を違うところ（remiレポジトリ）から入れてきたというだけの事だった。
 というわけで
 
-    # yum --enablerepo=remi-php56 install php-pecl-mongo
+```sh
+yum --enablerepo=remi-php56 install php-pecl-mongo
+```
 
 とかで解決。（これでいいんか）</del>
 

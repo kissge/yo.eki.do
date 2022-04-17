@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: 'jediとかvirtualenvとかがReason: image not foundと言ってぶっ壊れたときの対処'
 date: 2016-08-26 00:17:53
---
+---
+
 ある日突然jedi（EmacsでPythonを書くときにつかうすごいやつだよ）がぶっ壊れた。
 python-modeのバッファでピリオドを打つたびに
 

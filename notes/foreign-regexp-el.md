@@ -1,9 +1,11 @@
+---
 from: wordpress
 title: 'Emacs: re-builder + foreign-regexp.elでたのしい正規表現'
 date: 2014-12-19 23:30:53
 tags:
     - advent
---
+---
+
 この記事は<a href="http://qiita.com/advent-calendar/2014/emacs">Emacs Advent Calendar 2014</a>の第20日目の記事として書かれました．
 第19日目はkawabata@githubさんによる「Emacs Lispの汎変数（とその他）」でした．
 第21日目はsanryuuさんによる自作ツールの紹介の予定です．
@@ -37,12 +39,14 @@ Emacsに限らずエディタで何らかのファイルを編集していると
 <a href="https://github.com/k-talo/foreign-regexp.el">https://github.com/k-talo/foreign-regexp.el</a>からforeign-regexp.elを入手し，パスの通った場所におきます（動かすだけなら他のファイルは無くとも問題ないようです）．
 そして<code>.emacs</code>に
 
-    (require 'foreign-regexp)
+```lisp
+(require 'foreign-regexp)
 
-    (custom-set-variables
-    '(foreign-regexp/regexp-type 'perl) ;; Choose your taste of foreign regexp
-                                        ;; from 'perl, 'ruby or 'javascript.
-    '(reb-re-syntax 'foreign-regexp))   ;; Tell re-builder to use foreign regex.
+(custom-set-variables
+'(foreign-regexp/regexp-type 'perl) ;; Choose your taste of foreign regexp
+                                    ;; from 'perl, 'ruby or 'javascript.
+'(reb-re-syntax 'foreign-regexp))   ;; Tell re-builder to use foreign regex.
+```
 
 と追加します．このコードで，foreign-regexp.elで使う正規表現をPerl, Ruby, JavaScript (node.js)から選んで指定し，re-builderで用いる正規表現も変更しています．
 <code>autoload</code>で書きたい場合は<code>re-builder</code>か<code>foreign-regexp/re-builder/query-replace-on-target-buffer</code>に張ればいいでしょう（私はそうしています）．

@@ -1,7 +1,9 @@
+---
 from: wordpress
 title: Graphviz で subgraph が無視される
 date: 2014-07-15 22:19:44
---
+---
+
 Graphviz の subgraph を明示的に描画させるには subgraph の名前を cluster で始めないといけない．
 このへん (<a href="http://www.graphviz.org/content/dot-language">The DOT Language | Graphviz - Graph Visualization Software</a>) に
 

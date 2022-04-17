@@ -1,7 +1,8 @@
+---
 title: デザイナーの専門学校を卒業した
 date: 2021-09-19T12:34:56+09:00
 header: /images/2021/2021-09-19.jpg
---
+---
 
 [デジタルハリウッド](https://school.dhw.co.jp/school/tokyo/)というデザイナーの専門学校を卒業した。
 専攻はUI/UXデザイン。

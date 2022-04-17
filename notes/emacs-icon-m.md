@@ -1,23 +1,27 @@
+---
 from: wordpress
 title: 'Emacs: ファイル名補完で「Icon^M」を無視する'
 date: 2014-12-16 22:21:21
---
+---
+
 Emacsでは<code>find-file</code>などでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．
 たとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．
 
 <!--more-->
 
-    (setq completion-ignored-extensions
-          (append completion-ignored-extensions
-                  '("./" "../" ".xlsx")))
-    (defadvice completion-file-name-table (after ignoring-backups-f-n-completion activate)
-      "filter out results when the have completion-ignored-extensions"
-      (let ((res ad-return-value))
-        (if (and (listp res)
-                 (stringp (car res))
-              (cdr res)) ; length > 1, don't ignore sole match
-            (setq ad-return-value
-                  (completion-pcm--filename-try-filter res)))))
+```lisp
+(setq completion-ignored-extensions
+      (append completion-ignored-extensions
+              '("./" "../" ".xlsx")))
+(defadvice completion-file-name-table (after ignoring-backups-f-n-completion activate)
+  "filter out results when the have completion-ignored-extensions"
+  (let ((res ad-return-value))
+    (if (and (listp res)
+             (stringp (car res))
+          (cdr res)) ; length > 1, don't ignore sole match
+        (setq ad-return-value
+              (completion-pcm--filename-try-filter res)))))
+```
 
 （参考：<a href="http://stackoverflow.com/questions/1731634/dont-show-uninteresting-files-in-emacs-completion-window">autocomplete - Don't show uninteresting files in Emacs completion window - Stack Overflow</a>，Emacsのバージョンによって微妙にどこかを変えなければいけなかったような気がするけど忘れた）
 
@@ -31,12 +35,14 @@ Emacsでは<code>find-file</code>などでのファイル名補完で特定の�
 
 このことは次のようにすると確かめられる．
 
-    (car (file-name-all-completions "Icon" "~/Dropbox/"))
-    => "Icon
-    "
+```lisp
+(car (file-name-all-completions "Icon" "~/Dropbox/"))
+=> "Icon
+"
 
-    (string= "Icon\n" (car (file-name-all-completions "Icon" "~/Dropbox/")))
-    => t
+(string= "Icon\n" (car (file-name-all-completions "Icon" "~/Dropbox/")))
+=> t
+```
 
 （注．最後の<code>~/Dropbox/</code>を適当にIconからファイル名が始まるファイルがIcon\rしかないディレクトリに変える）
 
