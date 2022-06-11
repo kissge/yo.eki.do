@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-b31939b7.js",
+    "file": "start-7b2057e8.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -15,7 +15,7 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-f62cab73.js",
+    "file": "pages/__layout.svelte-0c722760.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -38,7 +38,7 @@
     ]
   },
   "src/routes/[...entity].svelte": {
-    "file": "pages/_...entity_.svelte-be1775c8.js",
+    "file": "pages/_...entity_.svelte-3efc4984.js",
     "src": "src/routes/[...entity].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -49,12 +49,13 @@
       "_singletons-d1fb5791.js"
     ],
     "css": [
-      "assets/pages/_...entity_.svelte-1f397eed.css"
+      "assets/pages/_...entity_.svelte-fc6df1b6.css"
     ],
     "assets": [
       "assets/heart-1cc6a2fc.svg",
       "assets/message-circle-c0b45d48.svg",
-      "assets/arrows-double-sw-ne-80dcf001.svg"
+      "assets/arrows-double-sw-ne-80dcf001.svg",
+      "assets/brand-github-a6e3cad2.svg"
     ]
   },
   "src/routes/index.svelte": {

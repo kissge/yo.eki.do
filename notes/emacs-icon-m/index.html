@@ -10,13 +10,13 @@
     <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="Emacs: ファイル名補完で「Icon^M」を無視する - 2014-12-17 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="Emacsではfind-fileなどでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．たとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．(setq completion-ignored-extensions       (append completion-ignored-extensions               &amp;#x27;(&amp;quot;./&amp;quot; &amp;quot;../&amp;quot; &amp;quot;.xlsx&amp;quot;)))(defadvice completion-file-name-table (after ignoring-backups-f-n-completion activate)  &amp;quot;filter out results when the have completion-ignored-extensions&amp;quot;  (let ((res ad-return-value))    (if (and (listp res)             (stringp (car res))          (cdr res)" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
 	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-1f397eed.css">
-	<link rel="modulepreload" href="/_app/immutable/start-b31939b7.js">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-fc6df1b6.css">
+	<link rel="modulepreload" href="/_app/immutable/start-7b2057e8.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-f62cab73.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-0c722760.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-be1775c8.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-3efc4984.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
   </head>
   <body>
@@ -31,21 +31,23 @@
 
 
 
-<div class="nav-background svelte-nthksl isHeaderInView" style=""></div>
+<div class="nav-background svelte-1lehjrj isHeaderInView" style=""></div>
 
-<main><article data-kind="note" class="svelte-nthksl"><header class="svelte-nthksl"><h1 class="svelte-nthksl">Emacs:<wbr> ファイル名補完で<wbr>「Icon^M」を<wbr>無視する</h1>
-
-      
-
-      <section class="meta svelte-nthksl"><p class="svelte-nthksl"><time title="7 年半前" class="svelte-5ni4x2">Tue Dec 16 2014 22:21:21 GMT+0000 (Coordinated Universal Time)</time></p>
-
-        <p class="svelte-nthksl"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/emacs-icon-m.md">更新履歴</a></p></section>
+<main><article data-kind="note" class="svelte-1lehjrj"><header class="svelte-1lehjrj"><h1 class="svelte-1lehjrj">Emacs:<wbr> ファイル名補完で<wbr>「Icon^M」を<wbr>無視する</h1>
 
       
 
-      <section class="header-image svelte-nthksl" style=""></section></header>
+      <section class="meta svelte-1lehjrj"><p class="svelte-1lehjrj"><time title="7 年半前" class="svelte-5ni4x2">Tue Dec 16 2014 22:21:21 GMT+0000 (Coordinated Universal Time)</time></p>
 
-    <section class="body svelte-nthksl"><!-- HTML_TAG_START --><p>Emacsでは<code>find-file</code>などでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．
+        <p class="svelte-1lehjrj"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/emacs-icon-m.md" class="svelte-1lehjrj">更新履歴</a></p></section>
+
+      
+
+      
+
+      <section class="header-image svelte-1lehjrj" style=""></section></header>
+
+    <section class="body svelte-1lehjrj"><!-- HTML_TAG_START --><p>Emacsでは<code>find-file</code>などでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．
 たとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．</p>
 <!--more-->
 
@@ -92,10 +94,10 @@
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="1vmosfc">
-		import { start } from "/_app/immutable/start-b31939b7.js";
+		<script type="module" data-sveltekit-hydrate="3mliq5">
+		import { start } from "/_app/immutable/start-7b2057e8.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1vmosfc"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="3mliq5"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
