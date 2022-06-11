@@ -2,6 +2,8 @@
 title: How do Japanese type?
 date: 2022-05-29T10:00:00+09:00
 lang: en
+tags:
+  - 日本語
 ---
 
 Unlike Latin alphabetic scripts, the Japanese language has several thousands of characters.
