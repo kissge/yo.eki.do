@@ -3,7 +3,7 @@ from: wordpress
 title: 'Emacs: まだターミナルで消耗してるの？'
 date: 2015-12-04 23:00:02
 tags:
-    - advent
+  - アドベントカレンダー
 ---
 
 この記事は<a href="http://qiita.com/advent-calendar/2015/emacs">Emacs Advent Calendar 2015</a>の第5日目の記事として書かれました。

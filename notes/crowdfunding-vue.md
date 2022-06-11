@@ -3,7 +3,7 @@ from: wordpress
 title: 来年こそは届いてほしいスマートグラス「Vue」
 date: 2018-12-13 00:17:07
 tags:
-    - advent
+  - アドベントカレンダー
 ---
 
 この記事は[届かないクラウドファンディング Advent Calendar 2018](https://adventar.org/calendars/3459)の第13日目の記事として書かれました。

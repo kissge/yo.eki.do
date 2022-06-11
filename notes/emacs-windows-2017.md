@@ -3,7 +3,7 @@ from: wordpress
 title: 'Emacs: Windowsでやっていく2017'
 date: 2017-12-08 00:00:08
 tags:
-    - advent
+  - アドベントカレンダー
 ---
 
 この記事は[Emacs Advent Calendar 2017](https://qiita.com/advent-calendar/2017/emacs)の第8日目の記事として書かれました。

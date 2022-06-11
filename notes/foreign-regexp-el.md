@@ -3,7 +3,7 @@ from: wordpress
 title: 'Emacs: re-builder + foreign-regexp.elでたのしい正規表現'
 date: 2014-12-19 23:30:53
 tags:
-    - advent
+  - アドベントカレンダー
 ---
 
 この記事は<a href="http://qiita.com/advent-calendar/2014/emacs">Emacs Advent Calendar 2014</a>の第20日目の記事として書かれました．
