@@ -1,3 +1,126 @@
-<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <link href=/global.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=/manifest.json rel=manifest crossorigin=use-credentials> <link href=/images/favicon.svg rel=icon type=image/svg+xml> <script>__SAPPER__={baseUrl:"",preloaded:[void 0,null,{post:{from:"wordpress",title:"Emacs 24 でクリップボードとの連携が上手くいかなくなった",date:"2014-07-23T22:14:19.000Z",type:"notes",slug:"emacs24",html:"\u003Cp\u003E\u003Ca href=\"\u002Fnotes\u002Fgit-gutter\" title=\"Emacs: git-gutter が便利過ぎる\"\u003Eというわけで\u003C\u002Fa\u003E Emacs 24 に晴れてバージョンアップすることになった．\u003C\u002Fp\u003E\n\u003Cpre\u003E\u003Ccode\u003EM-; emacs-version\n=\u003E \"24.3.1\"\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\u003Cp\u003E一応そんなに破壊的な変更は無いと見ていたし，実際ほとんど .emacs に変更は必要なかったが，X 周りは若干変わった点があったので注意が必要．\u003C\u002Fp\u003E\n\u003C!--more--\u003E\n\u003Cp\u003E自分で今までに気づいた変更はクリップボードとの連携がうまくいかなくなったこと．\n\u003Ca href=\"http:\u002F\u002Fwww.gnu.org\u002Fsoftware\u002Femacs\u002Fnews\u002FNEWS.24.1\"\u003ENEWS.24.1\u003C\u002Fa\u003E に記述があって，従来の挙動に戻す方法も書いてあるのでそれに倣えば OK.\u003C\u002Fp\u003E\n\u003Cblockquote\u003E** Selection changes.\n\u003Cp\u003EThe default handling of clipboard and primary selections has been\nchanged to conform with modern X applications.  In short, most\ncommands for killing and yanking text now use the clipboard, while\nmouse commands use the primary selection.\u003C\u002Fp\u003E\n\u003Cp\u003EIn the following, we provide a list of these changes, followed by a\nlist of steps to get the old behavior back if you prefer that.\u003C\u002Fp\u003E\n\u003Cp\u003E*** `select-active-regions’ now defaults to t.\nMerely selecting text (e.g. with drag-mouse-1) no longer puts it in\nthe kill ring.  The selected text is put in the primary selection, if\nthe system possesses a separate primary selection facility (e.g. X).\u003C\u002Fp\u003E\n\u003Cp\u003E**** \u003Ccode\u003Eselect-active-regions' also accepts a new value, \u003C\u002Fcode\u003Eonly’.\nThis means to only set the primary selection for temporarily active\nregions (usually made by mouse-dragging or shift-selection);\n“ordinary” active regions, such as those made with C-SPC followed by\npoint motion, do not alter the primary selection.\u003C\u002Fp\u003E\n\u003Cp\u003E**** `mouse-drag-copy-region’ now defaults to nil.\u003C\u002Fp\u003E\n\u003Cp\u003E*** mouse-2 is now bound to \u003Ccode\u003Emouse-yank-primary'. This pastes from the primary selection, ignoring the kill-ring. Previously, mouse-2 was bound to \u003C\u002Fcode\u003Emouse-yank-at-click’.\u003C\u002Fp\u003E\n\u003Cp\u003E*** `x-select-enable-clipboard’ now defaults to t on all platforms.\u003C\u002Fp\u003E\n\u003Cp\u003E*** `x-select-enable-primary’ now defaults to nil.\nThus, commands that kill text or copy it to the kill-ring (such as\nM-w, C-w, and C-k) also use the clipboard—not the primary selection.\u003C\u002Fp\u003E\n\u003Cp\u003E**** The “Copy”, “Cut”, and “Paste” items in the “Edit” menu are now\nexactly equivalent to M-w, C-w, and C-y respectively.\u003C\u002Fp\u003E\n\u003Cp\u003E**** Note that on MS-Windows, `x-select-enable-clipboard’ was already\nnon-nil by default, as Windows does not support the primary selection\nbetween applications.\u003C\u002Fp\u003E\n\u003Cp\u003E*** To return to the previous behavior, do the following:\u003C\u002Fp\u003E\n\u003Cp\u003E**** Change \u003Ccode\u003Eselect-active-regions' to nil. **** Change \u003C\u002Fcode\u003Emouse-drag-copy-region’ to t.\n**** Change \u003Ccode\u003Ex-select-enable-primary' to t (on X only). **** Change \u003C\u002Fcode\u003Ex-select-enable-clipboard’ to nil.\n**** Bind `mouse-yank-at-click’ to mouse-2.\u003C\u002Fblockquote\u003E\u003C\u002Fp\u003E\n",headline:"というわけで Emacs 24 に晴れてバージョンアップすることになった．M-; emacs-version=\u003E \"24.3.1\"一応そんなに破壊的な変更は無いと見ていたし，実際ほとんど .emacs"},historyURL:"https:\u002F\u002Fgithub.com\u002Fkissge\u002Fyo.eki.do\u002Fcommits\u002Fmaster\u002Fnotes\u002Femacs24.md"}]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.ad92a8a1.js"}catch(e){main="/client/legacy/client.8a1ee2e2.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.5.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=/client/client-0ed4f0b2.css rel=stylesheet><link href=/client/_slug_-ad5942c7.css rel=stylesheet> <title>Emacs 24 でクリップボードとの連携が上手くいかなくなった - 2014-07-24 | 葉月夜堂</title><link href=https://twitter.com/p_km rel=me data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/webmention rel=webmention data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/xmlrpc rel=pingback data-svelte=svelte-119a9vg><meta content=article data-svelte=svelte-zqyuod property=og:type><meta content="Emacs 24 でクリップボードとの連携が上手くいかなくなった - 2014-07-24 | 葉月夜堂" data-svelte=svelte-zqyuod property=og:title><meta content='というわけで Emacs 24 に晴れてバージョンアップすることになった．M-; emacs-version=> "24.3.1"一応そんなに破壊的な変更は無いと見ていたし，実際ほとんど .emacs' data-svelte=svelte-zqyuod property=og:description><meta content=葉月夜堂 data-svelte=svelte-zqyuod property=og:site_name><meta content=https://yo.eki.do/images/default.png data-svelte=svelte-zqyuod property=og:image> <link href=/client/client.ad92a8a1.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-0ed4f0b2.css rel=preload as=style><link href=/client/_slug_.907a21cd.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/utility.16d055df.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.803b7e80.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/_slug_-ad5942c7.css rel=preload as=style></head> <body> <div id=sapper> <nav class=svelte-1qy0d7s><ul class=svelte-1qy0d7s><li class=svelte-1qy0d7s><a href=/ class=svelte-1qy0d7s rel=prefetch>articles</a></li> <li class=svelte-1qy0d7s><a href=/about class=svelte-1qy0d7s rel=prefetch>about</a></ul> </nav> <main class=svelte-gph4rb> <header class=svelte-1tkryui><div class="svelte-1tkryui img-header" style=""></div> <h1 class=svelte-1tkryui>Emacs 24 でクリップボードとの連携が上手くいかなくなった</h1> <time class=svelte-1tkryui title=8 年前>2014-07-24<span class=date-weak>T</span>07:14:19<span class=date-weak>+09:00</span></time> <div class=tags></div> <p class="svelte-1tkryui history"><a href=https://github.com/kissge/yo.eki.do/commits/master/notes/emacs24.md>更新履歴</a></header> <h1 class="svelte-1tkryui floating-header">Emacs 24 でクリップボードとの連携が上手くいかなくなった</h1> <div class="svelte-1tkryui callout">この記事は以前別のところにあったものを移してきたものです。完璧に移植できておらず、表示が崩れているかもしれません。 </div> <div class="svelte-1tkryui content"><p><a href=/notes/git-gutter title="Emacs: git-gutter が便利過ぎる">というわけで</a> Emacs 24 に晴れてバージョンアップすることになった．</p> <pre><code>M-; emacs-version
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" />
+    <meta http-equiv="content-security-policy" content=""><title>Emacs 24 でクリップボードとの連携が上手くいかなくなった - 2014-07-24 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
+    <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
+    <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="Emacs 24 でクリップボードとの連携が上手くいかなくなった - 2014-07-24 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="というわけで Emacs 24 に晴れてバージョンアップすることになった．M-; emacs-version =&gt; &quot;24.3.1&quot;一応そんなに破壊的な変更は無いと見ていたし，実際ほとんど .emacs に変更は必要なかったが，X 周りは若干変わった点があったので注意が必要．自分で今までに気づいた変更はクリップボードとの連携がうまくいかなくなったこと．NEWS.24.1 に記述があって，従来の挙動に戻す方法も書いてあるのでそれに倣えば OK. ** Selection changes. The default handling of clipboard and primary selections has been changed to conform with modern X applications.  In short, most commands for killing and yanking text now use the clipboard, while mouse commands use the primary selection. In the following, we provide" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-1f397eed.css">
+	<link rel="modulepreload" href="/_app/immutable/start-c45c172a.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-2bb677a8.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-37f163cc.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-513c3435.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-0bf7833f.js">
+  </head>
+  <body>
+    <div>
+
+
+
+
+<nav><ul><li><a sveltekit:prefetch href="/">葉月夜堂</a>
+      </li><li><a sveltekit:prefetch href="/about">about</a>
+      </li></ul></nav>
+
+
+
+<div class="nav-background svelte-nthksl isHeaderInView" style=""></div>
+
+<main><article data-kind="note" class="svelte-nthksl"><header class="svelte-nthksl"><h1 class="svelte-nthksl">Emacs<wbr> 24 で<wbr>クリップボードとの<wbr>連携が<wbr>上手く<wbr>いかなくなった</h1>
+
+      
+
+      <section class="meta svelte-nthksl"><p class="svelte-nthksl"><time title="8 年前" class="svelte-5ni4x2">Wed Jul 23 2014 22:14:19 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-nthksl"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/emacs24.md">更新履歴</a></p></section>
+
+      
+
+      <section class="header-image svelte-nthksl" style=""></section></header>
+
+    <section class="body svelte-nthksl"><!-- HTML_TAG_START --><p><a href="/notes/git-gutter" title="Emacs: git-gutter が便利過ぎる">というわけで</a> Emacs 24 に晴れてバージョンアップすることになった．</p>
+<pre><code>M-; emacs-version
 => "24.3.1"
-</code></pre> <p>一応そんなに破壊的な変更は無いと見ていたし，実際ほとんど .emacs に変更は必要なかったが，X 周りは若干変わった点があったので注意が必要．</p> <p>自分で今までに気づいた変更はクリップボードとの連携がうまくいかなくなったこと． <a href=http://www.gnu.org/software/emacs/news/NEWS.24.1>NEWS.24.1</a> に記述があって，従来の挙動に戻す方法も書いてあるのでそれに倣えば OK.</p> <blockquote>** Selection changes. <p>The default handling of clipboard and primary selections has been changed to conform with modern X applications. In short, most commands for killing and yanking text now use the clipboard, while mouse commands use the primary selection.</p> <p>In the following, we provide a list of these changes, followed by a list of steps to get the old behavior back if you prefer that.</p> <p>*** `select-active-regions’ now defaults to t. Merely selecting text (e.g. with drag-mouse-1) no longer puts it in the kill ring. The selected text is put in the primary selection, if the system possesses a separate primary selection facility (e.g. X).</p> <p>**** <code>select-active-regions' also accepts a new value, </code>only’. This means to only set the primary selection for temporarily active regions (usually made by mouse-dragging or shift-selection); “ordinary” active regions, such as those made with C-SPC followed by point motion, do not alter the primary selection.</p> <p>**** `mouse-drag-copy-region’ now defaults to nil.</p> <p>*** mouse-2 is now bound to <code>mouse-yank-primary'. This pastes from the primary selection, ignoring the kill-ring. Previously, mouse-2 was bound to </code>mouse-yank-at-click’.</p> <p>*** `x-select-enable-clipboard’ now defaults to t on all platforms.</p> <p>*** `x-select-enable-primary’ now defaults to nil. Thus, commands that kill text or copy it to the kill-ring (such as M-w, C-w, and C-k) also use the clipboard—not the primary selection.</p> <p>**** The “Copy”, “Cut”, and “Paste” items in the “Edit” menu are now exactly equivalent to M-w, C-w, and C-y respectively.</p> <p>**** Note that on MS-Windows, `x-select-enable-clipboard’ was already non-nil by default, as Windows does not support the primary selection between applications.</p> <p>*** To return to the previous behavior, do the following:</p> <p>**** Change <code>select-active-regions' to nil. **** Change </code>mouse-drag-copy-region’ to t. **** Change <code>x-select-enable-primary' to t (on X only). **** Change </code>x-select-enable-clipboard’ to nil. **** Bind `mouse-yank-at-click’ to mouse-2.</blockquote><p></p> </div> <x-script async data-ad-client=ca-pub-5159408992513362 src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></x-script> <section class="svelte-1tkryui mentions"><h1 class=svelte-1tkryui>Recent public mentions on Twitter</h1> <ol class=svelte-1tkryui reversed>Loading mentions...</ol> </section> </main></div> 
+</code></pre>
+
+<p>一応そんなに破壊的な変更は無いと見ていたし，実際ほとんど .emacs に変更は必要なかったが，X 周りは若干変わった点があったので注意が必要．</p>
+<!--more-->
+
+
+<p>自分で今までに気づいた変更はクリップボードとの連携がうまくいかなくなったこと．
+<a href="http://www.gnu.org/software/emacs/news/NEWS.24.1">NEWS.24.1</a> に記述があって，従来の挙動に戻す方法も書いてあるのでそれに倣えば OK.</p>
+<blockquote>** Selection changes.
+
+<p>The default handling of clipboard and primary selections has been
+changed to conform with modern X applications.  In short, most
+commands for killing and yanking text now use the clipboard, while
+mouse commands use the primary selection.</p>
+<p>In the following, we provide a list of these changes, followed by a
+list of steps to get the old behavior back if you prefer that.</p>
+<p>*** `select-active-regions’ now defaults to t.
+Merely selecting text (e.g. with drag-mouse-1) no longer puts it in
+the kill ring.  The selected text is put in the primary selection, if
+the system possesses a separate primary selection facility (e.g. X).</p>
+<p>**** <code>select-active-regions&#39; also accepts a new value, </code>only’.
+This means to only set the primary selection for temporarily active
+regions (usually made by mouse-dragging or shift-selection);
+“ordinary” active regions, such as those made with C-SPC followed by
+point motion, do not alter the primary selection.</p>
+<p>**** `mouse-drag-copy-region’ now defaults to nil.</p>
+<p>*** mouse-2 is now bound to <code>mouse-yank-primary&#39;. This pastes from the primary selection, ignoring the kill-ring. Previously, mouse-2 was bound to </code>mouse-yank-at-click’.</p>
+<p>*** `x-select-enable-clipboard’ now defaults to t on all platforms.</p>
+<p>*** `x-select-enable-primary’ now defaults to nil.
+Thus, commands that kill text or copy it to the kill-ring (such as
+M-w, C-w, and C-k) also use the clipboard—not the primary selection.</p>
+<p>**** The “Copy”, “Cut”, and “Paste” items in the “Edit” menu are now
+exactly equivalent to M-w, C-w, and C-y respectively.</p>
+<p>**** Note that on MS-Windows, `x-select-enable-clipboard’ was already
+non-nil by default, as Windows does not support the primary selection
+between applications.</p>
+<p>*** To return to the previous behavior, do the following:</p>
+<p>**** Change <code>select-active-regions&#39; to nil. **** Change </code>mouse-drag-copy-region’ to t.
+**** Change <code>x-select-enable-primary&#39; to t (on X only). **** Change </code>x-select-enable-clipboard’ to nil.
+**** Bind `mouse-yank-at-click’ to mouse-2.</blockquote></p>
+<!-- HTML_TAG_END --></section>
+
+    
+
+    <section class="mentions svelte-19gm1ik"><section class="reaction svelte-19gm1ik"><a href="https://twitter.com/intent/tweet?url=" class="svelte-19gm1ik" style="background-image: url(/_app/immutable/assets/message-circle-c0b45d48.svg); color: #3579d1;"><small class="svelte-19gm1ik">Twitterで</small>
+        <span class="svelte-19gm1ik">コメントする</span></a></section>
+
+  <h1 class="svelte-19gm1ik">Mentions</h1>
+  <ol reversed class="svelte-19gm1ik loading"></ol>
+</section></article>
+</main>
+
+<footer>Built with <a href="https://github.com/kissge/monolog">monolog</a>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="fei19h">
+		import { start } from "/_app/immutable/start-c45c172a.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="fei19h"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 2],
+				params: {entity:"notes\u002Femacs24\u002F"},
+				routeId: "[...entity]"
+			}
+		});
+	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"Emacs 24 でクリップボードとの連携が上手くいかなくなった","nameSegmented":["Emacs"," 24 で","クリップボードとの","連携が","上手く","いかなくなった"],"kind":"note","urlPath":"/notes/emacs24","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/emacs24.md","lastModified":"2022-06-11T08:16:13.000Z","attributes":{"from":"wordpress","title":"Emacs 24 でクリップボードとの連携が上手くいかなくなった","date":"2014-07-23T22:14:19.000Z"},"tags":[],"body":"\u003Cp>\u003Ca href=\"/notes/git-gutter\" title=\"Emacs: git-gutter が便利過ぎる\">というわけで\u003C/a> Emacs 24 に晴れてバージョンアップすることになった．\u003C/p>\n\u003Cpre>\u003Ccode>M-; emacs-version\n=> \"24.3.1\"\n\u003C/code>\u003C/pre>\n\n\u003Cp>一応そんなに破壊的な変更は無いと見ていたし，実際ほとんど .emacs に変更は必要なかったが，X 周りは若干変わった点があったので注意が必要．\u003C/p>\n\u003C!--more-->\n\n\n\u003Cp>自分で今までに気づいた変更はクリップボードとの連携がうまくいかなくなったこと．\n\u003Ca href=\"http://www.gnu.org/software/emacs/news/NEWS.24.1\">NEWS.24.1\u003C/a> に記述があって，従来の挙動に戻す方法も書いてあるのでそれに倣えば OK.\u003C/p>\n\u003Cblockquote>** Selection changes.\n\n\u003Cp>The default handling of clipboard and primary selections has been\nchanged to conform with modern X applications.  In short, most\ncommands for killing and yanking text now use the clipboard, while\nmouse commands use the primary selection.\u003C/p>\n\u003Cp>In the following, we provide a list of these changes, followed by a\nlist of steps to get the old behavior back if you prefer that.\u003C/p>\n\u003Cp>*** `select-active-regions’ now defaults to t.\nMerely selecting text (e.g. with drag-mouse-1) no longer puts it in\nthe kill ring.  The selected text is put in the primary selection, if\nthe system possesses a separate primary selection facility (e.g. X).\u003C/p>\n\u003Cp>**** \u003Ccode>select-active-regions&#39; also accepts a new value, \u003C/code>only’.\nThis means to only set the primary selection for temporarily active\nregions (usually made by mouse-dragging or shift-selection);\n“ordinary” active regions, such as those made with C-SPC followed by\npoint motion, do not alter the primary selection.\u003C/p>\n\u003Cp>**** `mouse-drag-copy-region’ now defaults to nil.\u003C/p>\n\u003Cp>*** mouse-2 is now bound to \u003Ccode>mouse-yank-primary&#39;. This pastes from the primary selection, ignoring the kill-ring. Previously, mouse-2 was bound to \u003C/code>mouse-yank-at-click’.\u003C/p>\n\u003Cp>*** `x-select-enable-clipboard’ now defaults to t on all platforms.\u003C/p>\n\u003Cp>*** `x-select-enable-primary’ now defaults to nil.\nThus, commands that kill text or copy it to the kill-ring (such as\nM-w, C-w, and C-k) also use the clipboard—not the primary selection.\u003C/p>\n\u003Cp>**** The “Copy”, “Cut”, and “Paste” items in the “Edit” menu are now\nexactly equivalent to M-w, C-w, and C-y respectively.\u003C/p>\n\u003Cp>**** Note that on MS-Windows, `x-select-enable-clipboard’ was already\nnon-nil by default, as Windows does not support the primary selection\nbetween applications.\u003C/p>\n\u003Cp>*** To return to the previous behavior, do the following:\u003C/p>\n\u003Cp>**** Change \u003Ccode>select-active-regions&#39; to nil. **** Change \u003C/code>mouse-drag-copy-region’ to t.\n**** Change \u003Ccode>x-select-enable-primary&#39; to t (on X only). **** Change \u003C/code>x-select-enable-clipboard’ to nil.\n**** Bind `mouse-yank-at-click’ to mouse-2.\u003C/blockquote>\u003C/p>\n","headline":"というわけで Emacs 24 に晴れてバージョンアップすることになった．M-; emacs-version => \"24.3.1\"一応そんなに破壊的な変更は無いと見ていたし，実際ほとんど .emacs に変更は必要なかったが，X 周りは若干変わった点があったので注意が必要．自分で今までに気づいた変更はクリップボードとの連携がうまくいかなくなったこと．NEWS.24.1 に記述があって，従来の挙動に戻す方法も書いてあるのでそれに倣えば OK. ** Selection changes. The default handling of clipboard and primary selections has been changed to conform with modern X applications.  In short, most commands for killing and yanking text now use the clipboard, while mouse commands use the primary selection. In the following, we provide","links":{"to":{"urlPath":"/notes/emacs24","entities":[]},"from":{"urlPath":"/notes/emacs24","entities":[]},"kind":{"urlPath":"/notes/emacs24","entities":[]}}}}</script></div>
+  </body>
+</html>

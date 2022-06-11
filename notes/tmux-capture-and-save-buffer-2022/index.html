@@ -1,9 +1,109 @@
-<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <link href=/global.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=/manifest.json rel=manifest crossorigin=use-credentials> <link href=/images/favicon.svg rel=icon type=image/svg+xml> <script>__SAPPER__={baseUrl:"",preloaded:[void 0,null,{post:{title:"tmux: pane の表示内容をファイルに書き出す 2022",date:"2022-04-17T12:25:08.254Z",type:"notes",slug:"tmux-capture-and-save-buffer-2022",html:"\u003Cp\u003Etmux を使っていて、今表示されている画面の内容をコピーしたい、あるいはファイルに保存したいというときに使える方法の話。\u003C\u002Fp\u003E\n\u003Cp\u003E以前「\u003Ca href=\"\u002Fnotes\u002Ftmux-capture-and-save-buffer\u002F\"\u003Etmux: pane の表示内容をファイルに書き出す\u003C\u002Fa\u003E」というメモを自分で書いて、何だかんだいまだに毎月一回以上は自分で見ている。\nなんで見ているかというと、シェル上で実行するコマンドはヒストリに残るのでそれを参照すればなんとかなるが、tmux コマンドはそうでない場面が多いという理由が大きい。\u003C\u002Fp\u003E\n\u003Cp\u003Eしかし、よくよく考えると、tmux コマンドもシェル上で実行できることに気づき、いろいろ試した結果、かなり簡略化できた。\u003C\u002Fp\u003E\n\u003Cp\u003Eつまり、tmux セッションのコピーしたい pane の中でこうすればよい。\u003C\u002Fp\u003E\n\u003Cpre\u003E\u003Ccode class=\"hljs language-sh\"\u003Etmux capture-pane -pS - &gt; \u002Ftmp\u002Fhoge\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\u003Cp\u003E\u003Ccode\u003E-p\u003C\u002Fcode\u003E は出力先をバッファではなく標準出力に指定し、 \u003Ccode\u003E-S -\u003C\u002Fcode\u003E は pane の先頭から（末尾まで）を対象範囲に指定している。\u003C\u002Fp\u003E\n\u003Cp\u003Eあるいは、tmux をローカル環境で実行している場合には、こういうこともできる\u003Csup class=\"footnote-ref\"\u003E\u003Ca href=\"#fn1\" id=\"fnref1\"\u003E[1]\u003C\u002Fa\u003E\u003C\u002Fsup\u003E。\u003C\u002Fp\u003E\n\u003Cpre\u003E\u003Ccode class=\"hljs language-sh\"\u003E\u003Cspan class=\"hljs-comment\"\u003E# macOS\u003C\u002Fspan\u003E\ntmux capture-pane -pS - | pbcopy\n\n\u003Cspan class=\"hljs-comment\"\u003E# X\u003C\u002Fspan\u003E\ntmux capture-pane -pS - | xsel --clipboard\ntmux capture-pane -pS - | xclip -sel clipboard\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\u003Cp\u003E色などの情報を落とさずに出力するには、こうする。\u003C\u002Fp\u003E\n\u003Cpre\u003E\u003Ccode class=\"hljs language-sh\"\u003Etmux capture-pane -epS - &gt; \u002Ftmp\u002Fhoge\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\u003Chr class=\"footnotes-sep\"\u003E\n\u003Csection class=\"footnotes\"\u003E\n\u003Col class=\"footnotes-list\"\u003E\n\u003Cli id=\"fn1\" class=\"footnote-item\"\u003E\u003Cp\u003Exsel と xclip のどちらがイケてるかについては、諸説あるらしい。 \u003Ca href=\"#fnref1\" class=\"footnote-backref\"\u003E↩︎\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003C\u002Fli\u003E\n\u003C\u002Fol\u003E\n\u003C\u002Fsection\u003E\n",headline:"tmux を使っていて、今表示されている画面の内容をコピーしたい、あるいはファイルに保存したいというときに使える方法の話。以前「tmux: pane の表示内容をファイルに書き出す」というメモを自分で"},historyURL:"https:\u002F\u002Fgithub.com\u002Fkissge\u002Fyo.eki.do\u002Fcommits\u002Fmaster\u002Fnotes\u002Ftmux-capture-and-save-buffer-2022.md"}]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.ad92a8a1.js"}catch(e){main="/client/legacy/client.8a1ee2e2.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.5.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=/client/client-0ed4f0b2.css rel=stylesheet><link href=/client/_slug_-ad5942c7.css rel=stylesheet> <title>tmux: pane の表示内容をファイルに書き出す 2022 - 2022-04-17 | 葉月夜堂</title><link href=https://twitter.com/p_km rel=me data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/webmention rel=webmention data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/xmlrpc rel=pingback data-svelte=svelte-119a9vg><meta content=article data-svelte=svelte-zqyuod property=og:type><meta content="tmux: pane の表示内容をファイルに書き出す 2022 - 2022-04-17 | 葉月夜堂" data-svelte=svelte-zqyuod property=og:title><meta content="tmux を使っていて、今表示されている画面の内容をコピーしたい、あるいはファイルに保存したいというときに使える方法の話。以前「tmux: pane の表示内容をファイルに書き出す」というメモを自分で" data-svelte=svelte-zqyuod property=og:description><meta content=葉月夜堂 data-svelte=svelte-zqyuod property=og:site_name><meta content=https://yo.eki.do/images/default.png data-svelte=svelte-zqyuod property=og:image> <link href=/client/client.ad92a8a1.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-0ed4f0b2.css rel=preload as=style><link href=/client/_slug_.907a21cd.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/utility.16d055df.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.803b7e80.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/_slug_-ad5942c7.css rel=preload as=style></head> <body> <div id=sapper> <nav class=svelte-1qy0d7s><ul class=svelte-1qy0d7s><li class=svelte-1qy0d7s><a href=/ class=svelte-1qy0d7s rel=prefetch>articles</a></li> <li class=svelte-1qy0d7s><a href=/about class=svelte-1qy0d7s rel=prefetch>about</a></ul> </nav> <main class=svelte-gph4rb> <header class=svelte-1tkryui><div class="svelte-1tkryui img-header" style=""></div> <h1 class=svelte-1tkryui>tmux: pane の表示内容をファイルに書き出す 2022</h1> <time class=svelte-1tkryui title=1 か月半前>2022-04-17<span class=date-weak>T</span>21:25:08<span class=date-weak>+09:00</span></time> <div class=tags></div> <p class="svelte-1tkryui history"><a href=https://github.com/kissge/yo.eki.do/commits/master/notes/tmux-capture-and-save-buffer-2022.md>更新履歴</a></header> <h1 class="svelte-1tkryui floating-header">tmux: pane の表示内容をファイルに書き出す 2022</h1> <div class="svelte-1tkryui content"><p>tmux を使っていて、今表示されている画面の内容をコピーしたい、あるいはファイルに保存したいというときに使える方法の話。</p> <p>以前「<a href=/notes/tmux-capture-and-save-buffer/ >tmux: pane の表示内容をファイルに書き出す</a>」というメモを自分で書いて、何だかんだいまだに毎月一回以上は自分で見ている。 なんで見ているかというと、シェル上で実行するコマンドはヒストリに残るのでそれを参照すればなんとかなるが、tmux コマンドはそうでない場面が多いという理由が大きい。</p> <p>しかし、よくよく考えると、tmux コマンドもシェル上で実行できることに気づき、いろいろ試した結果、かなり簡略化できた。</p> <p>つまり、tmux セッションのコピーしたい pane の中でこうすればよい。</p> <pre><code class="hljs language-sh">tmux capture-pane -pS - > /tmp/hoge
-</code></pre> <p><code>-p</code> は出力先をバッファではなく標準出力に指定し、 <code>-S -</code> は pane の先頭から（末尾まで）を対象範囲に指定している。</p> <p>あるいは、tmux をローカル環境で実行している場合には、こういうこともできる<sup class=footnote-ref><a href=#fn1 id=fnref1>[1]</a></sup>。</p> <pre><code class="hljs language-sh"><span class=hljs-comment># macOS</span>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" />
+    <meta http-equiv="content-security-policy" content=""><title>tmux: pane の表示内容をファイルに書き出す 2022 - 2022-04-17 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
+    <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
+    <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="tmux: pane の表示内容をファイルに書き出す 2022 - 2022-04-17 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="tmux を使っていて、今表示されている画面の内容をコピーしたい、あるいはファイルに保存したいというときに使える方法の話。以前「tmux: pane の表示内容をファイルに書き出す」というメモを自分で書いて、何だかんだいまだに毎月一回以上は自分で見ている。なんで見ているかというと、シェル上で実行するコマンドはヒストリに残るのでそれを参照すればなんとかなるが、tmux コマンドはそうでない場面が多いという理由が大きい。しかし、よくよく考えると、tmux コマンドもシェル上で実行できることに気づき、いろいろ試した結果、かなり簡略化できた。つまり、tmux セッションのコピーしたい pane の中でこうすればよい。tmux capture-pane -pS - &amp;gt; /tmp/hoge -p は出力先をバッファではなく標準出力に指定し、 -S - は pane の先頭から（末尾まで）を対象範囲に指定している。あるいは、tmux をローカル環境で実行している場合には、こういうこともできる[1]。# macOS tmux capture-pane -pS - | pbcopy # X tmux capture-pa" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-1f397eed.css">
+	<link rel="modulepreload" href="/_app/immutable/start-c45c172a.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-2bb677a8.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-37f163cc.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-513c3435.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-0bf7833f.js">
+  </head>
+  <body>
+    <div>
+
+
+
+
+<nav><ul><li><a sveltekit:prefetch href="/">葉月夜堂</a>
+      </li><li><a sveltekit:prefetch href="/about">about</a>
+      </li></ul></nav>
+
+
+
+<div class="nav-background svelte-nthksl isHeaderInView" style=""></div>
+
+<main><article data-kind="note" class="svelte-nthksl"><header class="svelte-nthksl"><h1 class="svelte-nthksl">tmux:<wbr> pane<wbr> の<wbr>表示内容を<wbr>ファイルに<wbr>書き出す<wbr> 2022</h1>
+
+      
+
+      <section class="meta svelte-nthksl"><p class="svelte-nthksl"><time title="2 か月前" class="svelte-5ni4x2">Sun Apr 17 2022 12:25:08 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-nthksl"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/tmux-capture-and-save-buffer-2022.md">更新履歴</a></p></section>
+
+      
+
+      <section class="header-image svelte-nthksl" style=""></section></header>
+
+    <section class="body svelte-nthksl"><!-- HTML_TAG_START --><p>tmux を使っていて、今表示されている画面の内容をコピーしたい、あるいはファイルに保存したいというときに使える方法の話。</p>
+<p>以前「<a href="/notes/tmux-capture-and-save-buffer/" class="monolog-link" sveltekit:prefetch>tmux: pane の表示内容をファイルに書き出す</a>」というメモを自分で書いて、何だかんだいまだに毎月一回以上は自分で見ている。
+なんで見ているかというと、シェル上で実行するコマンドはヒストリに残るのでそれを参照すればなんとかなるが、tmux コマンドはそうでない場面が多いという理由が大きい。</p>
+<p>しかし、よくよく考えると、tmux コマンドもシェル上で実行できることに気づき、いろいろ試した結果、かなり簡略化できた。</p>
+<p>つまり、tmux セッションのコピーしたい pane の中でこうすればよい。</p>
+<pre><code class="language-sh">tmux capture-pane -pS - &gt; /tmp/hoge
+</code></pre>
+<p><code>-p</code> は出力先をバッファではなく標準出力に指定し、 <code>-S -</code> は pane の先頭から（末尾まで）を対象範囲に指定している。</p>
+<p>あるいは、tmux をローカル環境で実行している場合には、こういうこともできる<sup class="footnote-link"><a href="#footnote-1" id="footnote-link-1">[1]</a></sup>。</p>
+<pre><code class="language-sh"><span class="hljs-comment"># macOS</span>
 tmux capture-pane -pS - | pbcopy
 
-<span class=hljs-comment># X</span>
+<span class="hljs-comment"># X</span>
 tmux capture-pane -pS - | xsel --clipboard
 tmux capture-pane -pS - | xclip -sel clipboard
-</code></pre> <p>色などの情報を落とさずに出力するには、こうする。</p> <pre><code class="hljs language-sh">tmux capture-pane -epS - > /tmp/hoge
-</code></pre> <hr class=footnotes-sep> <section class=footnotes> <ol class=footnotes-list> <li class=footnote-item id=fn1><p>xsel と xclip のどちらがイケてるかについては、諸説あるらしい。 <a href=#fnref1 class=footnote-backref>↩︎</a></p> </li> </ol> </section> </div> <x-script async data-ad-client=ca-pub-5159408992513362 src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></x-script> <section class="svelte-1tkryui mentions"><h1 class=svelte-1tkryui>Recent public mentions on Twitter</h1> <ol class=svelte-1tkryui reversed>Loading mentions...</ol> </section> </main></div> 
+</code></pre>
+<p>色などの情報を落とさずに出力するには、こうする。</p>
+<pre><code class="language-sh">tmux capture-pane -epS - &gt; /tmp/hoge
+</code></pre>
+<section class="footnotes"><ol><li id="footnote-1">xsel と xclip のどちらがイケてるかについては、諸説あるらしい。 <a href="#footnote-link-1" title="本文にもどる">↩︎</a></li></ol></section><!-- HTML_TAG_END --></section>
+
+    <section class="links-section svelte-nthksl"><ul class="links"><li class="link-group"><h1 class="link-group-title">この記事がリンクしているもの</h1>
+      <ul class="link-group-links"><li class="link"><a sveltekit:prefetch href="/notes/tmux-capture-and-save-buffer">tmux: paneの表示内容をファイルに書き出す</a>
+            <small title="Sun Jun 16 2019 15:00:00 GMT+0000 (Coordinated Universal Time)"><time>2019-06-17</time>
+              </small>
+            <span class="tags"></span>
+            <p></p>
+          </li></ul>
+    </li></ul></section>
+
+    <section class="mentions svelte-19gm1ik"><section class="reaction svelte-19gm1ik"><a href="https://twitter.com/intent/tweet?url=" class="svelte-19gm1ik" style="background-image: url(/_app/immutable/assets/message-circle-c0b45d48.svg); color: #3579d1;"><small class="svelte-19gm1ik">Twitterで</small>
+        <span class="svelte-19gm1ik">コメントする</span></a></section>
+
+  <h1 class="svelte-19gm1ik">Mentions</h1>
+  <ol reversed class="svelte-19gm1ik loading"></ol>
+</section></article>
+</main>
+
+<footer>Built with <a href="https://github.com/kissge/monolog">monolog</a>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="kfllmm">
+		import { start } from "/_app/immutable/start-c45c172a.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="kfllmm"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 2],
+				params: {entity:"notes\u002Ftmux-capture-and-save-buffer-2022\u002F"},
+				routeId: "[...entity]"
+			}
+		});
+	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"tmux: pane の表示内容をファイルに書き出す 2022","nameSegmented":["tmux:"," pane"," の","表示内容を","ファイルに","書き出す"," 2022"],"kind":"note","urlPath":"/notes/tmux-capture-and-save-buffer-2022","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/tmux-capture-and-save-buffer-2022.md","lastModified":"2022-06-11T08:16:13.000Z","attributes":{"title":"tmux: pane の表示内容をファイルに書き出す 2022","date":"2022-04-17T12:25:08.254Z"},"tags":[],"body":"\u003Cp>tmux を使っていて、今表示されている画面の内容をコピーしたい、あるいはファイルに保存したいというときに使える方法の話。\u003C/p>\n\u003Cp>以前「\u003Ca href=\"/notes/tmux-capture-and-save-buffer/\" class=\"monolog-link\" sveltekit:prefetch>tmux: pane の表示内容をファイルに書き出す\u003C/a>」というメモを自分で書いて、何だかんだいまだに毎月一回以上は自分で見ている。\nなんで見ているかというと、シェル上で実行するコマンドはヒストリに残るのでそれを参照すればなんとかなるが、tmux コマンドはそうでない場面が多いという理由が大きい。\u003C/p>\n\u003Cp>しかし、よくよく考えると、tmux コマンドもシェル上で実行できることに気づき、いろいろ試した結果、かなり簡略化できた。\u003C/p>\n\u003Cp>つまり、tmux セッションのコピーしたい pane の中でこうすればよい。\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-sh\">tmux capture-pane -pS - &gt; /tmp/hoge\n\u003C/code>\u003C/pre>\n\u003Cp>\u003Ccode>-p\u003C/code> は出力先をバッファではなく標準出力に指定し、 \u003Ccode>-S -\u003C/code> は pane の先頭から（末尾まで）を対象範囲に指定している。\u003C/p>\n\u003Cp>あるいは、tmux をローカル環境で実行している場合には、こういうこともできる\u003Csup class=\"footnote-link\">\u003Ca href=\"#footnote-1\" id=\"footnote-link-1\">[1]\u003C/a>\u003C/sup>。\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-sh\">\u003Cspan class=\"hljs-comment\"># macOS\u003C/span>\ntmux capture-pane -pS - | pbcopy\n\n\u003Cspan class=\"hljs-comment\"># X\u003C/span>\ntmux capture-pane -pS - | xsel --clipboard\ntmux capture-pane -pS - | xclip -sel clipboard\n\u003C/code>\u003C/pre>\n\u003Cp>色などの情報を落とさずに出力するには、こうする。\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-sh\">tmux capture-pane -epS - &gt; /tmp/hoge\n\u003C/code>\u003C/pre>\n\u003Csection class=\"footnotes\">\u003Col>\u003Cli id=\"footnote-1\">xsel と xclip のどちらがイケてるかについては、諸説あるらしい。 \u003Ca href=\"#footnote-link-1\" title=\"本文にもどる\">↩︎\u003C/a>\u003C/li>\u003C/ol>\u003C/section>","headline":"tmux を使っていて、今表示されている画面の内容をコピーしたい、あるいはファイルに保存したいというときに使える方法の話。以前「tmux: pane の表示内容をファイルに書き出す」というメモを自分で書いて、何だかんだいまだに毎月一回以上は自分で見ている。なんで見ているかというと、シェル上で実行するコマンドはヒストリに残るのでそれを参照すればなんとかなるが、tmux コマンドはそうでない場面が多いという理由が大きい。しかし、よくよく考えると、tmux コマンドもシェル上で実行できることに気づき、いろいろ試した結果、かなり簡略化できた。つまり、tmux セッションのコピーしたい pane の中でこうすればよい。tmux capture-pane -pS - &gt; /tmp/hoge -p は出力先をバッファではなく標準出力に指定し、 -S - は pane の先頭から（末尾まで）を対象範囲に指定している。あるいは、tmux をローカル環境で実行している場合には、こういうこともできる[1]。# macOS tmux capture-pane -pS - | pbcopy # X tmux capture-pa","links":{"to":{"urlPath":"/notes/tmux-capture-and-save-buffer-2022","entities":[{"name":"tmux: paneの表示内容をファイルに書き出す","nameSegmented":["tmux:"," paneの","表示内容を","ファイルに","書き出す"],"kind":"note","urlPath":"/notes/tmux-capture-and-save-buffer","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/tmux-capture-and-save-buffer.md","lastModified":"2022-06-11T08:16:13.000Z","attributes":{"from":"wordpress","title":"tmux: paneの表示内容をファイルに書き出す","date":"2019-06-16T15:00:00.000Z"},"tags":[]}]},"from":{"urlPath":"/notes/tmux-capture-and-save-buffer-2022","entities":[]},"kind":{"urlPath":"/notes/tmux-capture-and-save-buffer-2022","entities":[]},"one_hop_tmux: paneの表示内容をファイルに書き出す":{"urlPath":"/notes/tmux-capture-and-save-buffer","entities":[]}}}}</script></div>
+  </body>
+</html>

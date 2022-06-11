@@ -1,4 +1,52 @@
-<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <link href=/global.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=/manifest.json rel=manifest crossorigin=use-credentials> <link href=/images/favicon.svg rel=icon type=image/svg+xml> <script>__SAPPER__={baseUrl:"",preloaded:[void 0,null,{post:{from:"wordpress",title:"yum upgradeしようとすると依存解決がうまくいかない",date:"2015-10-05T10:52:09.000Z",type:"notes",slug:"yum-remi",html:"\u003Cp\u003Eこんな感じで\u003C\u002Fp\u003E\n\u003Cpre\u003E\u003Ccode class=\"hljs\"\u003E# yum --changelog upgrade\nLoaded plugins: changelog, fastestmirror\nLoading mirror speeds from cached hostfile\n * base: ftp.nara.wide.ad.jp\n * epel: ftp.riken.jp\n * extras: ftp.nara.wide.ad.jp\n * updates: ftp.nara.wide.ad.jp\nResolving Dependencies\n--&gt; Running transaction check\n---&gt; Package php-pecl-mongo.x86_64 0:1.6.2-1.el7.remi.5.6 will be updated\n---&gt; Package php-pecl-mongo.x86_64 0:1.6.11-1.el7 will be an update\n--&gt; Processing Dependency: php(zend-abi) = 20100525-64 for package: php-pecl-mongo-1.6.11-1.el7.x86_64\n--&gt; Processing Dependency: php(api) = 20100412-64 for package: php-pecl-mongo-1.6.11-1.el7.x86_64\n--&gt; Finished Dependency Resolution\nError: Package: php-pecl-mongo-1.6.11-1.el7.x86_64 (epel)\n           Requires: php(zend-abi) = 20100525-64\n           Installed: php-common-5.6.5-1.el7.remi.x86_64 (@remi-php56)\n               php(zend-abi) = 20131226-64\n           Available: php-common-5.4.16-23.el7_0.3.x86_64 (base)\n               php(zend-abi) = 20100525-64\n           Available: php-common-5.4.16-36.el7_1.x86_64 (updates)\n               php(zend-abi) = 20100525-64\nError: Package: php-pecl-mongo-1.6.11-1.el7.x86_64 (epel)\n           Requires: php(api) = 20100412-64\n           Installed: php-common-5.6.5-1.el7.remi.x86_64 (@remi-php56)\n               php(api) = 20131106-64\n           Available: php-common-5.4.16-23.el7_0.3.x86_64 (base)\n               php(api) = 20100412-64\n           Available: php-common-5.4.16-36.el7_1.x86_64 (updates)\n               php(api) = 20100412-64\n You could try using --skip-broken to work around the problem\n You could try running: rpm -Va --nofiles --nodigest\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\u003C!--more--\u003E\n\u003Cp\u003E\u003Cdel datetime=\"2015-10-24T04:38:32+00:00\"\u003Eまず読み方が分からなくて何が何やらという感じだったが、何の事はない、\u003Ccode\u003Ephp-pecl-mongo\u003C\u002Fcode\u003E を違うところ（remiレポジトリ）から入れてきたというだけの事だった。\nというわけで\u003C\u002Fp\u003E\n\u003Cpre\u003E\u003Ccode class=\"hljs language-sh\"\u003Eyum --enablerepo=remi-php56 install php-pecl-mongo\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\u003Cp\u003Eとかで解決。（これでいいんか）\u003C\u002Fdel\u003E\u003C\u002Fp\u003E\n\u003Cp\u003Eよくよく考えたら \u003Ccode\u003E\u002Fetc\u002Fyum.repos.d\u002F*\u003C\u002Fcode\u003E を適切に編集して必要なレポジトリをenabledにするのがよい。何もわかっていなかった。 (2015-10-24)\u003C\u002Fp\u003E\n",headline:"こんな感じで# yum --changelog upgradeLoaded plugins: changelog, fastestmirrorLoading mirror speeds from ca"},historyURL:"https:\u002F\u002Fgithub.com\u002Fkissge\u002Fyo.eki.do\u002Fcommits\u002Fmaster\u002Fnotes\u002Fyum-remi.md"}]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.ad92a8a1.js"}catch(e){main="/client/legacy/client.8a1ee2e2.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.5.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=/client/client-0ed4f0b2.css rel=stylesheet><link href=/client/_slug_-ad5942c7.css rel=stylesheet> <title>yum upgradeしようとすると依存解決がうまくいかない - 2015-10-05 | 葉月夜堂</title><link href=https://twitter.com/p_km rel=me data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/webmention rel=webmention data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/xmlrpc rel=pingback data-svelte=svelte-119a9vg><meta content=article data-svelte=svelte-zqyuod property=og:type><meta content="yum upgradeしようとすると依存解決がうまくいかない - 2015-10-05 | 葉月夜堂" data-svelte=svelte-zqyuod property=og:title><meta content="こんな感じで# yum --changelog upgradeLoaded plugins: changelog, fastestmirrorLoading mirror speeds from ca" data-svelte=svelte-zqyuod property=og:description><meta content=葉月夜堂 data-svelte=svelte-zqyuod property=og:site_name><meta content=https://yo.eki.do/images/default.png data-svelte=svelte-zqyuod property=og:image> <link href=/client/client.ad92a8a1.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-0ed4f0b2.css rel=preload as=style><link href=/client/_slug_.907a21cd.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/utility.16d055df.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.803b7e80.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/_slug_-ad5942c7.css rel=preload as=style></head> <body> <div id=sapper> <nav class=svelte-1qy0d7s><ul class=svelte-1qy0d7s><li class=svelte-1qy0d7s><a href=/ class=svelte-1qy0d7s rel=prefetch>articles</a></li> <li class=svelte-1qy0d7s><a href=/about class=svelte-1qy0d7s rel=prefetch>about</a></ul> </nav> <main class=svelte-gph4rb> <header class=svelte-1tkryui><div class="svelte-1tkryui img-header" style=""></div> <h1 class=svelte-1tkryui>yum upgradeしようとすると依存解決がうまくいかない</h1> <time class=svelte-1tkryui title=6 年半前>2015-10-05<span class=date-weak>T</span>19:52:09<span class=date-weak>+09:00</span></time> <div class=tags></div> <p class="svelte-1tkryui history"><a href=https://github.com/kissge/yo.eki.do/commits/master/notes/yum-remi.md>更新履歴</a></header> <h1 class="svelte-1tkryui floating-header">yum upgradeしようとすると依存解決がうまくいかない</h1> <div class="svelte-1tkryui callout">この記事は以前別のところにあったものを移してきたものです。完璧に移植できておらず、表示が崩れているかもしれません。 </div> <div class="svelte-1tkryui content"><p>こんな感じで</p> <pre><code class=hljs># yum --changelog upgrade
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" />
+    <meta http-equiv="content-security-policy" content=""><title>yum upgradeしようとすると依存解決がうまくいかない - 2015-10-05 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
+    <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
+    <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="yum upgradeしようとすると依存解決がうまくいかない - 2015-10-05 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="こんな感じで# yum --changelog upgrade Loaded plugins: changelog, fastestmirror Loading mirror speeds from cached hostfile  * base: ftp.nara.wide.ad.jp  * epel: ftp.riken.jp  * extras: ftp.nara.wide.ad.jp  * updates: ftp.nara.wide.ad.jp Resolving Dependencies --&amp;gt; Running transaction check ---&amp;gt; Package php-pecl-mongo.x86_64 0:1.6.2-1.el7.remi.5.6 will be updated ---&amp;gt; Package php-pecl-mongo.x86_64 0:1.6.11-1.el7 will be an update --&amp;gt; Processing Dependency: php(zend-abi) = 20100525-64 for package: php-pec" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-1f397eed.css">
+	<link rel="modulepreload" href="/_app/immutable/start-c45c172a.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-2bb677a8.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-37f163cc.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-513c3435.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-0bf7833f.js">
+  </head>
+  <body>
+    <div>
+
+
+
+
+<nav><ul><li><a sveltekit:prefetch href="/">葉月夜堂</a>
+      </li><li><a sveltekit:prefetch href="/about">about</a>
+      </li></ul></nav>
+
+
+
+<div class="nav-background svelte-nthksl isHeaderInView" style=""></div>
+
+<main><article data-kind="note" class="svelte-nthksl"><header class="svelte-nthksl"><h1 class="svelte-nthksl">yum<wbr> upgradeしようと<wbr>すると<wbr>依存解決が<wbr>うまく<wbr>いかない</h1>
+
+      
+
+      <section class="meta svelte-nthksl"><p class="svelte-nthksl"><time title="6 年半前" class="svelte-5ni4x2">Mon Oct 05 2015 10:52:09 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-nthksl"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/yum-remi.md">更新履歴</a></p></section>
+
+      
+
+      <section class="header-image svelte-nthksl" style=""></section></header>
+
+    <section class="body svelte-nthksl"><!-- HTML_TAG_START --><p>こんな感じで</p>
+<pre><code># yum --changelog upgrade
 Loaded plugins: changelog, fastestmirror
 Loading mirror speeds from cached hostfile
  * base: ftp.nara.wide.ad.jp
@@ -6,12 +54,12 @@ Loading mirror speeds from cached hostfile
  * extras: ftp.nara.wide.ad.jp
  * updates: ftp.nara.wide.ad.jp
 Resolving Dependencies
---> Running transaction check
----> Package php-pecl-mongo.x86_64 0:1.6.2-1.el7.remi.5.6 will be updated
----> Package php-pecl-mongo.x86_64 0:1.6.11-1.el7 will be an update
---> Processing Dependency: php(zend-abi) = 20100525-64 for package: php-pecl-mongo-1.6.11-1.el7.x86_64
---> Processing Dependency: php(api) = 20100412-64 for package: php-pecl-mongo-1.6.11-1.el7.x86_64
---> Finished Dependency Resolution
+--&gt; Running transaction check
+---&gt; Package php-pecl-mongo.x86_64 0:1.6.2-1.el7.remi.5.6 will be updated
+---&gt; Package php-pecl-mongo.x86_64 0:1.6.11-1.el7 will be an update
+--&gt; Processing Dependency: php(zend-abi) = 20100525-64 for package: php-pecl-mongo-1.6.11-1.el7.x86_64
+--&gt; Processing Dependency: php(api) = 20100412-64 for package: php-pecl-mongo-1.6.11-1.el7.x86_64
+--&gt; Finished Dependency Resolution
 Error: Package: php-pecl-mongo-1.6.11-1.el7.x86_64 (epel)
            Requires: php(zend-abi) = 20100525-64
            Installed: php-common-5.6.5-1.el7.remi.x86_64 (@remi-php56)
@@ -30,5 +78,48 @@ Error: Package: php-pecl-mongo-1.6.11-1.el7.x86_64 (epel)
                php(api) = 20100412-64
  You could try using --skip-broken to work around the problem
  You could try running: rpm -Va --nofiles --nodigest
-</code></pre> <p><del datetime=2015-10-24T04:38:32+00:00>まず読み方が分からなくて何が何やらという感じだったが、何の事はない、<code>php-pecl-mongo</code> を違うところ（remiレポジトリ）から入れてきたというだけの事だった。 というわけで</del></p> <pre><code class="hljs language-sh">yum --enablerepo=remi-php56 install php-pecl-mongo
-</code></pre> <p>とかで解決。（これでいいんか）</p> <p>よくよく考えたら <code>/etc/yum.repos.d/*</code> を適切に編集して必要なレポジトリをenabledにするのがよい。何もわかっていなかった。 (2015-10-24)</p> </div> <x-script async data-ad-client=ca-pub-5159408992513362 src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></x-script> <section class="svelte-1tkryui mentions"><h1 class=svelte-1tkryui>Recent public mentions on Twitter</h1> <ol class=svelte-1tkryui reversed>Loading mentions...</ol> </section> </main></div> 
+</code></pre>
+<!--more-->
+
+<p><del datetime="2015-10-24T04:38:32+00:00">まず読み方が分からなくて何が何やらという感じだったが、何の事はない、<code>php-pecl-mongo</code> を違うところ（remiレポジトリ）から入れてきたというだけの事だった。
+というわけで</p>
+<pre><code class="language-sh">yum --enablerepo=remi-php56 install php-pecl-mongo
+</code></pre>
+<p>とかで解決。（これでいいんか）</del></p>
+<p>よくよく考えたら <code>/etc/yum.repos.d/*</code> を適切に編集して必要なレポジトリをenabledにするのがよい。何もわかっていなかった。 (2015-10-24)</p>
+<!-- HTML_TAG_END --></section>
+
+    
+
+    <section class="mentions svelte-19gm1ik"><section class="reaction svelte-19gm1ik"><a href="https://twitter.com/intent/tweet?url=" class="svelte-19gm1ik" style="background-image: url(/_app/immutable/assets/message-circle-c0b45d48.svg); color: #3579d1;"><small class="svelte-19gm1ik">Twitterで</small>
+        <span class="svelte-19gm1ik">コメントする</span></a></section>
+
+  <h1 class="svelte-19gm1ik">Mentions</h1>
+  <ol reversed class="svelte-19gm1ik loading"></ol>
+</section></article>
+</main>
+
+<footer>Built with <a href="https://github.com/kissge/monolog">monolog</a>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="vdd9jy">
+		import { start } from "/_app/immutable/start-c45c172a.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="vdd9jy"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 2],
+				params: {entity:"notes\u002Fyum-remi\u002F"},
+				routeId: "[...entity]"
+			}
+		});
+	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"yum upgradeしようとすると依存解決がうまくいかない","nameSegmented":["yum"," upgradeしようと","すると","依存解決が","うまく","いかない"],"kind":"note","urlPath":"/notes/yum-remi","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/yum-remi.md","lastModified":"2022-06-11T08:16:13.000Z","attributes":{"from":"wordpress","title":"yum upgradeしようとすると依存解決がうまくいかない","date":"2015-10-05T10:52:09.000Z"},"tags":[],"body":"\u003Cp>こんな感じで\u003C/p>\n\u003Cpre>\u003Ccode># yum --changelog upgrade\nLoaded plugins: changelog, fastestmirror\nLoading mirror speeds from cached hostfile\n * base: ftp.nara.wide.ad.jp\n * epel: ftp.riken.jp\n * extras: ftp.nara.wide.ad.jp\n * updates: ftp.nara.wide.ad.jp\nResolving Dependencies\n--&gt; Running transaction check\n---&gt; Package php-pecl-mongo.x86_64 0:1.6.2-1.el7.remi.5.6 will be updated\n---&gt; Package php-pecl-mongo.x86_64 0:1.6.11-1.el7 will be an update\n--&gt; Processing Dependency: php(zend-abi) = 20100525-64 for package: php-pecl-mongo-1.6.11-1.el7.x86_64\n--&gt; Processing Dependency: php(api) = 20100412-64 for package: php-pecl-mongo-1.6.11-1.el7.x86_64\n--&gt; Finished Dependency Resolution\nError: Package: php-pecl-mongo-1.6.11-1.el7.x86_64 (epel)\n           Requires: php(zend-abi) = 20100525-64\n           Installed: php-common-5.6.5-1.el7.remi.x86_64 (@remi-php56)\n               php(zend-abi) = 20131226-64\n           Available: php-common-5.4.16-23.el7_0.3.x86_64 (base)\n               php(zend-abi) = 20100525-64\n           Available: php-common-5.4.16-36.el7_1.x86_64 (updates)\n               php(zend-abi) = 20100525-64\nError: Package: php-pecl-mongo-1.6.11-1.el7.x86_64 (epel)\n           Requires: php(api) = 20100412-64\n           Installed: php-common-5.6.5-1.el7.remi.x86_64 (@remi-php56)\n               php(api) = 20131106-64\n           Available: php-common-5.4.16-23.el7_0.3.x86_64 (base)\n               php(api) = 20100412-64\n           Available: php-common-5.4.16-36.el7_1.x86_64 (updates)\n               php(api) = 20100412-64\n You could try using --skip-broken to work around the problem\n You could try running: rpm -Va --nofiles --nodigest\n\u003C/code>\u003C/pre>\n\u003C!--more-->\n\n\u003Cp>\u003Cdel datetime=\"2015-10-24T04:38:32+00:00\">まず読み方が分からなくて何が何やらという感じだったが、何の事はない、\u003Ccode>php-pecl-mongo\u003C/code> を違うところ（remiレポジトリ）から入れてきたというだけの事だった。\nというわけで\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-sh\">yum --enablerepo=remi-php56 install php-pecl-mongo\n\u003C/code>\u003C/pre>\n\u003Cp>とかで解決。（これでいいんか）\u003C/del>\u003C/p>\n\u003Cp>よくよく考えたら \u003Ccode>/etc/yum.repos.d/*\u003C/code> を適切に編集して必要なレポジトリをenabledにするのがよい。何もわかっていなかった。 (2015-10-24)\u003C/p>\n","headline":"こんな感じで# yum --changelog upgrade Loaded plugins: changelog, fastestmirror Loading mirror speeds from cached hostfile  * base: ftp.nara.wide.ad.jp  * epel: ftp.riken.jp  * extras: ftp.nara.wide.ad.jp  * updates: ftp.nara.wide.ad.jp Resolving Dependencies --&gt; Running transaction check ---&gt; Package php-pecl-mongo.x86_64 0:1.6.2-1.el7.remi.5.6 will be updated ---&gt; Package php-pecl-mongo.x86_64 0:1.6.11-1.el7 will be an update --&gt; Processing Dependency: php(zend-abi) = 20100525-64 for package: php-pec","links":{"to":{"urlPath":"/notes/yum-remi","entities":[]},"from":{"urlPath":"/notes/yum-remi","entities":[]},"kind":{"urlPath":"/notes/yum-remi","entities":[]}}}}</script></div>
+  </body>
+</html>

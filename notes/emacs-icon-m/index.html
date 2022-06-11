@@ -1,18 +1,114 @@
-<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <link href=/global.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=/manifest.json rel=manifest crossorigin=use-credentials> <link href=/images/favicon.svg rel=icon type=image/svg+xml> <script>__SAPPER__={baseUrl:"",preloaded:[void 0,null,{post:{from:"wordpress",title:"Emacs: ファイル名補完で「Icon^M」を無視する",date:"2014-12-16T22:21:21.000Z",type:"notes",slug:"emacs-icon-m",html:"\u003Cp\u003EEmacsでは\u003Ccode\u003Efind-file\u003C\u002Fcode\u003Eなどでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．\nたとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．\u003C\u002Fp\u003E\n\u003C!--more--\u003E\n\u003Cpre\u003E\u003Ccode class=\"hljs language-lisp\"\u003E(\u003Cspan class=\"hljs-name\"\u003Esetq\u003C\u002Fspan\u003E completion-ignored-extensions\n      (\u003Cspan class=\"hljs-name\"\u003Eappend\u003C\u002Fspan\u003E completion-ignored-extensions\n              &#x27;(\u003Cspan class=\"hljs-string\"\u003E&quot;.\u002F&quot;\u003C\u002Fspan\u003E \u003Cspan class=\"hljs-string\"\u003E&quot;..\u002F&quot;\u003C\u002Fspan\u003E \u003Cspan class=\"hljs-string\"\u003E&quot;.xlsx&quot;\u003C\u002Fspan\u003E)))\n(\u003Cspan class=\"hljs-name\"\u003Edefadvice\u003C\u002Fspan\u003E completion-file-name-table (\u003Cspan class=\"hljs-name\"\u003Eafter\u003C\u002Fspan\u003E ignoring-backups-f-n-completion activate)\n  \u003Cspan class=\"hljs-string\"\u003E&quot;filter out results when the have completion-ignored-extensions&quot;\u003C\u002Fspan\u003E\n  (\u003Cspan class=\"hljs-name\"\u003Elet\u003C\u002Fspan\u003E ((\u003Cspan class=\"hljs-name\"\u003Eres\u003C\u002Fspan\u003E ad-return-value))\n    (\u003Cspan class=\"hljs-name\"\u003Eif\u003C\u002Fspan\u003E (\u003Cspan class=\"hljs-name\"\u003Eand\u003C\u002Fspan\u003E (\u003Cspan class=\"hljs-name\"\u003Elistp\u003C\u002Fspan\u003E res)\n             (\u003Cspan class=\"hljs-name\"\u003Estringp\u003C\u002Fspan\u003E (\u003Cspan class=\"hljs-name\"\u003Ecar\u003C\u002Fspan\u003E res))\n          (\u003Cspan class=\"hljs-name\"\u003Ecdr\u003C\u002Fspan\u003E res)) \u003Cspan class=\"hljs-comment\"\u003E; length &gt; 1, don&#x27;t ignore sole match\u003C\u002Fspan\u003E\n        (\u003Cspan class=\"hljs-name\"\u003Esetq\u003C\u002Fspan\u003E ad-return-value\n              (\u003Cspan class=\"hljs-name\"\u003Ecompletion-pcm--filename-try-filter\u003C\u002Fspan\u003E res)))))\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\u003Cp\u003E（参考：\u003Ca href=\"http:\u002F\u002Fstackoverflow.com\u002Fquestions\u002F1731634\u002Fdont-show-uninteresting-files-in-emacs-completion-window\"\u003Eautocomplete - Don’t show uninteresting files in Emacs completion window - Stack Overflow\u003C\u002Fa\u003E，Emacsのバージョンによって微妙にどこかを変えなければいけなかったような気がするけど忘れた）\u003C\u002Fp\u003E\n\u003Cp\u003Eで，マッキントッシュというオーエスでは\u003Cstrong\u003E油断すると\u003C\u002Fstrong\u003E「Icon\\r」（\\rは制御文字のCR, 0x0d）という名前のファイルが勝手に作られることがある（「Icon?」「Icon^M」に見える場合もあるだろう）．\n普段は見えないので気にならないが，\u003Cstrong\u003E油断すると\u003C\u002Fstrong\u003E，例えばDropboxがヘマをすると見えるようになっていて，CRが含まれているせいで非常に邪魔だ．消したい．\u003C\u002Fp\u003E\n\u003Cp\u003Eが，\u003Ccode\u003Ecompletion-ignored-extensions\u003C\u002Fcode\u003Eにそのまま\u003Ccode\u003E“Icon\\r”\u003C\u002Fcode\u003Eとか\u003Ccode\u003E“Icon\\r”\u003C\u002Fcode\u003Eとか書いてもうまくいかない．\n何故ならばEmacsが自動的に\u003Ccode\u003E\\r\u003C\u002Fcode\u003Eを\u003Ccode\u003E\\n\u003C\u002Fcode\u003Eに変換してくれているからである．\u003C\u002Fp\u003E\n\u003Cp\u003Eこのことは次のようにすると確かめられる．\u003C\u002Fp\u003E\n\u003Cpre\u003E\u003Ccode class=\"hljs language-lisp\"\u003E(\u003Cspan class=\"hljs-name\"\u003Ecar\u003C\u002Fspan\u003E (\u003Cspan class=\"hljs-name\"\u003Efile-name-all-completions\u003C\u002Fspan\u003E \u003Cspan class=\"hljs-string\"\u003E&quot;Icon&quot;\u003C\u002Fspan\u003E \u003Cspan class=\"hljs-string\"\u003E&quot;~\u002FDropbox\u002F&quot;\u003C\u002Fspan\u003E))\n=&gt; \u003Cspan class=\"hljs-string\"\u003E&quot;Icon\n&quot;\u003C\u002Fspan\u003E\n\n(\u003Cspan class=\"hljs-name\"\u003Estring=\u003C\u002Fspan\u003E \u003Cspan class=\"hljs-string\"\u003E&quot;Icon\\n&quot;\u003C\u002Fspan\u003E (\u003Cspan class=\"hljs-name\"\u003Ecar\u003C\u002Fspan\u003E (\u003Cspan class=\"hljs-name\"\u003Efile-name-all-completions\u003C\u002Fspan\u003E \u003Cspan class=\"hljs-string\"\u003E&quot;Icon&quot;\u003C\u002Fspan\u003E \u003Cspan class=\"hljs-string\"\u003E&quot;~\u002FDropbox\u002F&quot;\u003C\u002Fspan\u003E)))\n=&gt; \u003Cspan class=\"hljs-literal\"\u003Et\u003C\u002Fspan\u003E\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\n\u003Cp\u003E（注．最後の\u003Ccode\u003E~\u002FDropbox\u002F\u003C\u002Fcode\u003Eを適当にIconからファイル名が始まるファイルがIcon\\rしかないディレクトリに変える）\u003C\u002Fp\u003E\n\u003Cp\u003Eと，いうわけで\u003Ccode\u003Ecompletion-ignored-extensions\u003C\u002Fcode\u003Eには\u003Ccode\u003E“Icon\\n”\u003C\u002Fcode\u003Eを追加すればよい．\u003C\u002Fp\u003E\n",headline:"Emacsではfind-fileなどでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．たとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．(setq c"},historyURL:"https:\u002F\u002Fgithub.com\u002Fkissge\u002Fyo.eki.do\u002Fcommits\u002Fmaster\u002Fnotes\u002Femacs-icon-m.md"}]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.ad92a8a1.js"}catch(e){main="/client/legacy/client.8a1ee2e2.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.5.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=/client/client-0ed4f0b2.css rel=stylesheet><link href=/client/_slug_-ad5942c7.css rel=stylesheet> <title>Emacs: ファイル名補完で「Icon^M」を無視する - 2014-12-17 | 葉月夜堂</title><link href=https://twitter.com/p_km rel=me data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/webmention rel=webmention data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/xmlrpc rel=pingback data-svelte=svelte-119a9vg><meta content=article data-svelte=svelte-zqyuod property=og:type><meta content="Emacs: ファイル名補完で「Icon^M」を無視する - 2014-12-17 | 葉月夜堂" data-svelte=svelte-zqyuod property=og:title><meta content="Emacsではfind-fileなどでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．たとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．(setq c" data-svelte=svelte-zqyuod property=og:description><meta content=葉月夜堂 data-svelte=svelte-zqyuod property=og:site_name><meta content=https://yo.eki.do/images/default.png data-svelte=svelte-zqyuod property=og:image> <link href=/client/client.ad92a8a1.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-0ed4f0b2.css rel=preload as=style><link href=/client/_slug_.907a21cd.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/utility.16d055df.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.803b7e80.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/_slug_-ad5942c7.css rel=preload as=style></head> <body> <div id=sapper> <nav class=svelte-1qy0d7s><ul class=svelte-1qy0d7s><li class=svelte-1qy0d7s><a href=/ class=svelte-1qy0d7s rel=prefetch>articles</a></li> <li class=svelte-1qy0d7s><a href=/about class=svelte-1qy0d7s rel=prefetch>about</a></ul> </nav> <main class=svelte-gph4rb> <header class=svelte-1tkryui><div class="svelte-1tkryui img-header" style=""></div> <h1 class=svelte-1tkryui>Emacs: ファイル名補完で「Icon^M」を無視する</h1> <time class=svelte-1tkryui title=7 年半前>2014-12-17<span class=date-weak>T</span>07:21:21<span class=date-weak>+09:00</span></time> <div class=tags></div> <p class="svelte-1tkryui history"><a href=https://github.com/kissge/yo.eki.do/commits/master/notes/emacs-icon-m.md>更新履歴</a></header> <h1 class="svelte-1tkryui floating-header">Emacs: ファイル名補完で「Icon^M」を無視する</h1> <div class="svelte-1tkryui callout">この記事は以前別のところにあったものを移してきたものです。完璧に移植できておらず、表示が崩れているかもしれません。 </div> <div class="svelte-1tkryui content"><p>Emacsでは<code>find-file</code>などでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる． たとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．</p> <pre><code class="hljs language-lisp">(<span class=hljs-name>setq</span> completion-ignored-extensions
-      (<span class=hljs-name>append</span> completion-ignored-extensions
-              '(<span class=hljs-string>"./"</span> <span class=hljs-string>"../"</span> <span class=hljs-string>".xlsx"</span>)))
-(<span class=hljs-name>defadvice</span> completion-file-name-table (<span class=hljs-name>after</span> ignoring-backups-f-n-completion activate)
-  <span class=hljs-string>"filter out results when the have completion-ignored-extensions"</span>
-  (<span class=hljs-name>let</span> ((<span class=hljs-name>res</span> ad-return-value))
-    (<span class=hljs-name>if</span> (<span class=hljs-name>and</span> (<span class=hljs-name>listp</span> res)
-             (<span class=hljs-name>stringp</span> (<span class=hljs-name>car</span> res))
-          (<span class=hljs-name>cdr</span> res)) <span class=hljs-comment>; length > 1, don't ignore sole match</span>
-        (<span class=hljs-name>setq</span> ad-return-value
-              (<span class=hljs-name>completion-pcm--filename-try-filter</span> res)))))
-</code></pre> <p>（参考：<a href=http://stackoverflow.com/questions/1731634/dont-show-uninteresting-files-in-emacs-completion-window>autocomplete - Don’t show uninteresting files in Emacs completion window - Stack Overflow</a>，Emacsのバージョンによって微妙にどこかを変えなければいけなかったような気がするけど忘れた）</p> <p>で，マッキントッシュというオーエスでは<strong>油断すると</strong>「Icon\r」（\rは制御文字のCR, 0x0d）という名前のファイルが勝手に作られることがある（「Icon?」「Icon^M」に見える場合もあるだろう）． 普段は見えないので気にならないが，<strong>油断すると</strong>，例えばDropboxがヘマをすると見えるようになっていて，CRが含まれているせいで非常に邪魔だ．消したい．</p> <p>が，<code>completion-ignored-extensions</code>にそのまま<code>“Icon\r”</code>とか<code>“Icon\r”</code>とか書いてもうまくいかない． 何故ならばEmacsが自動的に<code>\r</code>を<code>\n</code>に変換してくれているからである．</p> <p>このことは次のようにすると確かめられる．</p> <pre><code class="hljs language-lisp">(<span class=hljs-name>car</span> (<span class=hljs-name>file-name-all-completions</span> <span class=hljs-string>"Icon"</span> <span class=hljs-string>"~/Dropbox/"</span>))
-=> <span class=hljs-string>"Icon
-"</span>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" />
+    <meta http-equiv="content-security-policy" content=""><title>Emacs: ファイル名補完で「Icon^M」を無視する - 2014-12-17 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
+    <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
+    <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="Emacs: ファイル名補完で「Icon^M」を無視する - 2014-12-17 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="Emacsではfind-fileなどでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．たとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．(setq completion-ignored-extensions       (append completion-ignored-extensions               &amp;#x27;(&amp;quot;./&amp;quot; &amp;quot;../&amp;quot; &amp;quot;.xlsx&amp;quot;)))(defadvice completion-file-name-table (after ignoring-backups-f-n-completion activate)  &amp;quot;filter out results when the have completion-ignored-extensions&amp;quot;  (let ((res ad-return-value))    (if (and (listp res)             (stringp (car res))          (cdr res)" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-1f397eed.css">
+	<link rel="modulepreload" href="/_app/immutable/start-c45c172a.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-2bb677a8.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-37f163cc.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-513c3435.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-0bf7833f.js">
+  </head>
+  <body>
+    <div>
 
-(<span class=hljs-name>string=</span> <span class=hljs-string>"Icon\n"</span> (<span class=hljs-name>car</span> (<span class=hljs-name>file-name-all-completions</span> <span class=hljs-string>"Icon"</span> <span class=hljs-string>"~/Dropbox/"</span>)))
-=> <span class=hljs-literal>t</span>
-</code></pre> <p>（注．最後の<code>~/Dropbox/</code>を適当にIconからファイル名が始まるファイルがIcon\rしかないディレクトリに変える）</p> <p>と，いうわけで<code>completion-ignored-extensions</code>には<code>“Icon\n”</code>を追加すればよい．</p> </div> <x-script async data-ad-client=ca-pub-5159408992513362 src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></x-script> <section class="svelte-1tkryui mentions"><h1 class=svelte-1tkryui>Recent public mentions on Twitter</h1> <ol class=svelte-1tkryui reversed>Loading mentions...</ol> </section> </main></div> 
+
+
+
+<nav><ul><li><a sveltekit:prefetch href="/">葉月夜堂</a>
+      </li><li><a sveltekit:prefetch href="/about">about</a>
+      </li></ul></nav>
+
+
+
+<div class="nav-background svelte-nthksl isHeaderInView" style=""></div>
+
+<main><article data-kind="note" class="svelte-nthksl"><header class="svelte-nthksl"><h1 class="svelte-nthksl">Emacs:<wbr> ファイル名補完で<wbr>「Icon^M」を<wbr>無視する</h1>
+
+      
+
+      <section class="meta svelte-nthksl"><p class="svelte-nthksl"><time title="7 年半前" class="svelte-5ni4x2">Tue Dec 16 2014 22:21:21 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-nthksl"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/emacs-icon-m.md">更新履歴</a></p></section>
+
+      
+
+      <section class="header-image svelte-nthksl" style=""></section></header>
+
+    <section class="body svelte-nthksl"><!-- HTML_TAG_START --><p>Emacsでは<code>find-file</code>などでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．
+たとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．</p>
+<!--more-->
+
+<pre><code class="language-lisp">(<span class="hljs-name">setq</span> completion-ignored-extensions
+      (<span class="hljs-name">append</span> completion-ignored-extensions
+              &#x27;(<span class="hljs-string">&quot;./&quot;</span> <span class="hljs-string">&quot;../&quot;</span> <span class="hljs-string">&quot;.xlsx&quot;</span>)))
+(<span class="hljs-name">defadvice</span> completion-file-name-table (<span class="hljs-name">after</span> ignoring-backups-f-n-completion activate)
+  <span class="hljs-string">&quot;filter out results when the have completion-ignored-extensions&quot;</span>
+  (<span class="hljs-name">let</span> ((<span class="hljs-name">res</span> ad-return-value))
+    (<span class="hljs-name">if</span> (<span class="hljs-name">and</span> (<span class="hljs-name">listp</span> res)
+             (<span class="hljs-name">stringp</span> (<span class="hljs-name">car</span> res))
+          (<span class="hljs-name">cdr</span> res)) <span class="hljs-comment">; length &gt; 1, don&#x27;t ignore sole match</span>
+        (<span class="hljs-name">setq</span> ad-return-value
+              (<span class="hljs-name">completion-pcm--filename-try-filter</span> res)))))
+</code></pre>
+<p>（参考：<a href="http://stackoverflow.com/questions/1731634/dont-show-uninteresting-files-in-emacs-completion-window">autocomplete - Don’t show uninteresting files in Emacs completion window - Stack Overflow</a>，Emacsのバージョンによって微妙にどこかを変えなければいけなかったような気がするけど忘れた）</p>
+<p>で，マッキントッシュというオーエスでは<strong>油断すると</strong>「Icon\r」（\rは制御文字のCR, 0x0d）という名前のファイルが勝手に作られることがある（「Icon?」「Icon^M」に見える場合もあるだろう）．
+普段は見えないので気にならないが，<strong>油断すると</strong>，例えばDropboxがヘマをすると見えるようになっていて，CRが含まれているせいで非常に邪魔だ．消したい．</p>
+<p>が，<code>completion-ignored-extensions</code>にそのまま<code>"Icon\r"</code>とか<code>"Icon\r"</code>とか書いてもうまくいかない．
+何故ならばEmacsが自動的に<code>\r</code>を<code>\n</code>に変換してくれているからである．</p>
+<p>このことは次のようにすると確かめられる．</p>
+<pre><code class="language-lisp">(<span class="hljs-name">car</span> (<span class="hljs-name">file-name-all-completions</span> <span class="hljs-string">&quot;Icon&quot;</span> <span class="hljs-string">&quot;~/Dropbox/&quot;</span>))
+=&gt; <span class="hljs-string">&quot;Icon
+&quot;</span>
+
+(<span class="hljs-name">string=</span> <span class="hljs-string">&quot;Icon\n&quot;</span> (<span class="hljs-name">car</span> (<span class="hljs-name">file-name-all-completions</span> <span class="hljs-string">&quot;Icon&quot;</span> <span class="hljs-string">&quot;~/Dropbox/&quot;</span>)))
+=&gt; <span class="hljs-literal">t</span>
+</code></pre>
+<p>（注．最後の<code>~/Dropbox/</code>を適当にIconからファイル名が始まるファイルがIcon\rしかないディレクトリに変える）</p>
+<p>と，いうわけで<code>completion-ignored-extensions</code>には<code>"Icon\n"</code>を追加すればよい．</p>
+<!-- HTML_TAG_END --></section>
+
+    
+
+    <section class="mentions svelte-19gm1ik"><section class="reaction svelte-19gm1ik"><a href="https://twitter.com/intent/tweet?url=" class="svelte-19gm1ik" style="background-image: url(/_app/immutable/assets/message-circle-c0b45d48.svg); color: #3579d1;"><small class="svelte-19gm1ik">Twitterで</small>
+        <span class="svelte-19gm1ik">コメントする</span></a></section>
+
+  <h1 class="svelte-19gm1ik">Mentions</h1>
+  <ol reversed class="svelte-19gm1ik loading"></ol>
+</section></article>
+</main>
+
+<footer>Built with <a href="https://github.com/kissge/monolog">monolog</a>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="1vmosfc">
+		import { start } from "/_app/immutable/start-c45c172a.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="1vmosfc"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 2],
+				params: {entity:"notes\u002Femacs-icon-m\u002F"},
+				routeId: "[...entity]"
+			}
+		});
+	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"Emacs: ファイル名補完で「Icon^M」を無視する","nameSegmented":["Emacs:"," ファイル名補完で","「Icon^M」を","無視する"],"kind":"note","urlPath":"/notes/emacs-icon-m","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/emacs-icon-m.md","lastModified":"2022-06-11T08:16:13.000Z","attributes":{"from":"wordpress","title":"Emacs: ファイル名補完で「Icon^M」を無視する","date":"2014-12-16T22:21:21.000Z"},"tags":[],"body":"\u003Cp>Emacsでは\u003Ccode>find-file\u003C/code>などでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．\nたとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．\u003C/p>\n\u003C!--more-->\n\n\u003Cpre>\u003Ccode class=\"language-lisp\">(\u003Cspan class=\"hljs-name\">setq\u003C/span> completion-ignored-extensions\n      (\u003Cspan class=\"hljs-name\">append\u003C/span> completion-ignored-extensions\n              &#x27;(\u003Cspan class=\"hljs-string\">&quot;./&quot;\u003C/span> \u003Cspan class=\"hljs-string\">&quot;../&quot;\u003C/span> \u003Cspan class=\"hljs-string\">&quot;.xlsx&quot;\u003C/span>)))\n(\u003Cspan class=\"hljs-name\">defadvice\u003C/span> completion-file-name-table (\u003Cspan class=\"hljs-name\">after\u003C/span> ignoring-backups-f-n-completion activate)\n  \u003Cspan class=\"hljs-string\">&quot;filter out results when the have completion-ignored-extensions&quot;\u003C/span>\n  (\u003Cspan class=\"hljs-name\">let\u003C/span> ((\u003Cspan class=\"hljs-name\">res\u003C/span> ad-return-value))\n    (\u003Cspan class=\"hljs-name\">if\u003C/span> (\u003Cspan class=\"hljs-name\">and\u003C/span> (\u003Cspan class=\"hljs-name\">listp\u003C/span> res)\n             (\u003Cspan class=\"hljs-name\">stringp\u003C/span> (\u003Cspan class=\"hljs-name\">car\u003C/span> res))\n          (\u003Cspan class=\"hljs-name\">cdr\u003C/span> res)) \u003Cspan class=\"hljs-comment\">; length &gt; 1, don&#x27;t ignore sole match\u003C/span>\n        (\u003Cspan class=\"hljs-name\">setq\u003C/span> ad-return-value\n              (\u003Cspan class=\"hljs-name\">completion-pcm--filename-try-filter\u003C/span> res)))))\n\u003C/code>\u003C/pre>\n\u003Cp>（参考：\u003Ca href=\"http://stackoverflow.com/questions/1731634/dont-show-uninteresting-files-in-emacs-completion-window\">autocomplete - Don’t show uninteresting files in Emacs completion window - Stack Overflow\u003C/a>，Emacsのバージョンによって微妙にどこかを変えなければいけなかったような気がするけど忘れた）\u003C/p>\n\u003Cp>で，マッキントッシュというオーエスでは\u003Cstrong>油断すると\u003C/strong>「Icon\\r」（\\rは制御文字のCR, 0x0d）という名前のファイルが勝手に作られることがある（「Icon?」「Icon^M」に見える場合もあるだろう）．\n普段は見えないので気にならないが，\u003Cstrong>油断すると\u003C/strong>，例えばDropboxがヘマをすると見えるようになっていて，CRが含まれているせいで非常に邪魔だ．消したい．\u003C/p>\n\u003Cp>が，\u003Ccode>completion-ignored-extensions\u003C/code>にそのまま\u003Ccode>\"Icon\\r\"\u003C/code>とか\u003Ccode>\"Icon\\r\"\u003C/code>とか書いてもうまくいかない．\n何故ならばEmacsが自動的に\u003Ccode>\\r\u003C/code>を\u003Ccode>\\n\u003C/code>に変換してくれているからである．\u003C/p>\n\u003Cp>このことは次のようにすると確かめられる．\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-lisp\">(\u003Cspan class=\"hljs-name\">car\u003C/span> (\u003Cspan class=\"hljs-name\">file-name-all-completions\u003C/span> \u003Cspan class=\"hljs-string\">&quot;Icon&quot;\u003C/span> \u003Cspan class=\"hljs-string\">&quot;~/Dropbox/&quot;\u003C/span>))\n=&gt; \u003Cspan class=\"hljs-string\">&quot;Icon\n&quot;\u003C/span>\n\n(\u003Cspan class=\"hljs-name\">string=\u003C/span> \u003Cspan class=\"hljs-string\">&quot;Icon\\n&quot;\u003C/span> (\u003Cspan class=\"hljs-name\">car\u003C/span> (\u003Cspan class=\"hljs-name\">file-name-all-completions\u003C/span> \u003Cspan class=\"hljs-string\">&quot;Icon&quot;\u003C/span> \u003Cspan class=\"hljs-string\">&quot;~/Dropbox/&quot;\u003C/span>)))\n=&gt; \u003Cspan class=\"hljs-literal\">t\u003C/span>\n\u003C/code>\u003C/pre>\n\u003Cp>（注．最後の\u003Ccode>~/Dropbox/\u003C/code>を適当にIconからファイル名が始まるファイルがIcon\\rしかないディレクトリに変える）\u003C/p>\n\u003Cp>と，いうわけで\u003Ccode>completion-ignored-extensions\u003C/code>には\u003Ccode>\"Icon\\n\"\u003C/code>を追加すればよい．\u003C/p>\n","headline":"Emacsではfind-fileなどでのファイル名補完で特定の拡張子のファイルを候補に含まないように設定できる．たとえば.xlsxファイルをEmacsで開くことは普段はあまりないだろう．(setq completion-ignored-extensions       (append completion-ignored-extensions               &#x27;(&quot;./&quot; &quot;../&quot; &quot;.xlsx&quot;)))(defadvice completion-file-name-table (after ignoring-backups-f-n-completion activate)  &quot;filter out results when the have completion-ignored-extensions&quot;  (let ((res ad-return-value))    (if (and (listp res)             (stringp (car res))          (cdr res)","links":{"to":{"urlPath":"/notes/emacs-icon-m","entities":[]},"from":{"urlPath":"/notes/emacs-icon-m","entities":[]},"kind":{"urlPath":"/notes/emacs-icon-m","entities":[]}}}}</script></div>
+  </body>
+</html>

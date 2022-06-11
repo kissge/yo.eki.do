@@ -1,1 +1,110 @@
-<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <link href=/global.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css rel=preload as=style onload="this.onload=null;this.rel='stylesheet'"> <link href=/manifest.json rel=manifest crossorigin=use-credentials> <link href=/images/favicon.svg rel=icon type=image/svg+xml> <script>__SAPPER__={baseUrl:"",preloaded:[void 0,null,{post:{from:"wordpress",title:"マルチブート覚書",date:"2015-11-03T23:49:51.000Z",type:"notes",slug:"multiboot",html:"\u003Ch1\u003EChange the partition size\u003C\u002Fh1\u003E\n\u003Col\u003E\n\u003Cli\u003EUse \u003Ccode\u003Egparted\u003C\u002Fcode\u003E from external disk (e.g., Ubuntu Live USB disk) and adjust partition sizes as you want.\n\u003Cul\u003E\n\u003Cli\u003Enote: \u003Ccode\u003Egparted\u003C\u002Fcode\u003E has bugs around handling HFS, so it behaves as if it has hung while it is moving a partition that contains HFS. \u003Cstrong\u003EBe patient and let it work\u003C\u002Fstrong\u003E. It may take more than 2 hours.\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003Cli\u003EIf Windows won’t boot after this, you have to either reconfigure legacy MBR or rebuild BCD.\u003C\u002Fli\u003E\n\u003C\u002Fol\u003E\n\u003Ch1\u003EReconfigure MBR\u003C\u002Fh1\u003E\n\u003Col\u003E\n\u003Cli\u003EUse \u003Ccode\u003Egptsync\u003C\u002Fcode\u003E from external disk.\u003C\u002Fli\u003E\n\u003C\u002Fol\u003E\n\u003Ch1\u003ERebuild BCD\u003C\u002Fh1\u003E\n\u003Col\u003E\n\u003Cli\u003EUse \u003Ccode\u003Efdisk\u003C\u002Fcode\u003E and mark Windows partition as active.\n\u003Cul\u003E\n\u003Cli\u003EThis activeness seems not exclusive; i.e. more than one partition can be active at the same time. I’m not sure this causes any problems.\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003Cli\u003EBoot from Windows installation disk.\u003C\u002Fli\u003E\n\u003Cli\u003EProceed to advance startup options and launch Command Prompt.\u003C\u002Fli\u003E\n\u003Cli\u003ERun \u003Ccode\u003Ebootrec \u002FRebuildBcd\u003C\u002Fcode\u003E. (you have to type \u003Ccode\u003Ey\u003C\u002Fcode\u003E once, in most cases)\u003C\u002Fli\u003E\n\u003Cli\u003EReactivate appropriate partition if necessary.\u003C\u002Fli\u003E\n\u003C\u002Fol\u003E\n\u003Ch1\u003ERestore initial bootloader\u003C\u002Fh1\u003E\n\u003Col\u003E\n\u003Cli\u003ECopy first 446 bytes from another disk; e.g. \u003Ccode\u003Esudo dd if=\u002Fdev\u002Fsdc of=\u002Fdev\u002Fsda bs=446 count=1\u003C\u002Fcode\u003E\u003C\u002Fli\u003E\n\u003C\u002Fol\u003E\n",headline:"Change the partition sizeUse gparted from external disk (e.g., Ubuntu Live USB disk) and adjust part"},historyURL:"https:\u002F\u002Fgithub.com\u002Fkissge\u002Fyo.eki.do\u002Fcommits\u002Fmaster\u002Fnotes\u002Fmultiboot.md"}]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.ad92a8a1.js"}catch(e){main="/client/legacy/client.8a1ee2e2.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.5.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=/client/client-0ed4f0b2.css rel=stylesheet><link href=/client/_slug_-ad5942c7.css rel=stylesheet> <title>マルチブート覚書 - 2015-11-04 | 葉月夜堂</title><link href=https://twitter.com/p_km rel=me data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/webmention rel=webmention data-svelte=svelte-119a9vg> <link href=https://webmention.io/yo.eki.do/xmlrpc rel=pingback data-svelte=svelte-119a9vg><meta content=article data-svelte=svelte-zqyuod property=og:type><meta content="マルチブート覚書 - 2015-11-04 | 葉月夜堂" data-svelte=svelte-zqyuod property=og:title><meta content="Change the partition sizeUse gparted from external disk (e.g., Ubuntu Live USB disk) and adjust part" data-svelte=svelte-zqyuod property=og:description><meta content=葉月夜堂 data-svelte=svelte-zqyuod property=og:site_name><meta content=https://yo.eki.do/images/default.png data-svelte=svelte-zqyuod property=og:image> <link href=/client/client.ad92a8a1.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-0ed4f0b2.css rel=preload as=style><link href=/client/_slug_.907a21cd.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/utility.16d055df.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.803b7e80.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/_slug_-ad5942c7.css rel=preload as=style></head> <body> <div id=sapper> <nav class=svelte-1qy0d7s><ul class=svelte-1qy0d7s><li class=svelte-1qy0d7s><a href=/ class=svelte-1qy0d7s rel=prefetch>articles</a></li> <li class=svelte-1qy0d7s><a href=/about class=svelte-1qy0d7s rel=prefetch>about</a></ul> </nav> <main class=svelte-gph4rb> <header class=svelte-1tkryui><div class="svelte-1tkryui img-header" style=""></div> <h1 class=svelte-1tkryui>マルチブート覚書</h1> <time class=svelte-1tkryui title=6 年半前>2015-11-04<span class=date-weak>T</span>08:49:51<span class=date-weak>+09:00</span></time> <div class=tags></div> <p class="svelte-1tkryui history"><a href=https://github.com/kissge/yo.eki.do/commits/master/notes/multiboot.md>更新履歴</a></header> <h1 class="svelte-1tkryui floating-header">マルチブート覚書</h1> <div class="svelte-1tkryui callout">この記事は以前別のところにあったものを移してきたものです。完璧に移植できておらず、表示が崩れているかもしれません。 </div> <div class="svelte-1tkryui content"><h1>Change the partition size</h1> <ol> <li>Use <code>gparted</code> from external disk (e.g., Ubuntu Live USB disk) and adjust partition sizes as you want. <ul> <li>note: <code>gparted</code> has bugs around handling HFS, so it behaves as if it has hung while it is moving a partition that contains HFS. <strong>Be patient and let it work</strong>. It may take more than 2 hours.</li> </ul> </li> <li>If Windows won’t boot after this, you have to either reconfigure legacy MBR or rebuild BCD.</li> </ol> <h1>Reconfigure MBR</h1> <ol> <li>Use <code>gptsync</code> from external disk.</li> </ol> <h1>Rebuild BCD</h1> <ol> <li>Use <code>fdisk</code> and mark Windows partition as active. <ul> <li>This activeness seems not exclusive; i.e. more than one partition can be active at the same time. I’m not sure this causes any problems.</li> </ul> </li> <li>Boot from Windows installation disk.</li> <li>Proceed to advance startup options and launch Command Prompt.</li> <li>Run <code>bootrec /RebuildBcd</code>. (you have to type <code>y</code> once, in most cases)</li> <li>Reactivate appropriate partition if necessary.</li> </ol> <h1>Restore initial bootloader</h1> <ol> <li>Copy first 446 bytes from another disk; e.g. <code>sudo dd if=/dev/sdc of=/dev/sda bs=446 count=1</code></li> </ol> </div> <x-script async data-ad-client=ca-pub-5159408992513362 src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></x-script> <section class="svelte-1tkryui mentions"><h1 class=svelte-1tkryui>Recent public mentions on Twitter</h1> <ol class=svelte-1tkryui reversed>Loading mentions...</ol> </section> </main></div> 
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" />
+    <meta http-equiv="content-security-policy" content=""><title>マルチブート覚書 - 2015-11-04 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
+    <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
+    <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="マルチブート覚書 - 2015-11-04 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="Change the partition size Use gparted from external disk (e.g., Ubuntu Live USB disk) and adjust partition sizes as you want. note: gparted has bugs around handling HFS, so it behaves as if it has hung while it is moving a partition that contains HFS. Be patient and let it work. It may take more than 2 hours. If Windows won’t boot after this, you have to either reconfigure legacy MBR or rebuild BCD. Reconfigure MBR Use gptsync from external disk. Rebuild BCD Use fdisk and mark Windows partition as active. T" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-1f397eed.css">
+	<link rel="modulepreload" href="/_app/immutable/start-c45c172a.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-2bb677a8.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-37f163cc.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-513c3435.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-0bf7833f.js">
+  </head>
+  <body>
+    <div>
+
+
+
+
+<nav><ul><li><a sveltekit:prefetch href="/">葉月夜堂</a>
+      </li><li><a sveltekit:prefetch href="/about">about</a>
+      </li></ul></nav>
+
+
+
+<div class="nav-background svelte-nthksl isHeaderInView" style=""></div>
+
+<main><article data-kind="note" class="svelte-nthksl"><header class="svelte-nthksl"><h1 class="svelte-nthksl">マルチブート覚書</h1>
+
+      
+
+      <section class="meta svelte-nthksl"><p class="svelte-nthksl"><time title="6 年半前" class="svelte-5ni4x2">Tue Nov 03 2015 23:49:51 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-nthksl"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/multiboot.md">更新履歴</a></p></section>
+
+      
+
+      <section class="header-image svelte-nthksl" style=""></section></header>
+
+    <section class="body svelte-nthksl"><!-- HTML_TAG_START --><h1 id="change-the-partition-size">Change the partition size</h1>
+<ol>
+<li>Use <code>gparted</code> from external disk (e.g., Ubuntu Live USB disk) and adjust partition sizes as you want.<ul>
+<li>note: <code>gparted</code> has bugs around handling HFS, so it behaves as if it has hung while it is moving a partition that contains HFS. <strong>Be patient and let it work</strong>. It may take more than 2 hours.</li>
+</ul>
+</li>
+<li>If Windows won’t boot after this, you have to either reconfigure legacy MBR or rebuild BCD.</li>
+</ol>
+<h1 id="reconfigure-mbr">Reconfigure MBR</h1>
+<ol>
+<li>Use <code>gptsync</code> from external disk.</li>
+</ol>
+<h1 id="rebuild-bcd">Rebuild BCD</h1>
+<ol>
+<li>Use <code>fdisk</code> and mark Windows partition as active.<ul>
+<li>This activeness seems not exclusive; i.e. more than one partition can be active at the same time. I’m not sure this causes any problems.</li>
+</ul>
+</li>
+<li>Boot from Windows installation disk.</li>
+<li>Proceed to advance startup options and launch Command Prompt.</li>
+<li>Run <code>bootrec /RebuildBcd</code>. (you have to type <code>y</code> once, in most cases)</li>
+<li>Reactivate appropriate partition if necessary.</li>
+</ol>
+<h1 id="restore-initial-bootloader">Restore initial bootloader</h1>
+<ol>
+<li>Copy first 446 bytes from another disk; e.g. <code>sudo dd if=/dev/sdc of=/dev/sda bs=446 count=1</code></li>
+</ol>
+<!-- HTML_TAG_END --></section>
+
+    
+
+    <section class="mentions svelte-19gm1ik"><section class="reaction svelte-19gm1ik"><a href="https://twitter.com/intent/tweet?url=" class="svelte-19gm1ik" style="background-image: url(/_app/immutable/assets/message-circle-c0b45d48.svg); color: #3579d1;"><small class="svelte-19gm1ik">Twitterで</small>
+        <span class="svelte-19gm1ik">コメントする</span></a></section>
+
+  <h1 class="svelte-19gm1ik">Mentions</h1>
+  <ol reversed class="svelte-19gm1ik loading"></ol>
+</section></article>
+</main>
+
+<footer>Built with <a href="https://github.com/kissge/monolog">monolog</a>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="sra0ey">
+		import { start } from "/_app/immutable/start-c45c172a.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="sra0ey"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 2],
+				params: {entity:"notes\u002Fmultiboot\u002F"},
+				routeId: "[...entity]"
+			}
+		});
+	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"マルチブート覚書","nameSegmented":["マルチブート覚書"],"kind":"note","urlPath":"/notes/multiboot","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/multiboot.md","lastModified":"2022-06-11T08:16:13.000Z","attributes":{"from":"wordpress","title":"マルチブート覚書","date":"2015-11-03T23:49:51.000Z"},"tags":[],"body":"\u003Ch1 id=\"change-the-partition-size\">Change the partition size\u003C/h1>\n\u003Col>\n\u003Cli>Use \u003Ccode>gparted\u003C/code> from external disk (e.g., Ubuntu Live USB disk) and adjust partition sizes as you want.\u003Cul>\n\u003Cli>note: \u003Ccode>gparted\u003C/code> has bugs around handling HFS, so it behaves as if it has hung while it is moving a partition that contains HFS. \u003Cstrong>Be patient and let it work\u003C/strong>. It may take more than 2 hours.\u003C/li>\n\u003C/ul>\n\u003C/li>\n\u003Cli>If Windows won’t boot after this, you have to either reconfigure legacy MBR or rebuild BCD.\u003C/li>\n\u003C/ol>\n\u003Ch1 id=\"reconfigure-mbr\">Reconfigure MBR\u003C/h1>\n\u003Col>\n\u003Cli>Use \u003Ccode>gptsync\u003C/code> from external disk.\u003C/li>\n\u003C/ol>\n\u003Ch1 id=\"rebuild-bcd\">Rebuild BCD\u003C/h1>\n\u003Col>\n\u003Cli>Use \u003Ccode>fdisk\u003C/code> and mark Windows partition as active.\u003Cul>\n\u003Cli>This activeness seems not exclusive; i.e. more than one partition can be active at the same time. I’m not sure this causes any problems.\u003C/li>\n\u003C/ul>\n\u003C/li>\n\u003Cli>Boot from Windows installation disk.\u003C/li>\n\u003Cli>Proceed to advance startup options and launch Command Prompt.\u003C/li>\n\u003Cli>Run \u003Ccode>bootrec /RebuildBcd\u003C/code>. (you have to type \u003Ccode>y\u003C/code> once, in most cases)\u003C/li>\n\u003Cli>Reactivate appropriate partition if necessary.\u003C/li>\n\u003C/ol>\n\u003Ch1 id=\"restore-initial-bootloader\">Restore initial bootloader\u003C/h1>\n\u003Col>\n\u003Cli>Copy first 446 bytes from another disk; e.g. \u003Ccode>sudo dd if=/dev/sdc of=/dev/sda bs=446 count=1\u003C/code>\u003C/li>\n\u003C/ol>\n","headline":"Change the partition size Use gparted from external disk (e.g., Ubuntu Live USB disk) and adjust partition sizes as you want. note: gparted has bugs around handling HFS, so it behaves as if it has hung while it is moving a partition that contains HFS. Be patient and let it work. It may take more than 2 hours. If Windows won’t boot after this, you have to either reconfigure legacy MBR or rebuild BCD. Reconfigure MBR Use gptsync from external disk. Rebuild BCD Use fdisk and mark Windows partition as active. T","links":{"to":{"urlPath":"/notes/multiboot","entities":[]},"from":{"urlPath":"/notes/multiboot","entities":[]},"kind":{"urlPath":"/notes/multiboot","entities":[]}}}}</script></div>
+  </body>
+</html>
