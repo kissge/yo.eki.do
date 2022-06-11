@@ -11,13 +11,13 @@
 	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-1f397eed.css">
-	<link rel="modulepreload" href="/_app/immutable/start-c45c172a.js">
+	<link rel="modulepreload" href="/_app/immutable/start-b31939b7.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-2bb677a8.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-37f163cc.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-513c3435.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/tags-0bf7833f.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-f62cab73.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-be1775c8.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
   </head>
   <body>
     <div>
@@ -67,7 +67,7 @@
 
 
 		<script type="module" data-sveltekit-hydrate="1xezh3s">
-		import { start } from "/_app/immutable/start-c45c172a.js";
+		import { start } from "/_app/immutable/start-b31939b7.js";
 		start({
 			target: document.querySelector('[data-sveltekit-hydrate="1xezh3s"]').parentNode,
 			paths: {"base":"","assets":""},
@@ -83,6 +83,6 @@
 				routeId: "[...entity]"
 			}
 		});
-	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"特定のポートを使用しているプロセスのプロセス ID だけを列挙する","nameSegmented":["特定の","ポートを","使用している","プロセスの","プロセス"," ID だけを","列挙する"],"kind":"note","urlPath":"/notes/lsof-t","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/lsof-t.md","lastModified":"2022-06-11T08:16:13.000Z","attributes":{"from":"wordpress","title":"特定のポートを使用しているプロセスのプロセス ID だけを列挙する","date":"2014-05-25T21:32:08.000Z"},"tags":[],"body":"\u003Cp>\u003Ccode>lsof -i:***\u003C/code> とすると特定のポートを使用しているプロセスの一覧がヘッダ付きで取得できる．\nこれを \u003Ccode>kill\u003C/code> にプロセス ID だけを渡して一挙に殺したいとする．\nヘッダを削除するのは \u003Ccode>sed\u003C/code> で良いとして，プロセス ID だけを抜き出すのに \u003Ccode>cut\u003C/code> を使うのには具合が悪い．\n複数の半角スペースを使っていい感じに整形してくれているせい．\nが，最初から \u003Ccode>lsof\u003C/code> には \u003Ccode>-t\u003C/code> という (terse) オプションがあって，やっぱり \u003Ccode>kill\u003C/code> にパイプして使う用の意図であるみたいだ，\u003Ccode>man\u003C/code> 曰く．このオプションを使えば最初からプロセス ID だけが抜き出せて解決．\u003C/p>\n","headline":"lsof -i:*** とすると特定のポートを使用しているプロセスの一覧がヘッダ付きで取得できる．これを kill にプロセス ID だけを渡して一挙に殺したいとする．ヘッダを削除するのは sed で良いとして，プロセス ID だけを抜き出すのに cut を使うのには具合が悪い．複数の半角スペースを使っていい感じに整形してくれているせい．が，最初から lsof には -t という (terse) オプションがあって，やっぱり kill にパイプして使う用の意図であるみたいだ，man 曰く．このオプションを使えば最初からプロセス ID だけが抜き出せて解決．","links":{"to":{"urlPath":"/notes/lsof-t","entities":[]},"from":{"urlPath":"/notes/lsof-t","entities":[]},"kind":{"urlPath":"/notes/lsof-t","entities":[]}}}}</script></div>
+	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"特定のポートを使用しているプロセスのプロセス ID だけを列挙する","nameSegmented":["特定の","ポートを","使用している","プロセスの","プロセス"," ID だけを","列挙する"],"kind":"note","urlPath":"/notes/lsof-t","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/lsof-t.md","lastModified":"2022-04-17T12:08:43.000Z","attributes":{"from":"wordpress","title":"特定のポートを使用しているプロセスのプロセス ID だけを列挙する","date":"2014-05-25T21:32:08.000Z"},"tags":[],"body":"\u003Cp>\u003Ccode>lsof -i:***\u003C/code> とすると特定のポートを使用しているプロセスの一覧がヘッダ付きで取得できる．\nこれを \u003Ccode>kill\u003C/code> にプロセス ID だけを渡して一挙に殺したいとする．\nヘッダを削除するのは \u003Ccode>sed\u003C/code> で良いとして，プロセス ID だけを抜き出すのに \u003Ccode>cut\u003C/code> を使うのには具合が悪い．\n複数の半角スペースを使っていい感じに整形してくれているせい．\nが，最初から \u003Ccode>lsof\u003C/code> には \u003Ccode>-t\u003C/code> という (terse) オプションがあって，やっぱり \u003Ccode>kill\u003C/code> にパイプして使う用の意図であるみたいだ，\u003Ccode>man\u003C/code> 曰く．このオプションを使えば最初からプロセス ID だけが抜き出せて解決．\u003C/p>\n","headline":"lsof -i:*** とすると特定のポートを使用しているプロセスの一覧がヘッダ付きで取得できる．これを kill にプロセス ID だけを渡して一挙に殺したいとする．ヘッダを削除するのは sed で良いとして，プロセス ID だけを抜き出すのに cut を使うのには具合が悪い．複数の半角スペースを使っていい感じに整形してくれているせい．が，最初から lsof には -t という (terse) オプションがあって，やっぱり kill にパイプして使う用の意図であるみたいだ，man 曰く．このオプションを使えば最初からプロセス ID だけが抜き出せて解決．","links":{"to":{"urlPath":"/notes/lsof-t","entities":[]},"from":{"urlPath":"/notes/lsof-t","entities":[]},"kind":{"urlPath":"/notes/lsof-t","entities":[]}}}}</script></div>
   </body>
 </html>

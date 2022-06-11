@@ -11,13 +11,13 @@
 	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-1f397eed.css">
-	<link rel="modulepreload" href="/_app/immutable/start-c45c172a.js">
+	<link rel="modulepreload" href="/_app/immutable/start-b31939b7.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-2bb677a8.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-37f163cc.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-513c3435.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/tags-0bf7833f.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-f62cab73.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-be1775c8.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
   </head>
   <body>
     <div>
@@ -85,7 +85,7 @@ Firefox のことは知らない．
 
 
 		<script type="module" data-sveltekit-hydrate="hwbaqf">
-		import { start } from "/_app/immutable/start-c45c172a.js";
+		import { start } from "/_app/immutable/start-b31939b7.js";
 		start({
 			target: document.querySelector('[data-sveltekit-hydrate="hwbaqf"]').parentNode,
 			paths: {"base":"","assets":""},
@@ -101,6 +101,6 @@ Firefox のことは知らない．
 				routeId: "[...entity]"
 			}
 		});
-	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"Cygwin/X でウィンドウをリサイズしようとすると高さが潰れてしまう","nameSegmented":["Cygwin/","X で","ウィンドウを","リサイズしようと","すると","高さが","潰れてしまう"],"kind":"note","urlPath":"/notes/window-resize","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/window-resize.md","lastModified":"2022-06-11T08:16:13.000Z","attributes":{"from":"wordpress","title":"Cygwin/X でウィンドウをリサイズしようとすると高さが潰れてしまう","date":"2014-08-05T04:38:45.000Z"},"tags":[],"body":"\u003Cp>最近自分のメイン端末には Windows 8.1 を入れて動かしているがやはり Linux が使えると色々と便利な場面も多い．\n自分の場合は VirtualBox 上で Ubuntu を動かして Cygwin/X を使って仮想ネットワーク上の X11 forwarding によって Windows にウィンドウを持ってくるという若干遠回しな解決策でずっと運用していて，これが中々に快適．\u003C/p>\n\u003Cp>が，Firefox とかいうよく分からないアプリケーションだけはなぜか描画が上手く行かず，ウィンドウをリサイズしようとすると高さがゼロになってにっちもさっちもいかなくなるという致命的なバグがある．\u003C/p>\n\u003Cp>使わないからいいけれど．\u003C/p>\n\u003Cp>と思っていたら Emacs をバージョンアップしたとたん同じことが起きるようになってしまった．\u003C/p>\n\u003C!--more-->\n\n\u003Cp>で，ちょっと考えれば Emacs 23 と 24 で変わったことといえばデフォルトの Gtk+ のバージョンが変わったことがある (24.3 以降)．\n\u003Ca href=\"http://www.gnu.org/software/emacs/news/NEWS.24.3\">NEWS.24.3\u003C/a> 曰く，\u003C/p>\n\u003Cblockquote>\n** The default X toolkit is now Gtk+ version 3.\nIf you don't pass `--with-x-toolkit' to configure, or if you use\n`--with-x-toolkit=gtk' or `--with-x-toolkit=yes', configure will try\nto build with Gtk+ version 3, and if that fails, try Gtk+ version 2.\nYou can explicitly require a specific version by passing\n`--with-x-toolkit=gtk2' or `--with-x-toolkit=gtk3' to configure.\n\u003C/blockquote>\n\n\u003Cp>とのこと．\nというわけでもしかしてこいつかと思い，\u003Ccode>--with-x-toolkit=gtk2\u003C/code> でビルドしなおしてみたところ，ばっちり元通りの挙動に．\nどうせ上の方のツールボックスは非表示にしているので，Gtk+ 2 だろうが 3 だろうがあまり大差ない，と思う，たぶん．\nFirefox のことは知らない．\nめでたしめでたし．\u003C/p>\n","headline":"最近自分のメイン端末には Windows 8.1 を入れて動かしているがやはり Linux が使えると色々と便利な場面も多い．自分の場合は VirtualBox 上で Ubuntu を動かして Cygwin/X を使って仮想ネットワーク上の X11 forwarding によって Windows にウィンドウを持ってくるという若干遠回しな解決策でずっと運用していて，これが中々に快適．が，Firefox とかいうよく分からないアプリケーションだけはなぜか描画が上手く行かず，ウィンドウをリサイズしようとすると高さがゼロになってにっちもさっちもいかなくなるという致命的なバグがある．使わないからいいけれど．と思っていたら Emacs をバージョンアップしたとたん同じことが起きるようになってしまった．で，ちょっと考えれば Emacs 23 と 24 で変わったことといえばデフォルトの Gtk+ のバージョンが変わったことがある (24.3 以降)．NEWS.24.3 曰く，** The default X toolkit is now Gtk+ version 3. If you don't pass `--with-","links":{"to":{"urlPath":"/notes/window-resize","entities":[]},"from":{"urlPath":"/notes/window-resize","entities":[]},"kind":{"urlPath":"/notes/window-resize","entities":[]}}}}</script></div>
+	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"Cygwin/X でウィンドウをリサイズしようとすると高さが潰れてしまう","nameSegmented":["Cygwin/","X で","ウィンドウを","リサイズしようと","すると","高さが","潰れてしまう"],"kind":"note","urlPath":"/notes/window-resize","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/window-resize.md","lastModified":"2022-04-17T12:08:43.000Z","attributes":{"from":"wordpress","title":"Cygwin/X でウィンドウをリサイズしようとすると高さが潰れてしまう","date":"2014-08-05T04:38:45.000Z"},"tags":[],"body":"\u003Cp>最近自分のメイン端末には Windows 8.1 を入れて動かしているがやはり Linux が使えると色々と便利な場面も多い．\n自分の場合は VirtualBox 上で Ubuntu を動かして Cygwin/X を使って仮想ネットワーク上の X11 forwarding によって Windows にウィンドウを持ってくるという若干遠回しな解決策でずっと運用していて，これが中々に快適．\u003C/p>\n\u003Cp>が，Firefox とかいうよく分からないアプリケーションだけはなぜか描画が上手く行かず，ウィンドウをリサイズしようとすると高さがゼロになってにっちもさっちもいかなくなるという致命的なバグがある．\u003C/p>\n\u003Cp>使わないからいいけれど．\u003C/p>\n\u003Cp>と思っていたら Emacs をバージョンアップしたとたん同じことが起きるようになってしまった．\u003C/p>\n\u003C!--more-->\n\n\u003Cp>で，ちょっと考えれば Emacs 23 と 24 で変わったことといえばデフォルトの Gtk+ のバージョンが変わったことがある (24.3 以降)．\n\u003Ca href=\"http://www.gnu.org/software/emacs/news/NEWS.24.3\">NEWS.24.3\u003C/a> 曰く，\u003C/p>\n\u003Cblockquote>\n** The default X toolkit is now Gtk+ version 3.\nIf you don't pass `--with-x-toolkit' to configure, or if you use\n`--with-x-toolkit=gtk' or `--with-x-toolkit=yes', configure will try\nto build with Gtk+ version 3, and if that fails, try Gtk+ version 2.\nYou can explicitly require a specific version by passing\n`--with-x-toolkit=gtk2' or `--with-x-toolkit=gtk3' to configure.\n\u003C/blockquote>\n\n\u003Cp>とのこと．\nというわけでもしかしてこいつかと思い，\u003Ccode>--with-x-toolkit=gtk2\u003C/code> でビルドしなおしてみたところ，ばっちり元通りの挙動に．\nどうせ上の方のツールボックスは非表示にしているので，Gtk+ 2 だろうが 3 だろうがあまり大差ない，と思う，たぶん．\nFirefox のことは知らない．\nめでたしめでたし．\u003C/p>\n","headline":"最近自分のメイン端末には Windows 8.1 を入れて動かしているがやはり Linux が使えると色々と便利な場面も多い．自分の場合は VirtualBox 上で Ubuntu を動かして Cygwin/X を使って仮想ネットワーク上の X11 forwarding によって Windows にウィンドウを持ってくるという若干遠回しな解決策でずっと運用していて，これが中々に快適．が，Firefox とかいうよく分からないアプリケーションだけはなぜか描画が上手く行かず，ウィンドウをリサイズしようとすると高さがゼロになってにっちもさっちもいかなくなるという致命的なバグがある．使わないからいいけれど．と思っていたら Emacs をバージョンアップしたとたん同じことが起きるようになってしまった．で，ちょっと考えれば Emacs 23 と 24 で変わったことといえばデフォルトの Gtk+ のバージョンが変わったことがある (24.3 以降)．NEWS.24.3 曰く，** The default X toolkit is now Gtk+ version 3. If you don't pass `--with-","links":{"to":{"urlPath":"/notes/window-resize","entities":[]},"from":{"urlPath":"/notes/window-resize","entities":[]},"kind":{"urlPath":"/notes/window-resize","entities":[]}}}}</script></div>
   </body>
 </html>

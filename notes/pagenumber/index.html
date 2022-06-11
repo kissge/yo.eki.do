@@ -11,13 +11,13 @@
 	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-1f397eed.css">
-	<link rel="modulepreload" href="/_app/immutable/start-c45c172a.js">
+	<link rel="modulepreload" href="/_app/immutable/start-b31939b7.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-2bb677a8.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-37f163cc.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-513c3435.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/tags-0bf7833f.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-f62cab73.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-be1775c8.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
   </head>
   <body>
     <div>
@@ -70,7 +70,7 @@
 
 
 		<script type="module" data-sveltekit-hydrate="xvbgh5">
-		import { start } from "/_app/immutable/start-c45c172a.js";
+		import { start } from "/_app/immutable/start-b31939b7.js";
 		start({
 			target: document.querySelector('[data-sveltekit-hydrate="xvbgh5"]').parentNode,
 			paths: {"base":"","assets":""},
@@ -86,6 +86,6 @@
 				routeId: "[...entity]"
 			}
 		});
-	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"TeX: \\pagestyle{empty} してもページ番号が勝手に挿入される","nameSegmented":["TeX: ","\\pagestyle","{empty","} しても","ページ番号が","勝手に","挿入される"],"kind":"note","urlPath":"/notes/pagenumber","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/pagenumber.md","lastModified":"2022-06-11T08:16:13.000Z","attributes":{"from":"wordpress","title":"TeX: \\pagestyle{empty} してもページ番号が勝手に挿入される","date":"2014-08-31T15:19:25.000Z"},"tags":[],"body":"\u003Cp>より正確に言うと，「最初のページにのみ」ページ番号が勝手に挿入される．\n解決策は \u003Ccode>\\maketitle\u003C/code> よりも後に \u003Ccode>\\thispagestyle{empty}\u003C/code> を挿入すればよい．\nどうも \u003Ccode>\\maketitle\u003C/code> の中で勝手に \u003Ccode>\\thispagestyle{plane}\u003C/code> か何かで上書きされているらしい．\n\u003Csmall style=\"font-size: medium; color: #eee;\">2014 年にもなって何でこんなことになっているんだ．\u003C/small>\u003C/p>\n\u003Cp>余談だけれど，LyX でこの問題に対処するいい感じの方法が思いつかなかったので，プリアンブルにこんな感じのハック（笑）を足すことで対応することにした．\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-tex\">\u003Cspan class=\"hljs-keyword\">\\let\u003C/span>\u003Cspan class=\"hljs-keyword\">\\maketitlex\u003C/span>\u003Cspan class=\"hljs-keyword\">\\maketitle\u003C/span>\n\u003Cspan class=\"hljs-keyword\">\\renewcommand\u003C/span>{\u003Cspan class=\"hljs-keyword\">\\maketitle\u003C/span>}{\u003Cspan class=\"hljs-keyword\">\\maketitlex\u003C/span>\u003Cspan class=\"hljs-keyword\">\\thispagestyle\u003C/span>{empty}}\n\u003C/code>\u003C/pre>\n","headline":"より正確に言うと，「最初のページにのみ」ページ番号が勝手に挿入される．解決策は \\maketitle よりも後に \\thispagestyle{empty} を挿入すればよい．どうも \\maketitle の中で勝手に \\thispagestyle{plane} か何かで上書きされているらしい．2014 年にもなって何でこんなことになっているんだ．余談だけれど，LyX でこの問題に対処するいい感じの方法が思いつかなかったので，プリアンブルにこんな感じのハック（笑）を足すことで対応することにした．\\let\\maketitlex\\maketitle \\renewcommand{\\maketitle}{\\maketitlex\\thispagestyle{empty}}","links":{"to":{"urlPath":"/notes/pagenumber","entities":[]},"from":{"urlPath":"/notes/pagenumber","entities":[]},"kind":{"urlPath":"/notes/pagenumber","entities":[]}}}}</script></div>
+	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"TeX: \\pagestyle{empty} してもページ番号が勝手に挿入される","nameSegmented":["TeX: ","\\pagestyle","{empty","} しても","ページ番号が","勝手に","挿入される"],"kind":"note","urlPath":"/notes/pagenumber","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/pagenumber.md","lastModified":"2022-04-17T12:08:43.000Z","attributes":{"from":"wordpress","title":"TeX: \\pagestyle{empty} してもページ番号が勝手に挿入される","date":"2014-08-31T15:19:25.000Z"},"tags":[],"body":"\u003Cp>より正確に言うと，「最初のページにのみ」ページ番号が勝手に挿入される．\n解決策は \u003Ccode>\\maketitle\u003C/code> よりも後に \u003Ccode>\\thispagestyle{empty}\u003C/code> を挿入すればよい．\nどうも \u003Ccode>\\maketitle\u003C/code> の中で勝手に \u003Ccode>\\thispagestyle{plane}\u003C/code> か何かで上書きされているらしい．\n\u003Csmall style=\"font-size: medium; color: #eee;\">2014 年にもなって何でこんなことになっているんだ．\u003C/small>\u003C/p>\n\u003Cp>余談だけれど，LyX でこの問題に対処するいい感じの方法が思いつかなかったので，プリアンブルにこんな感じのハック（笑）を足すことで対応することにした．\u003C/p>\n\u003Cpre>\u003Ccode class=\"language-tex\">\u003Cspan class=\"hljs-keyword\">\\let\u003C/span>\u003Cspan class=\"hljs-keyword\">\\maketitlex\u003C/span>\u003Cspan class=\"hljs-keyword\">\\maketitle\u003C/span>\n\u003Cspan class=\"hljs-keyword\">\\renewcommand\u003C/span>{\u003Cspan class=\"hljs-keyword\">\\maketitle\u003C/span>}{\u003Cspan class=\"hljs-keyword\">\\maketitlex\u003C/span>\u003Cspan class=\"hljs-keyword\">\\thispagestyle\u003C/span>{empty}}\n\u003C/code>\u003C/pre>\n","headline":"より正確に言うと，「最初のページにのみ」ページ番号が勝手に挿入される．解決策は \\maketitle よりも後に \\thispagestyle{empty} を挿入すればよい．どうも \\maketitle の中で勝手に \\thispagestyle{plane} か何かで上書きされているらしい．2014 年にもなって何でこんなことになっているんだ．余談だけれど，LyX でこの問題に対処するいい感じの方法が思いつかなかったので，プリアンブルにこんな感じのハック（笑）を足すことで対応することにした．\\let\\maketitlex\\maketitle \\renewcommand{\\maketitle}{\\maketitlex\\thispagestyle{empty}}","links":{"to":{"urlPath":"/notes/pagenumber","entities":[]},"from":{"urlPath":"/notes/pagenumber","entities":[]},"kind":{"urlPath":"/notes/pagenumber","entities":[]}}}}</script></div>
   </body>
 </html>
