@@ -8,7 +8,7 @@ date: 2017-06-12 23:17:55
 
 <!--more-->
 
-と意気込んでみたものの、いざまとめてみると [AWS(EC2)でSoftEtherを使ってL2TP/IPsecなVPNを構築する (Mac) - Qiita](http://qiita.com/showwin/items/92861057a8b62611444d) をやっただけになった。書くことがない……。
+と意気込みはしたものの、いざまとめてみると [AWS(EC2)でSoftEtherを使ってL2TP/IPsecなVPNを構築する (Mac) - Qiita](http://qiita.com/showwin/items/92861057a8b62611444d) をやっただけになった。書くことがない……。
 
 一箇所記事に書いていないことがあり `vpncmd` でサーバの設定をしようとすると
 

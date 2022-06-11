@@ -9,7 +9,6 @@ This means it is practically impossible to have every character on their keyboar
 That's why we use **input method editors** (usually called **IME**) to type.
 
 [![Google Japan's April fool project in 2010](https://4.bp.blogspot.com/_EKfCI8QuAaM/S7L-baZ-ZVI/AAAAAAAADlg/A7gggwUIRSQ/s1600/JD1C0014.JPG)](https://japan.googleblog.com/2010/04/google.html)
-
 Image from: https://japan.googleblog.com/2010/04/google.html
 
 Since many people in the software industry are not familiar with this concept, or maybe simply ignoring the minorities in The Agile Mindset™, there is much software that has trouble when used in Japanese environments.
@@ -63,7 +62,6 @@ With this feature on, the text is automatically converted to the most likely can
 The candidate selection is usually OK, but you can move to conversion state with the Space bar if wrong, just as before.
 
 [![Live conversion](https://iphone-mania.jp/uploads/2022/05/livetranslation.gif)](https://iphone-mania.jp/news-457657/)
-
 Image from: https://iphone-mania.jp/news-457657/
 
 There are also some other input methods than _Rōmaji_ input, including direct _hiragana_ input (かな入力).

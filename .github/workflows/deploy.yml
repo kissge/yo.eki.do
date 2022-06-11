@@ -10,25 +10,32 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
         with:
-          node-version: '17'
-      - uses: actions/checkout@v2
+          path: yo.eki.do
+      - uses: actions/checkout@v3
         with:
           repository: kissge/monolog
-          path: .monolog
-      - run: mv config.ts .monolog/src/
-      - run: mv images .monolog/static/
-      - run: mv static/* .monolog/static/
-      - run: mkdir .src && mv */ .src
-      - run: yarn install
-        working-directory: .monolog
-      - run: yarn export
-        working-directory: .monolog
-      - run: head -c 100 .monolog/__sapper__/export/posts.json
+          path: monolog
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.3.0'
+          cache: yarn
+          cache-dependency-path: monolog/yarn.lock
+      - run: yarn install --frozen-lockfile
+        working-directory: monolog
+
+      - name: Set up assets and configs
+        run: |
+          mv yo.eki.do/.env monolog/ &&
+          mv yo.eki.do/images monolog/static/ &&
+          mv yo.eki.do/static/* monolog/static/
+
+      - run: yarn build
+        working-directory: monolog
+
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .monolog/__sapper__/export
+          publish_dir: monolog/build
           CNAME: yo.eki.do
