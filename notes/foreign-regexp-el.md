@@ -57,7 +57,7 @@ Emacsに限らずエディタで何らかのファイルを編集していると
 
 あとはそんなに覚えるべきキーバインドも多くはないのですが……一応ひと通り使ってみましょう．
 まず<kbd>M-s M-l</kbd>で<code>re-builder</code>を呼び出します．キャンセルして終了するときは<kbd>C-c C-q</kbd>です．
-そして<code>*RE-Builder*</code>バッファで置換前にマッチする正規表現を入力します．
+そして `*RE-Builder*` バッファで置換前にマッチする正規表現を入力します．
 
 <img src="/images/uploads/2014/12/regex-fig-02.gif" width="555" height="525" class="alignnone size-full wp-image-192" data-wp-pid="192" />
 
