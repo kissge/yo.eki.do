@@ -116,7 +116,7 @@ Common Locale Data Repository、略してCLDRは、The Unicode Consortiumが提�
 
 <x-script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Funicode-org%2Fcldr%2Fblob%2F17b4fac37d9a0f323579e9a21f452a6688d1b648%2Fcommon%2Fmain%2Froot.xml%23L2150-L2158&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on&fetchFromJsDelivr=on"></x-script>
 
-また[ロシア語](https://github.com/unicode-org/cldr/blob/17b4fac37d9a0f323579e9a21f452a6688d1b648/common/main/ru.xml#L3074-L3086)では、何故か "Эпоха" がついたりつかなかったりする（「〜時代」みたいな意味かな？）。
+また[ロシア語](https://github.com/unicode-org/cldr/blob/17b4fac37d9a0f323579e9a21f452a6688d1b648/common/main/ru.xml#L3074-L3086)では、何故か "<span lang="ru">Эпоха</span>" がついたりつかなかったりする（「〜時代」みたいな意味かな？）。
 
 <x-script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Funicode-org%2Fcldr%2Fblob%2F17b4fac37d9a0f323579e9a21f452a6688d1b648%2Fcommon%2Fmain%2Fru.xml%23L3074-L3086&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on&fetchFromJsDelivr=on"></x-script>
 
