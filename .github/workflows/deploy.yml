@@ -18,7 +18,6 @@ jobs:
         with:
           repository: kissge/monolog
           path: monolog
-      - run: head -n 6 monolog/package.json
       - uses: actions/setup-node@v3
         with:
           node-version: '18.3.0'
@@ -41,3 +40,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: monolog/build
           CNAME: yo.eki.do
+
+      - run: |
+          (
+            du -sh monolog/build
+            git -C monolog rev-parse HEAD
+            head -n 6 monolog/package.json
+          ) >> $GITHUB_STEP_SUMMARY
