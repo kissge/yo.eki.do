@@ -8,15 +8,15 @@
     <meta http-equiv="content-security-policy" content=""><title>Elasticaの戻り値をいい感じにラップするライブラリを書いた - 2016-07-27 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
     <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
     <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="Elasticaの戻り値をいい感じにラップするライブラリを書いた - 2016-07-27 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="PHPでElasticSearchをあつかうときの定番ライブラリにElasticaというものがある。Symfonyで扱うときはこれをさらにラップしたFOSElasticaBundleを使うとよい。Elasticaの難点として、クエリを投げて帰ってくる結果が連想配列で得られるのだが、これが無駄に深いネストがあったりして地味に使いづらい。$result = $index-&amp;gt;search($query)-&amp;gt;getAggregations()こんな感じで結果を取るとすると[    &amp;#x27;interval&amp;#x27; =&amp;gt; [        &amp;#x27;buckets&amp;#x27; =&amp;gt; [            [                &amp;#x27;key_as_string&amp;#x27; =&amp;gt; &amp;#x27;2016-05-31T15:00:00.000Z&amp;#x27;,                 &amp;#x27;key&amp;#x27; =&amp;gt; 1464706800000,                 &amp;#x27;doc_count&amp;#x27; =&amp;gt; 1000,   " data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-00878b0d.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-fc6df1b6.css">
-	<link rel="modulepreload" href="/_app/immutable/start-7b2057e8.js">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-f6db877a.css">
+	<link rel="modulepreload" href="/_app/immutable/start-9d36bcd1.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
 	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-0c722760.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-3efc4984.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-46a52835.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
   </head>
   <body>
@@ -31,23 +31,23 @@
 
 
 
-<div class="nav-background svelte-1lehjrj isHeaderInView" style=""></div>
+<div class="nav-background svelte-1dwb7hb isHeaderInView" style=""></div>
 
-<main><article data-kind="note" class="svelte-1lehjrj"><header class="svelte-1lehjrj"><h1 class="svelte-1lehjrj">Elasticaの<wbr>戻り<wbr>値を<wbr>いい<wbr>感じに<wbr>ラップする<wbr>ライブラリを<wbr>書いた</h1>
-
-      
-
-      <section class="meta svelte-1lehjrj"><p class="svelte-1lehjrj"><time title="6 年前" class="svelte-5ni4x2">Wed Jul 27 2016 05:34:31 GMT+0000 (Coordinated Universal Time)</time></p>
-
-        <p class="svelte-1lehjrj"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/elastica-friendly-result-set.md" class="svelte-1lehjrj">更新履歴</a></p></section>
+<main><article data-kind="note" class="svelte-1dwb7hb"><header class="svelte-1dwb7hb"><h1 class="svelte-1dwb7hb">Elasticaの<wbr>戻り<wbr>値を<wbr>いい<wbr>感じに<wbr>ラップする<wbr>ライブラリを<wbr>書いた</h1>
 
       
 
+      <section class="meta svelte-1dwb7hb"><p class="svelte-1dwb7hb"><time title="6 年前" class="svelte-5ni4x2">Wed Jul 27 2016 05:34:31 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-1dwb7hb"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/elastica-friendly-result-set.md" class="svelte-1dwb7hb">更新履歴</a></p></section>
+
       
 
-      <section class="header-image svelte-1lehjrj" style=""></section></header>
+      
 
-    <section class="body svelte-1lehjrj"><!-- HTML_TAG_START --><p>PHPでElasticSearchをあつかうときの定番ライブラリに<a href="https://github.com/ruflin/Elastica">Elastica</a>というものがある。
+      <section class="header-image svelte-1dwb7hb" style=""></section></header>
+
+    <section class="body svelte-1dwb7hb"><!-- HTML_TAG_START --><p>PHPでElasticSearchをあつかうときの定番ライブラリに<a href="https://github.com/ruflin/Elastica">Elastica</a>というものがある。
 Symfonyで扱うときはこれをさらにラップした<a href="https://github.com/FriendsOfSymfony/FOSElasticaBundle">FOSElasticaBundle</a>を使うとよい。</p>
 <p>Elasticaの難点として、クエリを投げて帰ってくる結果が連想配列で得られるのだが、これが無駄に深いネストがあったりして地味に使いづらい。</p>
 <!--more-->
@@ -153,10 +153,10 @@ passing &amp; 100%のGitHubドヤ顔緑バッジ……もなんか出てない�
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="mdfelc">
-		import { start } from "/_app/immutable/start-7b2057e8.js";
+		<script type="module" data-sveltekit-hydrate="tpsklc">
+		import { start } from "/_app/immutable/start-9d36bcd1.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="mdfelc"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="tpsklc"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,

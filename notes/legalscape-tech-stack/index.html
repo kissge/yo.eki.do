@@ -8,15 +8,15 @@
     <meta http-equiv="content-security-policy" content=""><title>リーガルリサーチシステム「Legalscape」の技術スタック2021 - 2021-12-02 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
     <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
     <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="リーガルリサーチシステム「Legalscape」の技術スタック2021 - 2021-12-02 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="こんにちは。Legalscape Co-Founder &amp;amp; CTOの城戸（きど）です。この記事はLegalscape アドベントカレンダー 2021の2日目のエントリです。今日は私たちの主力プロダクトである「Legalscape」を支える技術スタックについて簡単に説明し、なぜそれを選んだのかを語ることで、これを読んでいるあなたに私たちのチームについて理解を深めていただきたいと思います。Legalscapeって、何？Legalscapeは、法務に携わる方々が使うリサーチシステムです。どんな製品なのかについては弊社ブログの過去の記事（はじめまして、Legalscapeです）を見ていただきたいのですが、簡単に言うとWebアプリなので、バックエンド、フロントエンドからなり、裏に検索エンジンやデータベースがあります。これらが全てGoogle Cloud Platform (GCP) 上で構築されています。では、それぞれのコンポーネントについて詳しく見ていきましょう。バックエンドLegalscapeのAPIサーバはTypeScriptで書かれています。確かにそこまでメジャーな選択肢ではありませんが、フロントエンド" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-00878b0d.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-fc6df1b6.css">
-	<link rel="modulepreload" href="/_app/immutable/start-7b2057e8.js">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-f6db877a.css">
+	<link rel="modulepreload" href="/_app/immutable/start-9d36bcd1.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
 	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-0c722760.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-3efc4984.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-46a52835.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
   </head>
   <body>
@@ -31,24 +31,24 @@
 
 
 
-<div class="nav-background svelte-1lehjrj isHeaderInView" style=""></div>
+<div class="nav-background svelte-1dwb7hb isHeaderInView" style=""></div>
 
-<main><article data-kind="note" class="svelte-1lehjrj"><header class="svelte-1lehjrj"><h1 class="svelte-1lehjrj">リーガルリサーチシステム<wbr>「Legalscape」の<wbr>技術スタック<wbr>2021</h1>
-
-      
-
-      <section class="meta svelte-1lehjrj"><p class="svelte-1lehjrj"><time title="6 か月半前" class="svelte-5ni4x2">Thu Dec 02 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</time></p>
-
-        <p class="svelte-1lehjrj"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/legalscape-tech-stack.md" class="svelte-1lehjrj">更新履歴</a></p></section>
+<main><article data-kind="note" class="svelte-1dwb7hb"><header class="svelte-1dwb7hb"><h1 class="svelte-1dwb7hb">リーガルリサーチシステム<wbr>「Legalscape」の<wbr>技術スタック<wbr>2021</h1>
 
       
 
-      <section class="svelte-1lehjrj"><a sveltekit:prefetch href="/mono/%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC" class="tag svelte-k4uca large" data-kind="tag">アドベントカレンダー</a>
+      <section class="meta svelte-1dwb7hb"><p class="svelte-1dwb7hb"><time title="6 か月半前" class="svelte-5ni4x2">Thu Dec 02 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-1dwb7hb"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/legalscape-tech-stack.md" class="svelte-1dwb7hb">更新履歴</a></p></section>
+
+      
+
+      <section class="svelte-1dwb7hb"><a sveltekit:prefetch href="/mono/%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC" class="tag svelte-k4uca large" data-kind="tag">アドベントカレンダー</a>
   </section>
 
-      <section class="header-image svelte-1lehjrj" style=""></section></header>
+      <section class="header-image svelte-1dwb7hb" style=""></section></header>
 
-    <section class="body svelte-1lehjrj"><!-- HTML_TAG_START --><p>こんにちは。Legalscape Co-Founder &amp; CTOの城戸（きど）です。
+    <section class="body svelte-1dwb7hb"><!-- HTML_TAG_START --><p>こんにちは。Legalscape Co-Founder &amp; CTOの城戸（きど）です。
 この記事は<a href="https://qiita.com/advent-calendar/2021/legalscape">Legalscape アドベントカレンダー 2021</a>の2日目のエントリです。</p>
 <p>今日は私たちの主力プロダクトである「Legalscape」を支える技術スタックについて簡単に説明し、なぜそれを選んだのかを語ることで、これを読んでいるあなたに私たちのチームについて理解を深めていただきたいと思います。</p>
 <h1 id="legalscapeって、何？">Legalscapeって、何？</h1>
@@ -75,7 +75,7 @@
 <p>この記事を読んで私たちのチームでの開発に興味が湧いた方や、もっと詳しく聞きたい！　という方は、ぜひ<a href="https://legalscape.notion.site/09aeb478072946c18249495b8fb63fcd">採用情報</a>をご覧ください！　カジュアル面談からでも大丈夫ですので、気軽にご連絡いただけるのをお待ちしております。</p>
 <!-- HTML_TAG_END --></section>
 
-    <section class="links-section svelte-1lehjrj"><ul class="links"><li class="link-group"><h1 class="link-group-title">この記事がリンクしているもの</h1>
+    <section class="links-section svelte-1dwb7hb"><ul class="links"><li class="link-group"><h1 class="link-group-title">この記事がリンクしているもの</h1>
       <ul class="link-group-links"><li class="link"><a sveltekit:prefetch href="/mono/TypeScript">TypeScript</a>
             
             <span class="tags"></span>
@@ -134,10 +134,10 @@
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="qeyj90">
-		import { start } from "/_app/immutable/start-7b2057e8.js";
+		<script type="module" data-sveltekit-hydrate="gxzc44">
+		import { start } from "/_app/immutable/start-9d36bcd1.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="qeyj90"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="gxzc44"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,

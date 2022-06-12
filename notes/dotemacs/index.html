@@ -8,15 +8,15 @@
     <meta http-equiv="content-security-policy" content=""><title>Emacs の設定ファイル (.emacs) を綺麗にした - 2015-03-14 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
     <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
     <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="Emacs の設定ファイル (.emacs) を綺麗にした - 2015-03-14 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="本当はこんなことしている場合じゃないんですけど！！，レシピ不明の秘伝のタレと化していた .emacs を前々からフルスクラッチで書き直したいと思っていて，ついにやってしまった．一応今回のテーマとして El-Get と init-loader.el の導入が目新しいところ．El-Get が思いの外空気を読んでくれないようだったので結構苦労した．作者に言わせればパッケージの書き方が悪いということになるのだろうが……．まだ手元の環境でしか試せていないので職場でも動かしてみて色々調整が必要だろう．ついでに初めての試みとしてすべての設定を GitHub で公開してみることにする．https://github.com/kissge/.emacs.d 有識者におかしなところを直してもらえたりしたらいいなぁ．そういえば init.el 読書会が気になる今日このごろ．" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-00878b0d.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-fc6df1b6.css">
-	<link rel="modulepreload" href="/_app/immutable/start-7b2057e8.js">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-f6db877a.css">
+	<link rel="modulepreload" href="/_app/immutable/start-9d36bcd1.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
 	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-0c722760.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-3efc4984.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-46a52835.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
   </head>
   <body>
@@ -31,23 +31,23 @@
 
 
 
-<div class="nav-background svelte-1lehjrj isHeaderInView" style=""></div>
+<div class="nav-background svelte-1dwb7hb isHeaderInView" style=""></div>
 
-<main><article data-kind="note" class="svelte-1lehjrj"><header class="svelte-1lehjrj"><h1 class="svelte-1lehjrj">Emacs の<wbr>設定ファイル<wbr> (.emacs<wbr>) を<wbr>綺麗に<wbr>した</h1>
-
-      
-
-      <section class="meta svelte-1lehjrj"><p class="svelte-1lehjrj"><time title="7 年前" class="svelte-5ni4x2">Sat Mar 14 2015 06:10:24 GMT+0000 (Coordinated Universal Time)</time></p>
-
-        <p class="svelte-1lehjrj"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/dotemacs.md" class="svelte-1lehjrj">更新履歴</a></p></section>
+<main><article data-kind="note" class="svelte-1dwb7hb"><header class="svelte-1dwb7hb"><h1 class="svelte-1dwb7hb">Emacs の<wbr>設定ファイル<wbr> (.emacs<wbr>) を<wbr>綺麗に<wbr>した</h1>
 
       
 
+      <section class="meta svelte-1dwb7hb"><p class="svelte-1dwb7hb"><time title="7 年前" class="svelte-5ni4x2">Sat Mar 14 2015 06:10:24 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-1dwb7hb"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/dotemacs.md" class="svelte-1dwb7hb">更新履歴</a></p></section>
+
       
 
-      <section class="header-image svelte-1lehjrj" style=""></section></header>
+      
 
-    <section class="body svelte-1lehjrj"><!-- HTML_TAG_START --><p>本当はこんなことしている場合じゃないんですけど！！，レシピ不明の秘伝のタレと化していた <code>.emacs</code> を前々からフルスクラッチで書き直したいと思っていて，ついにやってしまった．</p>
+      <section class="header-image svelte-1dwb7hb" style=""></section></header>
+
+    <section class="body svelte-1dwb7hb"><!-- HTML_TAG_START --><p>本当はこんなことしている場合じゃないんですけど！！，レシピ不明の秘伝のタレと化していた <code>.emacs</code> を前々からフルスクラッチで書き直したいと思っていて，ついにやってしまった．</p>
 <p>一応今回のテーマとして <code>El-Get</code> と <code>init-loader.el</code> の導入が目新しいところ．
 <code>El-Get</code> が思いの外空気を読んでくれないようだったので結構苦労した．
 作者に言わせればパッケージの書き方が悪いということになるのだろうが……．
@@ -72,10 +72,10 @@
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="3n6acr">
-		import { start } from "/_app/immutable/start-7b2057e8.js";
+		<script type="module" data-sveltekit-hydrate="1kji6ff">
+		import { start } from "/_app/immutable/start-9d36bcd1.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="3n6acr"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1kji6ff"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,

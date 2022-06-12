@@ -8,15 +8,15 @@
     <meta http-equiv="content-security-policy" content=""><title>コミット・タグを指定してその時点でのツリーだけをgit cloneしてくる - 2015-11-11 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
     <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
     <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="コミット・タグを指定してその時点でのツリーだけをgit cloneしてくる - 2015-11-11 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="タイトルは若干釣りだが……。超でかいプロジェクトがあって、その ある時点での ソースコードに対して grep とかしたい、というような状況で必要になった。やってみたところ、 ある時点での っていうところを満たすためには git-clone を使わないほうが近道だった。こんな感じ。mkdir foo cd foo git init git remote add origin &amp;lt;cloneする元のURL&amp;gt;git fetch --depth 1 origin &amp;lt;コミットを指定するSHA1ハッシュやタグ名&amp;gt;git reset --hard FETCH_HEAD clone を使わないのがちょっとおもしろい。ちょっと。もちろん最新の master から取ってくるだけなら、たぶん clone すればよい。" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-211fd336.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-00878b0d.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-fc6df1b6.css">
-	<link rel="modulepreload" href="/_app/immutable/start-7b2057e8.js">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-f6db877a.css">
+	<link rel="modulepreload" href="/_app/immutable/start-9d36bcd1.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
 	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-0c722760.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-3efc4984.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-46a52835.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
   </head>
   <body>
@@ -31,23 +31,23 @@
 
 
 
-<div class="nav-background svelte-1lehjrj isHeaderInView" style=""></div>
+<div class="nav-background svelte-1dwb7hb isHeaderInView" style=""></div>
 
-<main><article data-kind="note" class="svelte-1lehjrj"><header class="svelte-1lehjrj"><h1 class="svelte-1lehjrj">コミット・タグを<wbr>指定して<wbr>その<wbr>時点での<wbr>ツリーだけを<wbr>git <wbr>cloneしてくる</h1>
-
-      
-
-      <section class="meta svelte-1lehjrj"><p class="svelte-1lehjrj"><time title="6 年半前" class="svelte-5ni4x2">Tue Nov 10 2015 20:03:33 GMT+0000 (Coordinated Universal Time)</time></p>
-
-        <p class="svelte-1lehjrj"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/git-only-single-commit.md" class="svelte-1lehjrj">更新履歴</a></p></section>
+<main><article data-kind="note" class="svelte-1dwb7hb"><header class="svelte-1dwb7hb"><h1 class="svelte-1dwb7hb">コミット・タグを<wbr>指定して<wbr>その<wbr>時点での<wbr>ツリーだけを<wbr>git <wbr>cloneしてくる</h1>
 
       
 
+      <section class="meta svelte-1dwb7hb"><p class="svelte-1dwb7hb"><time title="6 年半前" class="svelte-5ni4x2">Tue Nov 10 2015 20:03:33 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-1dwb7hb"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/git-only-single-commit.md" class="svelte-1dwb7hb">更新履歴</a></p></section>
+
       
 
-      <section class="header-image svelte-1lehjrj" style=""></section></header>
+      
 
-    <section class="body svelte-1lehjrj"><!-- HTML_TAG_START --><p>タイトルは若干釣りだが……。
+      <section class="header-image svelte-1dwb7hb" style=""></section></header>
+
+    <section class="body svelte-1dwb7hb"><!-- HTML_TAG_START --><p>タイトルは若干釣りだが……。
 超でかいプロジェクトがあって、その <em>ある時点での</em> ソースコードに対して <code>grep</code> とかしたい、というような状況で必要になった。</p>
 <!--more-->
 
@@ -64,7 +64,7 @@ git reset --hard FETCH_HEAD
 もちろん最新の <code>master</code> から取ってくるだけなら、たぶん <code>clone</code> すればよい。</p>
 <!-- HTML_TAG_END --></section>
 
-    <section class="links-section svelte-1lehjrj"><ul class="links"><li class="link-group"><h1 class="link-group-title">この記事にリンクしているもの</h1>
+    <section class="links-section svelte-1dwb7hb"><ul class="links"><li class="link-group"><h1 class="link-group-title">この記事にリンクしているもの</h1>
       <ul class="link-group-links"><li class="link"><a sveltekit:prefetch href="/notes/emacs-windows-2017">Emacs: Windowsでやっていく2017</a>
             <small title="Fri Dec 08 2017 00:00:08 GMT+0000 (Coordinated Universal Time)"><time>2017-12-08</time>
               </small>
@@ -86,10 +86,10 @@ git reset --hard FETCH_HEAD
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="h3t7h6">
-		import { start } from "/_app/immutable/start-7b2057e8.js";
+		<script type="module" data-sveltekit-hydrate="1v8fusl">
+		import { start } from "/_app/immutable/start-9d36bcd1.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="h3t7h6"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1v8fusl"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,

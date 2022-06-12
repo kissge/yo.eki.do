@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-7b2057e8.js",
+    "file": "start-9d36bcd1.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -11,6 +11,7 @@
       "src/routes/__layout.svelte",
       ".svelte-kit/runtime/components/error.svelte",
       "src/routes/[...entity].svelte",
+      "src/routes/all.svelte",
       "src/routes/index.svelte"
     ]
   },
@@ -25,7 +26,7 @@
       "_singletons-d1fb5791.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-211fd336.css"
+      "assets/pages/__layout.svelte-00878b0d.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
@@ -38,7 +39,7 @@
     ]
   },
   "src/routes/[...entity].svelte": {
-    "file": "pages/_...entity_.svelte-3efc4984.js",
+    "file": "pages/_...entity_.svelte-46a52835.js",
     "src": "src/routes/[...entity].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -49,13 +50,22 @@
       "_singletons-d1fb5791.js"
     ],
     "css": [
-      "assets/pages/_...entity_.svelte-fc6df1b6.css"
+      "assets/pages/_...entity_.svelte-f6db877a.css"
     ],
     "assets": [
       "assets/heart-1cc6a2fc.svg",
       "assets/message-circle-c0b45d48.svg",
       "assets/arrows-double-sw-ne-80dcf001.svg",
       "assets/brand-github-a6e3cad2.svg"
+    ]
+  },
+  "src/routes/all.svelte": {
+    "file": "pages/all.svelte-ba0f00e1.js",
+    "src": "src/routes/all.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-7416df8b.js"
     ]
   },
   "src/routes/index.svelte": {
