@@ -50,6 +50,7 @@ Emacs 26を導入するとなると、もうビルドするしかないのでは
 幸い最近のWSLはかなり安定してきておりdependencyを正しく導入すると問題なくビルドできる。
 Emacsのソースを管理するgitレポジトリは巨大なのでfetchを最小限に抑えるとかなり時間短縮になる (cf. [コミット・タグを指定してその時点でのツリーだけをgit cloneしてくる | 葉月夜堂](/notes/git-only-single-commit))。
 dependencyの導入まで合わせて、こんな感じ。
+
 <x-script src="https://gist.github.com/kissge/e925a60437aacac5475673c70bc496e8.js"></x-script>
 
 ## 3. Xサーバを導入する
