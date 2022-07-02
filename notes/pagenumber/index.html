@@ -8,16 +8,16 @@
     <meta http-equiv="content-security-policy" content=""><title>TeX: \pagestyle{empty} してもページ番号が勝手に挿入される - 2014-09-01 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
     <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
     <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="TeX: \pagestyle{empty} してもページ番号が勝手に挿入される - 2014-09-01 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="より正確に言うと，「最初のページにのみ」ページ番号が勝手に挿入される．解決策は \maketitle よりも後に \thispagestyle{empty} を挿入すればよい．どうも \maketitle の中で勝手に \thispagestyle{plane} か何かで上書きされているらしい．2014 年にもなって何でこんなことになっているんだ．余談だけれど，LyX でこの問題に対処するいい感じの方法が思いつかなかったので，プリアンブルにこんな感じのハック（笑）を足すことで対応することにした．\let\maketitlex\maketitle \renewcommand{\maketitle}{\maketitlex\thispagestyle{empty}}" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-00878b0d.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-f9a44566.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-f6db877a.css">
-	<link rel="modulepreload" href="/_app/immutable/start-214f5043.js">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-d69f21a9.css">
+	<link rel="modulepreload" href="/_app/immutable/start-61914f00.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
 	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-0c722760.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-46a52835.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-25e1c177.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-252b31a4.js">
   </head>
   <body>
     <div>
@@ -31,23 +31,23 @@
 
 
 
-<div class="nav-background svelte-1dwb7hb isHeaderInView" style=""></div>
+<div class="nav-background svelte-6mvvsp isHeaderInView" style=""></div>
 
-<main><article data-kind="note" class="svelte-1dwb7hb"><header class="svelte-1dwb7hb"><h1 class="svelte-1dwb7hb">TeX: <wbr>\pagestyle<wbr>{empty<wbr>} しても<wbr>ページ番号が<wbr>勝手に<wbr>挿入される</h1>
-
-      
-
-      <section class="meta svelte-1dwb7hb"><p class="svelte-1dwb7hb"><time title="8 年前" class="svelte-5ni4x2">Sun Aug 31 2014 15:19:25 GMT+0000 (Coordinated Universal Time)</time></p>
-
-        <p class="svelte-1dwb7hb"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/pagenumber.md" class="svelte-1dwb7hb">更新履歴</a></p></section>
+<main><article data-kind="note" class="svelte-6mvvsp"><header class="svelte-6mvvsp"><h1 class="svelte-6mvvsp">TeX: <wbr>\pagestyle<wbr>{empty<wbr>} しても<wbr>ページ番号が<wbr>勝手に<wbr>挿入される</h1>
 
       
 
+      <section class="meta svelte-6mvvsp"><p class="svelte-6mvvsp"><time title="8 年前" class="svelte-5ni4x2">Sun Aug 31 2014 15:19:25 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-6mvvsp"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/pagenumber.md" title="Sun Apr 17 2022 12:08:43 GMT+0000 (Coordinated Universal Time)" class="svelte-6mvvsp">最終更新：2 か月半前</a></p></section>
+
       
 
-      <section class="header-image svelte-1dwb7hb" style=""></section></header>
+      
 
-    <section class="body svelte-1dwb7hb"><!-- HTML_TAG_START --><p>より正確に言うと，「最初のページにのみ」ページ番号が勝手に挿入される．
+      <section class="header-image svelte-6mvvsp" style=""></section></header>
+
+    <section class="body svelte-6mvvsp"><!-- HTML_TAG_START --><p>より正確に言うと，「最初のページにのみ」ページ番号が勝手に挿入される．
 解決策は <code>\maketitle</code> よりも後に <code>\thispagestyle{empty}</code> を挿入すればよい．
 どうも <code>\maketitle</code> の中で勝手に <code>\thispagestyle{plane}</code> か何かで上書きされているらしい．
 <small style="font-size: medium; color: #eee;">2014 年にもなって何でこんなことになっているんだ．</small></p>
@@ -71,10 +71,10 @@
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="2kcfik">
-		import { start } from "/_app/immutable/start-214f5043.js";
+		<script type="module" data-sveltekit-hydrate="mdrjny">
+		import { start } from "/_app/immutable/start-61914f00.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="2kcfik"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="mdrjny"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,

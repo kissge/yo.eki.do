@@ -8,16 +8,16 @@
     <meta http-equiv="content-security-policy" content=""><title>ファイルを番号順にソートする - 2014-07-24 | 葉月夜堂</title><link href="https://twitter.com/p_km" rel="me" data-svelte="svelte-10crdf0">
     <link rel="webmention" href="https://webmention.io/sveltekit-prerender/webmention" data-svelte="svelte-10crdf0">
     <link rel="pingback" href="https://webmention.io/sveltekit-prerender/xmlrpc" data-svelte="svelte-10crdf0"><meta property="og:type" content="article" data-svelte="svelte-6t30ru"><meta property="og:title" content="ファイルを番号順にソートする - 2014-07-24 | 葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:description" content="連番が含まれるような名前のファイルがあったときに$ ls 10.txt  11.txt  12.txt  13.txt  14.txt  15.txt  1.txt  2.txt  3.txt  4.txt  5.txt  6.txt  7.txt  8.txt  9.txt という要領でアルファベット順にソートされてしまうが，$ ls -v 1.txt  2.txt  3.txt  4.txt  5.txt  6.txt  7.txt  8.txt  9.txt  10.txt  11.txt  12.txt  13.txt  14.txt  15.txt とすれば自然な順序になる．べんり．man 曰く，-v natural sort of (version) numbers within text" data-svelte="svelte-6t30ru"><meta property="og:site_name" content="葉月夜堂" data-svelte="svelte-6t30ru"><meta property="og:image" content="http://sveltekit-prerender/images/favicon.svg" data-svelte="svelte-6t30ru">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-00878b0d.css">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-f9a44566.css">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-61ea3f89.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-f6db877a.css">
-	<link rel="modulepreload" href="/_app/immutable/start-214f5043.js">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-d69f21a9.css">
+	<link rel="modulepreload" href="/_app/immutable/start-61914f00.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-7416df8b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
 	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-0c722760.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/time.svelte_svelte_type_style_lang-2ab901cd.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-46a52835.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/tags-f0769dcf.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/_...entity_.svelte-25e1c177.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/tags-252b31a4.js">
   </head>
   <body>
     <div>
@@ -31,23 +31,23 @@
 
 
 
-<div class="nav-background svelte-1dwb7hb isHeaderInView" style=""></div>
+<div class="nav-background svelte-6mvvsp isHeaderInView" style=""></div>
 
-<main><article data-kind="note" class="svelte-1dwb7hb"><header class="svelte-1dwb7hb"><h1 class="svelte-1dwb7hb">ファイルを<wbr>番号順に<wbr>ソートする</h1>
-
-      
-
-      <section class="meta svelte-1dwb7hb"><p class="svelte-1dwb7hb"><time title="8 年前" class="svelte-5ni4x2">Wed Jul 23 2014 23:21:28 GMT+0000 (Coordinated Universal Time)</time></p>
-
-        <p class="svelte-1dwb7hb"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/numerical-sort.md" class="svelte-1dwb7hb">更新履歴</a></p></section>
+<main><article data-kind="note" class="svelte-6mvvsp"><header class="svelte-6mvvsp"><h1 class="svelte-6mvvsp">ファイルを<wbr>番号順に<wbr>ソートする</h1>
 
       
 
+      <section class="meta svelte-6mvvsp"><p class="svelte-6mvvsp"><time title="8 年前" class="svelte-5ni4x2">Wed Jul 23 2014 23:21:28 GMT+0000 (Coordinated Universal Time)</time></p>
+
+        <p class="svelte-6mvvsp"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/numerical-sort.md" title="Sun Apr 17 2022 12:08:43 GMT+0000 (Coordinated Universal Time)" class="svelte-6mvvsp">最終更新：2 か月半前</a></p></section>
+
       
 
-      <section class="header-image svelte-1dwb7hb" style=""></section></header>
+      
 
-    <section class="body svelte-1dwb7hb"><!-- HTML_TAG_START --><p>連番が含まれるような名前のファイルがあったときに</p>
+      <section class="header-image svelte-6mvvsp" style=""></section></header>
+
+    <section class="body svelte-6mvvsp"><!-- HTML_TAG_START --><p>連番が含まれるような名前のファイルがあったときに</p>
 <pre><code class="language-sh">$ <span class="hljs-built_in">ls</span>
 10.txt  11.txt  12.txt  13.txt  14.txt  15.txt  1.txt  2.txt  3.txt  4.txt  5.txt  6.txt  7.txt  8.txt  9.txt
 </code></pre>
@@ -76,10 +76,10 @@
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="1lh618p">
-		import { start } from "/_app/immutable/start-214f5043.js";
+		<script type="module" data-sveltekit-hydrate="golhd7">
+		import { start } from "/_app/immutable/start-61914f00.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1lh618p"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="golhd7"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
