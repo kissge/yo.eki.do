@@ -2,6 +2,7 @@
 definition: ちゃんと普段使いできる小さなスマートフォン
 tags:
   - 推し
+header: https://pbs.twimg.com/media/EriJtymUUAMPbI3?format=jpg&name=4096x4096
 url: https://www.unihertz.com/ja-jp/products/jelly-2-japan
 ---
 
