@@ -1,6 +1,8 @@
 ---
-title: このWebサイトについて
+title: 葉月夜堂
 header: false
+definition: このWebサイト
+date: '2013-10-16'
 urlPath: '/about'
 ---
 
