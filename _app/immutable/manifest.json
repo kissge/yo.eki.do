@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-5a580832.js",
+    "file": "start-a0607b20.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -29,7 +29,7 @@
       "_singletons-d1fb5791.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-be120460.css"
+      "assets/pages/__layout.svelte-aab09818.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
@@ -42,7 +42,7 @@
     ]
   },
   "src/routes/[...entity].svelte": {
-    "file": "pages/_...entity_.svelte-9c5c34fa.js",
+    "file": "pages/_...entity_.svelte-b99678a4.js",
     "src": "src/routes/[...entity].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -58,13 +58,14 @@
       "src/components/slideshow.ts"
     ],
     "css": [
-      "assets/pages/_...entity_.svelte-2d900cb3.css"
+      "assets/pages/_...entity_.svelte-dac9bdf9.css"
     ],
     "assets": [
       "assets/heart-1cc6a2fc.svg",
       "assets/message-circle-c0b45d48.svg",
       "assets/arrows-double-sw-ne-80dcf001.svg",
-      "assets/brand-github-a6e3cad2.svg"
+      "assets/brand-github-a6e3cad2.svg",
+      "assets/presentation-c41ec3dd.svg"
     ]
   },
   "src/routes/all.svelte": {
@@ -138,11 +139,11 @@
     ]
   },
   "src/components/slideshow.ts": {
-    "file": "chunks/slideshow-079bfeee.js",
+    "file": "chunks/slideshow-2309e86f.js",
     "src": "src/components/slideshow.ts",
     "isDynamicEntry": true,
     "css": [
-      "assets/slideshow-7d2e6535.css"
+      "assets/slideshow-46ae8450.css"
     ]
   }
 }
