@@ -10,6 +10,8 @@ tags:
 
 # Introduction to Legal NLP <!-- slideshow-title -->
 
+## Webinar Series On Data Science & Machine Learning in Real World S1E02 <br /> Indian Institute of Information Technology, Kottayam
+
 Yusuke Kido
 
 Co-Founder & CTO, Legalscape, Inc.
