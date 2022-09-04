@@ -287,7 +287,7 @@ Case text pseudonymization
 ## Problem
 
 - **Privacy concern**
-- 2M judgments made every year; manual post-editing all is not affordable
+- 0.2M judgments made every year; manual post-editing all is not affordable
 
 # Case study 🇯🇵 Case text pseudonymization
 
