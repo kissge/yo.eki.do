@@ -23,7 +23,7 @@ jobs:
           node-version: '18.3.0'
           cache: yarn
           cache-dependency-path: monolog/yarn.lock
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --frozen-lockfile --production
         working-directory: monolog
 
       - name: Set up assets and configs
