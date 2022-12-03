@@ -1,5 +1,6 @@
 ---
 definition: 「もの」のログを実現する、あなたが今見ているこのWebサイトを構築したソフトウェア
+date: 2020-12-27T11:47:33+09:00
 url: https://github.com/kissge/monolog
 tags:
   - 開発したもの
