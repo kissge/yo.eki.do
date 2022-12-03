@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-a27ec198.css" disabled media="(max-width: 0)">
 	<link rel="stylesheet" href="/_app/immutable/assets/time.svelte_svelte_type_style_lang-8d43daca.css" disabled media="(max-width: 0)">
 	<link rel="stylesheet" href="/_app/immutable/assets/pages/_...entity_.svelte-fd60fffd.css" disabled media="(max-width: 0)">
-	<link rel="modulepreload" href="/_app/immutable/start-4a55d3db.js">
+	<link rel="modulepreload" href="/_app/immutable/start-197fde4b.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/index-ec00db2f.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/preload-helper-60cab3ee.js">
 	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-d1fb5791.js">
@@ -57,7 +57,7 @@
 
       
 
-      <section class="meta svelte-1askvef"><p class="svelte-1askvef"><time title="5 か月前" class="svelte-5ni4x2">Sun Jun 26 2022 14:14:13 GMT+0000 (Coordinated Universal Time)</time></p>
+      <section class="meta svelte-1askvef"><p class="svelte-1askvef"><time title="5 か月半前" class="svelte-5ni4x2">Sun Jun 26 2022 14:14:13 GMT+0000 (Coordinated Universal Time)</time></p>
 
         <p class="svelte-1askvef"><a href="https://github.com/kissge/yo.eki.do/commits/master/notes/hp-spectre-13.md" title="Mon Jun 27 2022 06:25:27 GMT+0000 (Coordinated Universal Time)" class="svelte-1askvef">最終更新：5 か月前</a></p></section>
 
@@ -75,17 +75,80 @@
 <h1 id="2-（解決済）シャットダウンできない">2. （解決済）シャットダウンできない</h1>
 <p>いつからか、シャットダウンできないようになってしまった。正確には、シャットダウンすると、勝手に再起動してしまう。しょうがないので電源ボタン長押しで電源断するしかない。</p>
 <p>で、これもGoogle検索するとみんな言ってて、いわゆるCMOSクリアすると直るよと言っている人がちらほらいた。ただ、CMOSクリアするには裏面を開けてバッテリーを取り外す必要があり、この機種の場合、裏面を開けるためのネジが底面のゴム足の裏に丁寧に隠されていて、それを剥がさないといけないらしい。それでずっと後回しにして放置していた。</p>
-<p>ところが、よくよく調べると、裏面を開けなくてもCMOSクリアする方法を発見。<kbd>Windows</kbd> + <kbd>V</kbd>キーを長押ししたまま電源を入れると、リセット画面に入れる。</p>
+<p>ところが、よくよく調べると、裏面を開けなくてもCMOSクリアする方法を発見。<kbd><a href="/mono/Windows" class="monolog-link" sveltekit:prefetch title="Windows">Windows</a></kbd> + <kbd>V</kbd>キーを長押ししたまま電源を入れると、リセット画面に入れる。</p>
 <p>これを行ってみたところ、無事シャットダウンできるようになった。と言うわけで、しばらく様子見だけど、一旦解決済み。</p>
 <h1 id="3-特定のキーが反応しない">3. 特定のキーが反応しない</h1>
 <p>正直これが一番困っている。これもいつからか。同じく、Google検索するとちらほら同じことを言っている人がいる。僕の場合、具体的には、左の<kbd>Alt</kbd>、数字の<kbd>1</kbd>〜<kbd>4</kbd>、<kbd>7</kbd>〜<kbd>9</kbd>、<kbd>0</kbd>キーが、押しても反応しない。最初の頃は「強く押し込むと反応することがある」のだったのだが、今は全く反応しない。ちなみに外付けのキーボードだと問題なく動作する。ハードウェア的な不具合かなあ？　となんとなく思っていた。</p>
 <p>ただ、今日、奇妙なことに気づいた。</p>
-<p>まず、普通にWindowsを起動する。前述の通り、一部のキーが反応しない。この状態で、<kbd>3</kbd>と<kbd>4</kbd>キーを同時押ししたまま、<kbd>5</kbd>キーも押す。すると<strong>何故か画面の明るさが変化</strong>する（つまり、<kbd>Fn</kbd> + <kbd>F3</kbd>キー相当のことが起きる）。</p>
+<p>まず、普通に<a href="/mono/Windows" class="monolog-link" sveltekit:prefetch title="Windows">Windows</a>を起動する。前述の通り、一部のキーが反応しない。この状態で、<kbd>3</kbd>と<kbd>4</kbd>キーを同時押ししたまま、<kbd>5</kbd>キーも押す。すると<strong>何故か画面の明るさが変化</strong>する（つまり、<kbd>Fn</kbd> + <kbd>F3</kbd>キー相当のことが起きる）。</p>
 <p>これだけでも意味不明なのだが、この操作を何回か行っていると、効かなくなる。その状態になると、なんと、<strong>今まで効かなかった各数字キーが反応する</strong>ようになる。昔のゲームの裏技かよ。正確には、数字キーは10回に9回くらい反応するようになる。<kbd>Alt</kbd>キーは相変わらず反応しない。そして、シャットダウンして、再度起動すると、元通りどのキーも反応しなくなってしまう。</p>
 <p>正直原理が全く分からない。誰か何か知ってたら教えて欲しい。</p>
 <!-- HTML_TAG_END --></section>
 
-    
+    <section class="links-section svelte-1askvef"><ul class="links"><li class="link-group"><h1 class="link-group-title">この記事がリンクしているもの</h1>
+      <ul class="link-group-links"><li class="link"><a sveltekit:prefetch href="/mono/Windows" class="monolog-link svelte-1ytxadn empty" data-kind="tag">Windows</a>
+            
+            <span class="tags"></span>
+            <p></p>
+          </li></ul>
+    </li><li class="link-group"><h1 class="link-group-title">この記事にリンクしているもの</h1>
+      <ul class="link-group-links"><li class="link"><a sveltekit:prefetch href="/notes/vaio-sx12" class="monolog-link svelte-1ytxadn" data-kind="note">VAIO SX12 ALL BLACK EDITIONを買った</a>
+            <small title="Sat Dec 03 2022 14:01:38 GMT+0000 (Coordinated Universal Time)"><time>2022-12-03</time>
+              </small>
+            <span class="tags"></span>
+            <p></p>
+          </li></ul>
+    </li><li class="link-group"><h1 class="link-group-title">Windowsにリンクしているもの</h1>
+      <ul class="link-group-links"><li class="link"><a sveltekit:prefetch href="/memorandum/Windows%2011%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97" class="monolog-link svelte-1ytxadn">Windows 11のセットアップ</a>
+            
+            <span class="tags"><a sveltekit:prefetch href="/mono/%E5%82%99%E5%BF%98%E9%8C%B2" class="tag svelte-o20os9" data-kind="tag">備忘録</a>
+  </span>
+            <p></p>
+          </li><li class="link"><a sveltekit:prefetch href="/notes/vaio-sx12" class="monolog-link svelte-1ytxadn" data-kind="note">VAIO SX12 ALL BLACK EDITIONを買った</a>
+            <small title="Sat Dec 03 2022 14:01:38 GMT+0000 (Coordinated Universal Time)"><time>2022-12-03</time>
+              </small>
+            <span class="tags"></span>
+            <p></p>
+          </li><li class="link"><a sveltekit:prefetch href="/notes/lnlp" class="monolog-link svelte-1ytxadn" data-kind="note">Introduction to Legal NLP</a>
+            <small title="Sun Sep 04 2022 03:30:00 GMT+0000 (Coordinated Universal Time)"><time>2022-09-04</time>
+              </small>
+            <span class="tags"><a sveltekit:prefetch href="/mono/NLP" class="tag svelte-o20os9" data-kind="tag">NLP</a>
+  <a sveltekit:prefetch href="/mono/LegalTech" class="tag svelte-o20os9" data-kind="tag">LegalTech</a>
+  </span>
+            <p></p>
+          </li><li class="link"><a sveltekit:prefetch href="/notes/emacs-windows-2017" class="monolog-link svelte-1ytxadn" data-kind="note">Emacs: Windowsでやっていく2017</a>
+            <small title="Fri Dec 08 2017 00:00:08 GMT+0000 (Coordinated Universal Time)"><time>2017-12-08</time>
+              </small>
+            <span class="tags"><a sveltekit:prefetch href="/mono/%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC" class="tag svelte-o20os9" data-kind="tag">アドベントカレンダー</a>
+  </span>
+            <p></p>
+          </li><li class="link"><a sveltekit:prefetch href="/notes/maximize-windows-by-dragging-them-to-the-screen-edge-on-osx" class="monolog-link svelte-1ytxadn" data-kind="note">ウィンドウをドラッグしたまま画面の端にぐぐぐっと押し付けることで最大化したり画面サイズの半分の大きさに変えたりするやつをOS Xでやる</a>
+            <small title="Tue Jan 12 2016 22:14:29 GMT+0000 (Coordinated Universal Time)"><time>2016-01-13</time>
+              </small>
+            <span class="tags"></span>
+            <p></p>
+          </li><li class="link"><a sveltekit:prefetch href="/notes/multiboot" class="monolog-link svelte-1ytxadn" data-kind="note">マルチブート覚書</a>
+            <small title="Tue Nov 03 2015 23:49:51 GMT+0000 (Coordinated Universal Time)"><time>2015-11-04</time>
+              </small>
+            <span class="tags"></span>
+            <p></p>
+          </li><li class="link"><a sveltekit:prefetch href="/notes/2-column-pdf" class="monolog-link svelte-1ytxadn" data-kind="note">二段組みのPDFを読みやすく変換する</a>
+            <small title="Wed Dec 10 2014 22:31:22 GMT+0000 (Coordinated Universal Time)"><time>2014-12-11</time>
+              </small>
+            <span class="tags"></span>
+            <p></p>
+          </li><li class="link"><a sveltekit:prefetch href="/notes/window-resize" class="monolog-link svelte-1ytxadn" data-kind="note">Cygwin/X でウィンドウをリサイズしようとすると高さが潰れてしまう</a>
+            <small title="Tue Aug 05 2014 04:38:45 GMT+0000 (Coordinated Universal Time)"><time>2014-08-05</time>
+              </small>
+            <span class="tags"></span>
+            <p></p>
+          </li><li class="link"><a sveltekit:prefetch href="/notes/emacs24" class="monolog-link svelte-1ytxadn" data-kind="note">Emacs 24 でクリップボードとの連携が上手くいかなくなった</a>
+            <small title="Wed Jul 23 2014 22:14:19 GMT+0000 (Coordinated Universal Time)"><time>2014-07-24</time>
+              </small>
+            <span class="tags"></span>
+            <p></p>
+          </li></ul>
+    </li></ul></section>
 
     <section class="mentions svelte-19gm1ik"><section class="reaction svelte-19gm1ik"><a href="https://twitter.com/intent/tweet?url=" class="svelte-19gm1ik" style="background-image: url(/_app/immutable/assets/message-circle-c0b45d48.svg); color: #3579d1;"><small class="svelte-19gm1ik">Twitterで</small>
         <span class="svelte-19gm1ik">コメントする</span></a></section>
@@ -99,10 +162,10 @@
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="u65gy4">
-		import { start } from "/_app/immutable/start-4a55d3db.js";
+		<script type="module" data-sveltekit-hydrate="1t8yt57">
+		import { start } from "/_app/immutable/start-197fde4b.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="u65gy4"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1t8yt57"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -116,6 +179,6 @@
 				routeId: "[...entity]"
 			}
 		});
-	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"うちのHP Spectre x360 Convertible 13がなんか変","nameSegmented":["うちの","HP"," Spectre"," x360 ","Convertible ","13が","なんか","変"],"kind":"note","urlPath":"/notes/hp-spectre-13","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/hp-spectre-13.md","lastModified":"2022-06-27T06:25:27.000Z","attributes":{"title":"うちのHP Spectre x360 Convertible 13がなんか変","date":"2022-06-26T14:14:13.000Z","header":"https://jp.ext.hp.com/content/dam/jp-ext-hp-com/jp/ja/ec/notebooks/personal/spectre/images/design_img_x360_13.jpg"},"tags":[],"body":"\u003Cp>最近は徐々に出社の頻度も増し、ここ2年ほど死蔵していたノートパソコンを使う頻度が高まっている。2019年8月に買ったHPの2-in-1ノートパソコンSpectreを使っているのだけど、それが色々とおかしくて、気になっている。\u003C/p>\n\u003Ch1 id=\"1-すぐ熱くなってファンがフル回転する\">1. すぐ熱くなってファンがフル回転する\u003C/h1>\n\u003Cp>購入直後からずっとこんな感じ。Google検索すると、買った人みんな同じこと言ってる。けどまあ困ってるかと言うと困ってはいない。多分。\u003C/p>\n\u003Ch1 id=\"2-（解決済）シャットダウンできない\">2. （解決済）シャットダウンできない\u003C/h1>\n\u003Cp>いつからか、シャットダウンできないようになってしまった。正確には、シャットダウンすると、勝手に再起動してしまう。しょうがないので電源ボタン長押しで電源断するしかない。\u003C/p>\n\u003Cp>で、これもGoogle検索するとみんな言ってて、いわゆるCMOSクリアすると直るよと言っている人がちらほらいた。ただ、CMOSクリアするには裏面を開けてバッテリーを取り外す必要があり、この機種の場合、裏面を開けるためのネジが底面のゴム足の裏に丁寧に隠されていて、それを剥がさないといけないらしい。それでずっと後回しにして放置していた。\u003C/p>\n\u003Cp>ところが、よくよく調べると、裏面を開けなくてもCMOSクリアする方法を発見。\u003Ckbd>Windows\u003C/kbd> + \u003Ckbd>V\u003C/kbd>キーを長押ししたまま電源を入れると、リセット画面に入れる。\u003C/p>\n\u003Cp>これを行ってみたところ、無事シャットダウンできるようになった。と言うわけで、しばらく様子見だけど、一旦解決済み。\u003C/p>\n\u003Ch1 id=\"3-特定のキーが反応しない\">3. 特定のキーが反応しない\u003C/h1>\n\u003Cp>正直これが一番困っている。これもいつからか。同じく、Google検索するとちらほら同じことを言っている人がいる。僕の場合、具体的には、左の\u003Ckbd>Alt\u003C/kbd>、数字の\u003Ckbd>1\u003C/kbd>〜\u003Ckbd>4\u003C/kbd>、\u003Ckbd>7\u003C/kbd>〜\u003Ckbd>9\u003C/kbd>、\u003Ckbd>0\u003C/kbd>キーが、押しても反応しない。最初の頃は「強く押し込むと反応することがある」のだったのだが、今は全く反応しない。ちなみに外付けのキーボードだと問題なく動作する。ハードウェア的な不具合かなあ？　となんとなく思っていた。\u003C/p>\n\u003Cp>ただ、今日、奇妙なことに気づいた。\u003C/p>\n\u003Cp>まず、普通にWindowsを起動する。前述の通り、一部のキーが反応しない。この状態で、\u003Ckbd>3\u003C/kbd>と\u003Ckbd>4\u003C/kbd>キーを同時押ししたまま、\u003Ckbd>5\u003C/kbd>キーも押す。すると\u003Cstrong>何故か画面の明るさが変化\u003C/strong>する（つまり、\u003Ckbd>Fn\u003C/kbd> + \u003Ckbd>F3\u003C/kbd>キー相当のことが起きる）。\u003C/p>\n\u003Cp>これだけでも意味不明なのだが、この操作を何回か行っていると、効かなくなる。その状態になると、なんと、\u003Cstrong>今まで効かなかった各数字キーが反応する\u003C/strong>ようになる。昔のゲームの裏技かよ。正確には、数字キーは10回に9回くらい反応するようになる。\u003Ckbd>Alt\u003C/kbd>キーは相変わらず反応しない。そして、シャットダウンして、再度起動すると、元通りどのキーも反応しなくなってしまう。\u003C/p>\n\u003Cp>正直原理が全く分からない。誰か何か知ってたら教えて欲しい。\u003C/p>\n","headline":"最近は徐々に出社の頻度も増し、ここ2年ほど死蔵していたノートパソコンを使う頻度が高まっている。2019年8月に買ったHPの2-in-1ノートパソコンSpectreを使っているのだけど、それが色々とおかしくて、気になっている。1. すぐ熱くなってファンがフル回転する購入直後からずっとこんな感じ。Google検索すると、買った人みんな同じこと言ってる。けどまあ困ってるかと言うと困ってはいない。多分。2. （解決済）シャットダウンできないいつからか、シャットダウンできないようになってしまった。正確には、シャットダウンすると、勝手に再起動してしまう。しょうがないので電源ボタン長押しで電源断するしかない。で、これもGoogle検索するとみんな言ってて、いわゆるCMOSクリアすると直るよと言っている人がちらほらいた。ただ、CMOSクリアするには裏面を開けてバッテリーを取り外す必要があり、この機種の場合、裏面を開けるためのネジが底面のゴム足の裏に丁寧に隠されていて、それを剥がさないといけないらしい。それでずっと後回しにして放置していた。ところが、よくよく調べると、裏面を開けなくてもCMOSクリアする方法を発見。Window","links":{"to":{"urlPath":"/notes/hp-spectre-13","entities":[]},"from":{"urlPath":"/notes/hp-spectre-13","entities":[]},"kind":{"urlPath":"/notes/hp-spectre-13","entities":[]}},"isEmpty":false}}</script></div>
+	</script><script type="application/json" sveltekit:data-type="props">{"entity":{"name":"うちのHP Spectre x360 Convertible 13がなんか変","nameSegmented":["うちの","HP"," Spectre"," x360 ","Convertible ","13が","なんか","変"],"kind":"note","urlPath":"/notes/hp-spectre-13","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/hp-spectre-13.md","lastModified":"2022-06-27T06:25:27.000Z","attributes":{"title":"うちのHP Spectre x360 Convertible 13がなんか変","date":"2022-06-26T14:14:13.000Z","header":"https://jp.ext.hp.com/content/dam/jp-ext-hp-com/jp/ja/ec/notebooks/personal/spectre/images/design_img_x360_13.jpg"},"tags":[],"body":"\u003Cp>最近は徐々に出社の頻度も増し、ここ2年ほど死蔵していたノートパソコンを使う頻度が高まっている。2019年8月に買ったHPの2-in-1ノートパソコンSpectreを使っているのだけど、それが色々とおかしくて、気になっている。\u003C/p>\n\u003Ch1 id=\"1-すぐ熱くなってファンがフル回転する\">1. すぐ熱くなってファンがフル回転する\u003C/h1>\n\u003Cp>購入直後からずっとこんな感じ。Google検索すると、買った人みんな同じこと言ってる。けどまあ困ってるかと言うと困ってはいない。多分。\u003C/p>\n\u003Ch1 id=\"2-（解決済）シャットダウンできない\">2. （解決済）シャットダウンできない\u003C/h1>\n\u003Cp>いつからか、シャットダウンできないようになってしまった。正確には、シャットダウンすると、勝手に再起動してしまう。しょうがないので電源ボタン長押しで電源断するしかない。\u003C/p>\n\u003Cp>で、これもGoogle検索するとみんな言ってて、いわゆるCMOSクリアすると直るよと言っている人がちらほらいた。ただ、CMOSクリアするには裏面を開けてバッテリーを取り外す必要があり、この機種の場合、裏面を開けるためのネジが底面のゴム足の裏に丁寧に隠されていて、それを剥がさないといけないらしい。それでずっと後回しにして放置していた。\u003C/p>\n\u003Cp>ところが、よくよく調べると、裏面を開けなくてもCMOSクリアする方法を発見。\u003Ckbd>\u003Ca href=\"/mono/Windows\" class=\"monolog-link\" sveltekit:prefetch title=\"Windows\">Windows\u003C/a>\u003C/kbd> + \u003Ckbd>V\u003C/kbd>キーを長押ししたまま電源を入れると、リセット画面に入れる。\u003C/p>\n\u003Cp>これを行ってみたところ、無事シャットダウンできるようになった。と言うわけで、しばらく様子見だけど、一旦解決済み。\u003C/p>\n\u003Ch1 id=\"3-特定のキーが反応しない\">3. 特定のキーが反応しない\u003C/h1>\n\u003Cp>正直これが一番困っている。これもいつからか。同じく、Google検索するとちらほら同じことを言っている人がいる。僕の場合、具体的には、左の\u003Ckbd>Alt\u003C/kbd>、数字の\u003Ckbd>1\u003C/kbd>〜\u003Ckbd>4\u003C/kbd>、\u003Ckbd>7\u003C/kbd>〜\u003Ckbd>9\u003C/kbd>、\u003Ckbd>0\u003C/kbd>キーが、押しても反応しない。最初の頃は「強く押し込むと反応することがある」のだったのだが、今は全く反応しない。ちなみに外付けのキーボードだと問題なく動作する。ハードウェア的な不具合かなあ？　となんとなく思っていた。\u003C/p>\n\u003Cp>ただ、今日、奇妙なことに気づいた。\u003C/p>\n\u003Cp>まず、普通に\u003Ca href=\"/mono/Windows\" class=\"monolog-link\" sveltekit:prefetch title=\"Windows\">Windows\u003C/a>を起動する。前述の通り、一部のキーが反応しない。この状態で、\u003Ckbd>3\u003C/kbd>と\u003Ckbd>4\u003C/kbd>キーを同時押ししたまま、\u003Ckbd>5\u003C/kbd>キーも押す。すると\u003Cstrong>何故か画面の明るさが変化\u003C/strong>する（つまり、\u003Ckbd>Fn\u003C/kbd> + \u003Ckbd>F3\u003C/kbd>キー相当のことが起きる）。\u003C/p>\n\u003Cp>これだけでも意味不明なのだが、この操作を何回か行っていると、効かなくなる。その状態になると、なんと、\u003Cstrong>今まで効かなかった各数字キーが反応する\u003C/strong>ようになる。昔のゲームの裏技かよ。正確には、数字キーは10回に9回くらい反応するようになる。\u003Ckbd>Alt\u003C/kbd>キーは相変わらず反応しない。そして、シャットダウンして、再度起動すると、元通りどのキーも反応しなくなってしまう。\u003C/p>\n\u003Cp>正直原理が全く分からない。誰か何か知ってたら教えて欲しい。\u003C/p>\n","headline":"最近は徐々に出社の頻度も増し、ここ2年ほど死蔵していたノートパソコンを使う頻度が高まっている。2019年8月に買ったHPの2-in-1ノートパソコンSpectreを使っているのだけど、それが色々とおかしくて、気になっている。1. すぐ熱くなってファンがフル回転する購入直後からずっとこんな感じ。Google検索すると、買った人みんな同じこと言ってる。けどまあ困ってるかと言うと困ってはいない。多分。2. （解決済）シャットダウンできないいつからか、シャットダウンできないようになってしまった。正確には、シャットダウンすると、勝手に再起動してしまう。しょうがないので電源ボタン長押しで電源断するしかない。で、これもGoogle検索するとみんな言ってて、いわゆるCMOSクリアすると直るよと言っている人がちらほらいた。ただ、CMOSクリアするには裏面を開けてバッテリーを取り外す必要があり、この機種の場合、裏面を開けるためのネジが底面のゴム足の裏に丁寧に隠されていて、それを剥がさないといけないらしい。それでずっと後回しにして放置していた。ところが、よくよく調べると、裏面を開けなくてもCMOSクリアする方法を発見。Window","links":{"to":{"urlPath":"/notes/hp-spectre-13","entities":[{"name":"Windows","nameSegmented":["Windows"],"kind":"tag","urlPath":"/mono/Windows","tags":[],"isEmpty":true}]},"from":{"urlPath":"/notes/hp-spectre-13","entities":[{"name":"VAIO SX12 ALL BLACK EDITIONを買った","nameSegmented":["VAIO ","SX12"," ALL"," BLACK"," EDITIONを","買った"],"kind":"note","urlPath":"/notes/vaio-sx12","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/vaio-sx12.md","lastModified":"2022-12-03T14:52:44.000Z","attributes":{"title":"VAIO SX12 ALL BLACK EDITIONを買った","date":"2022-12-03T14:01:38.000Z","header":"https://vaio.com/products/allblack_sx12/images/img_main.png"},"tags":[],"isEmpty":false}]},"kind":{"urlPath":"/notes/hp-spectre-13","entities":[]},"one_hop_Windows":{"urlPath":"/mono/Windows","entities":[{"name":"Windows 11のセットアップ","nameSegmented":["Windows"," 11の","セットアップ"],"urlPath":"/memorandum/Windows%2011%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/memorandum/Windows 11のセットアップ.md","lastModified":"2022-12-03T14:52:35.000Z","attributes":{"tags":["備忘録","Windows"]},"tags":[{"name":"備忘録","kind":"tag","urlPath":"/mono/%E5%82%99%E5%BF%98%E9%8C%B2"},{"name":"Windows","kind":"tag","urlPath":"/mono/Windows"}],"isEmpty":false},{"name":"VAIO SX12 ALL BLACK EDITIONを買った","nameSegmented":["VAIO ","SX12"," ALL"," BLACK"," EDITIONを","買った"],"kind":"note","urlPath":"/notes/vaio-sx12","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/vaio-sx12.md","lastModified":"2022-12-03T14:52:44.000Z","attributes":{"title":"VAIO SX12 ALL BLACK EDITIONを買った","date":"2022-12-03T14:01:38.000Z","header":"https://vaio.com/products/allblack_sx12/images/img_main.png"},"tags":[],"isEmpty":false},{"name":"Introduction to Legal NLP","nameSegmented":["Introduction ","to"," Legal"," NLP"],"kind":"note","urlPath":"/notes/lnlp","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/lnlp.md","lastModified":"2022-09-04T05:58:38.000Z","attributes":{"title":"Introduction to Legal NLP","date":"2022-09-04T03:30:00.000Z","lang":"en","slides":true,"tags":["NLP","LegalTech"]},"tags":[{"name":"NLP","kind":"tag","urlPath":"/mono/NLP"},{"name":"LegalTech","kind":"tag","urlPath":"/mono/LegalTech"}],"isEmpty":false},{"name":"Emacs: Windowsでやっていく2017","nameSegmented":["Emacs: ","Windowsで","やっていく","2017"],"kind":"note","urlPath":"/notes/emacs-windows-2017","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/emacs-windows-2017.md","lastModified":"2022-07-02T05:00:46.000Z","attributes":{"from":"wordpress","title":"Emacs: Windowsでやっていく2017","date":"2017-12-08T00:00:08.000Z","tags":["アドベントカレンダー"]},"tags":[{"name":"アドベントカレンダー","kind":"tag","urlPath":"/mono/%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC"}],"isEmpty":false},{"name":"ウィンドウをドラッグしたまま画面の端にぐぐぐっと押し付けることで最大化したり画面サイズの半分の大きさに変えたりするやつをOS Xでやる","nameSegmented":["ウィンドウを","ドラッグした","まま","画面の","端に","ぐぐぐっと","押し","付ける","ことで","最大化したり","画面","サイズの","半分の","大きさに","変えたりする","やつを","OS"," Xで","やる"],"kind":"note","urlPath":"/notes/maximize-windows-by-dragging-them-to-the-screen-edge-on-osx","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/maximize-windows-by-dragging-them-to-the-screen-edge-on-osx.md","lastModified":"2022-04-17T12:08:43.000Z","attributes":{"from":"wordpress","title":"ウィンドウをドラッグしたまま画面の端にぐぐぐっと押し付けることで最大化したり画面サイズの半分の大きさに変えたりするやつをOS Xでやる","date":"2016-01-12T22:14:29.000Z"},"tags":[],"isEmpty":false},{"name":"マルチブート覚書","nameSegmented":["マルチブート覚書"],"kind":"note","urlPath":"/notes/multiboot","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/multiboot.md","lastModified":"2022-04-17T12:08:43.000Z","attributes":{"from":"wordpress","title":"マルチブート覚書","date":"2015-11-03T23:49:51.000Z"},"tags":[],"isEmpty":false},{"name":"二段組みのPDFを読みやすく変換する","nameSegmented":["二段組みの","PDFを","読みや","すく","変換する"],"kind":"note","urlPath":"/notes/2-column-pdf","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/2-column-pdf.md","lastModified":"2022-06-11T07:32:46.000Z","attributes":{"from":"wordpress","title":"二段組みのPDFを読みやすく変換する","date":"2014-12-10T22:31:22.000Z"},"tags":[],"isEmpty":false},{"name":"Cygwin/X でウィンドウをリサイズしようとすると高さが潰れてしまう","nameSegmented":["Cygwin/","X で","ウィンドウを","リサイズしようと","すると","高さが","潰れてしまう"],"kind":"note","urlPath":"/notes/window-resize","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/window-resize.md","lastModified":"2022-04-17T12:08:43.000Z","attributes":{"from":"wordpress","title":"Cygwin/X でウィンドウをリサイズしようとすると高さが潰れてしまう","date":"2014-08-05T04:38:45.000Z"},"tags":[],"isEmpty":false},{"name":"Emacs 24 でクリップボードとの連携が上手くいかなくなった","nameSegmented":["Emacs"," 24 で","クリップボードとの","連携が","上手く","いかなくなった"],"kind":"note","urlPath":"/notes/emacs24","historyURL":"https://github.com/kissge/yo.eki.do/commits/master/notes/emacs24.md","lastModified":"2022-04-17T12:14:26.000Z","attributes":{"from":"wordpress","title":"Emacs 24 でクリップボードとの連携が上手くいかなくなった","date":"2014-07-23T22:14:19.000Z"},"tags":[],"isEmpty":false}]}},"isEmpty":false}}</script></div>
   </body>
 </html>
