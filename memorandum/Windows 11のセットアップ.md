@@ -22,6 +22,7 @@ tags:
    1. `iwr https://raw.githubusercontent.com/kissge/dotfiles/master/windows/winget.json -OutFile winget.json`
    2. `winget import winget.json`
 - Remote Desktopを有効化
+- ThinkPad USB トラックポイントキーボードのドライバ https://support.lenovo.com/jp/ja/solutions/pd005137-thinkpad-usb-keyboard-with-trackpoint-overview （たぶん）
 
 # WSL2
 
