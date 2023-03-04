@@ -364,7 +364,7 @@ Don't try to replace human with AI; assist them with technology
 In order to achieve even more accurate outputs, we also built a Web app to effectively find and fix errors of machine output manually
 
 <iframe
-  src="https://drive.google.com/file/d/1epOuBKMoE71hN9yAiu57ECwSoCpKbXir/preview"
+  src="data:text/html,%3Cbody%20style%3D%22background%3A%20grey%3B%20font-size%3A%20100px%3B%20display%3A%20flex%3B%20justify-content%3A%20center%3B%20align-items%3A%20center%22%3EVideo"
   allowfullscreen
   style="height: calc(100% - 4em); aspect-ratio: 640 / 355"></iframe>
 
