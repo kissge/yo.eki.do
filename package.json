@@ -2,5 +2,6 @@
   "devDependencies": {
     "prettier": "^2.6.2",
     "prettier-plugin-md-nocjsp": "^1.2.0"
-  }
+  },
+  "packageManager": "pnpm@9.0.6+sha1.648f6014eb363abb36618f2ba59282a9eeb3e879"
 }
