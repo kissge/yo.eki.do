@@ -7,6 +7,7 @@ creator:
   - サンボマスター
   - レキシ
   - SKY-HI & THE SUPER FLYERS
+  - 斎藤宏介
   - POLYSICS
   - フレデリック
   - UNISON SQUARE GARDEN

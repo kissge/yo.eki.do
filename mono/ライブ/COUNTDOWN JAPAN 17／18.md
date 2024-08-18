@@ -9,6 +9,7 @@ creator:
   - ZAZEN BOYS
   - ヒトリエ
   - 東京スカパラダイスオーケストラ
+  - 斎藤宏介
   - アンジュルム
   - Mrs. GREEN APPLE
   - the HIATUS
